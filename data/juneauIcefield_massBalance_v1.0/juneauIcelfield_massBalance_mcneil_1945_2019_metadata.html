@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Glacier-Wide Mass Balance and Compiled Data Inputs: Juneau Icefield Glaciers</title>
+  <link rel="schema.dc" href="http://purl.org/metadata/dublin_core"/>
+  <meta name="dc.title" content="Glacier-Wide Mass Balance and Compiled Data Inputs: Juneau Icefield Glaciers "/>
+  <meta name="dc.creator" content="Christopher J. McNeil (ORCID: 0000-0003-4170-0428) Seth W. Campbell (ORCID: 0000-0002-9620-8329) Shad O'Neel (ORCID: 0000-0002-9185-0144) Emily H. Baker (ORCID: 0000-0002-0938-3496) "/>
+  <meta name="dc.subject" content="geoscientificInformation "/>
+  <meta name="dc.description" content="Since the 1940s, the Juneau Icefield Research Program (JIRP) has been measuring surface mass balance on the Juneau Icefield. This is the longest ongoing program of its kind in North America. The program nominally occurs between late June and late August, traversing between Juneau, Alaska and Atlin, British Columbia. JIRP has examined the surface mass balance of the Juneau Icefield since 1946, with principal efforts focused on Lemon Creek Glacier and Taku Glacier. Glaciological, geodetic, and meteorological data have been collected by JIRP to characterize the interaction between the climate and glaciers of the Juneau Icefield. Direct field measurements of point glaciological data are combined with weather and geodetic data to estimate the seasonal and annual mass balance at each glacier in both a conventional and reference surface format (Cogley and others, 2011). The basic analysis framework (O'Neel, 2019; McNeil et. al, 2019) is the same at each glacier to enable cross-comparison between output time series. For Taku and Lemon Creek glaciers, temperature lapse rates are optimized using on-icefield weather data. This changes the degree day factor in the melt model, giving small post-geodetic calibration differences on the order of 2-3 cm. Details are described in McNeil (2019). Vocabulary used follows Cogley and others (2011) Glossary of Glacier Mass Balance. This portion of the data release includes glacier wide mass balance solutions for Taku and Lemon Creek Glaciers, as well as the refined inputs used in these calculations. Input data are of three types: 1) time-variable area altitude distribution (AAD); 2) time series of point water balance at long term sites (with secondary sites given in recent years); 3) weather data from nearby stations, either installed along the glacier margins or taken from a nearby site if continuous glacier-adjacent data is unavailable. The USGS runs a coded analysis to transform the three input data types to the output glacier-wide data. Output data represent surface mass balance estimates. The output solution is a geodetically calibrated, conventional glacier-wide mass balance, which represents our preferred solution. Conventional glacier-wide mass balance from direct observations without calibration can be easily derived by using the geodetic calibration coefficients provided, if desired. We do not explicitly account for basal or englacial accumulation or ablation. Mass balances are reported in water equivalent (w.e.) units, and often represent integration of multiple field measurements. Whenever possible, we average multiple field measurements to account for surface roughness and measurement errors. "/>
+  <meta name="dc.publisher" content="U.S. Geological Survey, Alaska Science Center"/>
+  <meta name="dc.contributor" content="USGS Climate and Land Use Change Glacier and Climate Project "/>
+  <meta name="dc.date" content="20191112"/>
+  <meta name="dc.type" content="data.tabular digital data"/>
+  <meta name="dc.format" content="ZIP"/>
+  <meta name="dc.identifier" content="https://doi.org/10.5066/P9YBZ36F"/>
+  <meta name="dc.source" content="Authoritative source of data."/>
+  <meta name="dc.lang" content="en"/>
+  <meta name="dc.relation" content="Part of USGS Benchmark Glacier Mass Balance"/>
+  <meta name="dc.coverage.x.min" scheme="DD" content="-135.3470"/>
+  <meta name="dc.coverage.x.max" scheme="DD" content="-133.6890"/>
+  <meta name="dc.coverage.y.min" scheme="DD" content="58.3620"/>
+  <meta name="dc.coverage.y.max" scheme="DD" content="59.5220"/>
+  <meta name="dc.coverage.placeName" content="Juneau Icefield"/>
+  <meta name="dc.coverage.placeName" content="Taku Glacier"/>
+  <meta name="dc.coverage.placeName" content="Lemon Creek Glacier"/>
+  <meta name="dc.coverage.placeName" content="Alaska"/>
+  <meta name="dc.coverage.t.min" content="1945"/>
+  <meta name="dc.coverage.t.max" content="2019"/>
+  <meta name="dc.rights" content="Access constraints: none; Use constraints: It is requested that the authors and the USGS be cited for any subsequent publications referenced to this dataset. It is strongly recommended that careful attention be paid to the contents of the metadata file associated with these data to evaluate data set limitations, restrictions or intended use."/>
+  <meta name="generated-from" content="phpMlrylR.xml"/>
+  <style type="text/css">
+    /* These CSS rules can be modified to apply different styles to your outline-format metadata. */
+    .major-section { border-top: 1px solid black; padding-top: 0.5em; }
+    .child { margin-left: 2em; margin-bottom: 0.5em; }
+    .element-name { font-style: italic; }
+    .element-value { }
+    .blank { margin-top: 1em; }
+    #page-bottom { visibility: hidden; display: none; }
+    #generated-by { font-size: small; }
+  </style>
+</head>
+<body>
+<h1>Glacier-Wide Mass Balance and Compiled Data Inputs: Juneau Icefield Glaciers</h1>
+<p>
+<h3>Metadata:</h3>
+<ul>
+<li><a href="#1">Identification_Information</a></li>
+<li><a href="#2">Data_Quality_Information</a></li>
+<li><a href="#3">Spatial_Data_Organization_Information</a></li>
+<li><a href="#4">Spatial_Reference_Information</a></li>
+<li><a href="#5">Entity_and_Attribute_Information</a></li>
+<li><a href="#6">Distribution_Information</a></li>
+<li><a href="#7">Metadata_Reference_Information</a></li>
+</ul>
+<div class="major-section" id="1">
+<span class="element-name idinfo">Identification_Information:</span><div class="child">
+<span class="element-name citation">Citation:</span><div class="child">
+<span class="element-name citeinfo">Citation_Information:</span><div class="child">
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Christopher J. McNeil (ORCID: 0000-0003-4170-0428)</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Seth W. Campbell (ORCID: 0000-0002-9620-8329)</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Shad O'Neel (ORCID: 0000-0002-9185-0144)</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Emily H. Baker (ORCID: 0000-0002-0938-3496)</span><br/>
+<span class="element-name pubdate">Publication_Date:</span> <span class="element-value pubdate">20191112</span><br/>
+<span class="element-name title">Title:</span>
+<div class="child element-value title">
+Glacier-Wide Mass Balance and Compiled Data Inputs: Juneau Icefield Glaciers
+</div>
+<span class="element-name geoform">Geospatial_Data_Presentation_Form:</span> <span class="element-value geoform">tabular digital data</span><br/>
+<span class="element-name serinfo">Series_Information:</span><div class="child">
+<span class="element-name sername">Series_Name:</span>
+<div class="child element-value sername">
+Glacier-Wide Mass Balance and Compiled Data Inputs: Juneau Icefield Glaciers
+</div>
+<span class="element-name issue">Issue_Identification:</span> <span class="element-value issue">1.0</span><br/>
+</div>
+<span class="element-name pubinfo">Publication_Information:</span><div class="child">
+<span class="element-name pubplace">Publication_Place:</span> <span class="element-value pubplace">Anchorage, Alaska</span><br/>
+<span class="element-name publish">Publisher:</span> <span class="element-value publish">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name othercit">Other_Citation_Details:</span>
+<div class="child element-value othercit">
+McNeil, C. J., Campbell, S. W., O'Neel, S., and Baker, E. H., 2019, Glacier-wide mass balance and compiled data inputs: Juneau Icefield glaciers, (ver. 1.0, November 2019): U.S. Geological Survey data release, <a href="https://doi.org/10.5066/P9YBZ36F">https://doi.org/10.5066/P9YBZ36F</a>
+</div>
+<span class="element-name onlink">Online_Linkage:</span> <span class="element-value onlink"><a href="https://doi.org/10.5066/P9YBZ36F">https://doi.org/10.5066/P9YBZ36F</a></span><br/>
+<span class="element-name lworkcit">Larger_Work_Citation:</span><div class="child">
+<span class="element-name citeinfo">Citation_Information:</span><div class="child">
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Shad O'Neel (ORCID: 0000-0002-9185-0144)</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Louis C. Sass (ORCID: 0000-0003-4677-029X)</span><br/>
+<span class="element-name pubdate">Publication_Date:</span> <span class="element-value pubdate">2019</span><br/>
+<span class="element-name title">Title:</span> <span class="element-value title">USGS Benchmark Glacier Mass Balance</span><br/>
+<span class="element-name geoform">Geospatial_Data_Presentation_Form:</span> <span class="element-value geoform">Web Site</span><br/>
+<span class="element-name pubinfo">Publication_Information:</span><div class="child">
+<span class="element-name pubplace">Publication_Place:</span> <span class="element-value pubplace">Anchorage, Alaska</span><br/>
+<span class="element-name publish">Publisher:</span> <span class="element-value publish">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name onlink">Online_Linkage:</span> <span class="element-value onlink"><a href="https://doi.org/10.5066/F7BG2N8R">https://doi.org/10.5066/F7BG2N8R</a></span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name descript">Description:</span><div class="child">
+<span class="element-name abstract">Abstract:</span>
+<div class="child element-value abstract">
+Since the 1940s, the Juneau Icefield Research Program (JIRP) has been measuring surface mass balance on the Juneau Icefield. This is the longest ongoing program of its kind in North America. The program nominally occurs between late June and late August, traversing between Juneau, Alaska and Atlin, British Columbia. JIRP has examined the surface mass balance of the Juneau Icefield since 1946, with principal efforts focused on Lemon Creek Glacier and Taku Glacier. Glaciological, geodetic, and meteorological data have been collected by JIRP to characterize the interaction between the climate and glaciers of the Juneau Icefield. Direct field measurements of point glaciological data are combined with weather and geodetic data to estimate the seasonal and annual mass balance at each glacier in both a conventional and reference surface format (Cogley and others, 2011). The basic analysis framework (O'Neel, 2019; McNeil et. al, 2019) is the same at each glacier to enable cross-comparison between output time series. For Taku and Lemon Creek glaciers, temperature lapse rates are optimized using on-icefield weather data. This changes the degree day factor in the melt model, giving small post-geodetic calibration differences on the order of 2-3 cm. Details are described in McNeil (2019). Vocabulary used follows Cogley and others (2011) Glossary of Glacier Mass Balance.
+This portion of the data release includes glacier wide mass balance solutions for Taku and Lemon Creek Glaciers, as well as the refined inputs used in these calculations. Input data are of three types: 1) time-variable area altitude distribution (AAD); 2) time series of point water balance at long term sites (with secondary sites given in recent years); 3) weather data from nearby stations, either installed along the glacier margins or taken from a nearby site if continuous glacier-adjacent data is unavailable. The USGS runs a coded analysis to transform the three input data types to the output glacier-wide data. Output data represent surface mass balance estimates. The output solution is a geodetically calibrated, conventional glacier-wide mass balance, which represents our preferred solution. Conventional glacier-wide mass balance from direct observations without calibration can be easily derived by using the geodetic calibration coefficients provided, if desired. We do not explicitly account for basal or englacial accumulation or ablation. Mass balances are reported in water equivalent (w.e.) units, and often represent integration of multiple field measurements. Whenever possible, we average multiple field measurements to account for surface roughness and measurement errors.
+</div>
+<span class="element-name purpose">Purpose:</span>
+<div class="child element-value purpose">
+The purpose of this project is to quantitatively evaluate time changes in mass at specified glaciers.
+</div>
+<span class="element-name supplinf">Supplemental_Information:</span>
+<div class="child element-value supplinf">
+Output files were produced in year of release; time series goes through previous year, as current year's measurements are necessary for the previous year's mass balance calculation. As the time series grows, more points will be added to both the AAD and point balance matrices, which may result in changes to values.
+</div>
+</div>
+<span class="element-name timeperd">Time_Period_of_Content:</span><div class="child">
+<span class="element-name timeinfo">Time_Period_Information:</span><div class="child">
+<span class="element-name rngdates">Range_of_Dates/Times:</span><div class="child">
+<span class="element-name begdate">Beginning_Date:</span> <span class="element-value begdate">1945</span><br/>
+<span class="element-name enddate">Ending_Date:</span> <span class="element-value enddate">2019</span><br/>
+</div>
+</div>
+<span class="element-name current">Currentness_Reference:</span> <span class="element-value current">ground condition</span><br/>
+</div>
+<span class="element-name status">Status:</span><div class="child">
+<span class="element-name progress">Progress:</span> <span class="element-value progress">In work</span><br/>
+<span class="element-name update">Maintenance_and_Update_Frequency:</span> <span class="element-value update">Annually</span><br/>
+</div>
+<span class="element-name spdom">Spatial_Domain:</span><div class="child">
+<span class="element-name bounding">Bounding_Coordinates:</span><div class="child">
+<span class="element-name westbc">West_Bounding_Coordinate:</span> <span class="element-value westbc">-135.3470</span><br/>
+<span class="element-name eastbc">East_Bounding_Coordinate:</span> <span class="element-value eastbc">-133.6890</span><br/>
+<span class="element-name northbc">North_Bounding_Coordinate:</span> <span class="element-value northbc">59.5220</span><br/>
+<span class="element-name southbc">South_Bounding_Coordinate:</span> <span class="element-value southbc">58.3620</span><br/>
+</div>
+</div>
+<span class="element-name keywords">Keywords:</span><div class="child">
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">ISO 19115 Topic Category</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">geoscientificInformation</span><br/>
+</div>
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">NASA GCMD Earth Science Thesaurus</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Cryosphere</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciers/Ice Sheets</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciers</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Ablation Zones/Accumulation Zones</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glacier Elevation/Ice Sheet Elevation</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glacier Mass Balance/Ice Sheet Mass Balance</span><br/>
+</div>
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">USGS CSA Biocomplexity Thesaurus</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciology</span><br/>
+</div>
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">USGS Thesaurus</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Snow and ice cover</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciation</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciology</span><br/>
+</div>
+<span class="element-name place">Place:</span><div class="child">
+<span class="element-name placekt">Place_Keyword_Thesaurus:</span> <span class="element-value placekt">USGS Geographic Names Information System</span><br/>
+<span class="element-name placekey">Place_Keyword:</span> <span class="element-value placekey">Juneau Icefield</span><br/>
+<span class="element-name placekey">Place_Keyword:</span> <span class="element-value placekey">Taku Glacier</span><br/>
+<span class="element-name placekey">Place_Keyword:</span> <span class="element-value placekey">Lemon Creek Glacier</span><br/>
+<span class="element-name placekey">Place_Keyword:</span> <span class="element-value placekey">Alaska</span><br/>
+</div>
+</div>
+<span class="element-name accconst">Access_Constraints:</span> <span class="element-value accconst">none</span><br/>
+<span class="element-name useconst">Use_Constraints:</span>
+<div class="child element-value useconst">
+It is requested that the authors and the USGS be cited for any subsequent publications referenced to this dataset. It is strongly recommended that careful attention be paid to the contents of the metadata file associated with these data to evaluate data set limitations, restrictions or intended use.
+</div>
+<span class="element-name ptcontac">Point_of_Contact:</span><div class="child">
+<span class="element-name cntinfo">Contact_Information:</span><div class="child">
+<span class="element-name cntperp">Contact_Person_Primary:</span><div class="child">
+<span class="element-name cntper">Contact_Person:</span> <span class="element-value cntper">Shad O'Neel</span><br/>
+<span class="element-name cntorg">Contact_Organization:</span> <span class="element-value cntorg">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name cntaddr">Contact_Address:</span><div class="child">
+<span class="element-name addrtype">Address_Type:</span> <span class="element-value addrtype">mailing and physical</span><br/>
+<span class="element-name address">Address:</span> <span class="element-value address">4210 University Dr</span><br/>
+<span class="element-name city">City:</span> <span class="element-value city">Anchorage</span><br/>
+<span class="element-name state">State_or_Province:</span> <span class="element-value state">AK</span><br/>
+<span class="element-name postal">Postal_Code:</span> <span class="element-value postal">99508</span><br/>
+<span class="element-name country">Country:</span> <span class="element-value country">USA</span><br/>
+</div>
+<span class="element-name cntvoice">Contact_Voice_Telephone:</span> <span class="element-value cntvoice">907.786.7000</span><br/>
+<span class="element-name cntemail">Contact_Electronic_Mail_Address:</span> <span class="element-value cntemail">ascweb@usgs.gov</span><br/>
+</div>
+</div>
+<span class="element-name datacred">Data_Set_Credit:</span> <span class="element-value datacred">USGS Climate and Land Use Change Glacier and Climate Project</span><br/>
+<span class="element-name crossref">Cross_Reference:</span><div class="child">
+<span class="element-name citeinfo">Citation_Information:</span><div class="child">
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Shad O'Neel</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Dan Fagre</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Erin Whorton</span><br/>
+<span class="element-name pubdate">Publication_Date:</span> <span class="element-value pubdate">Unpublished material</span><br/>
+<span class="element-name title">Title:</span> <span class="element-value title">USGS Glacier Studies</span><br/>
+<span class="element-name geoform">Geospatial_Data_Presentation_Form:</span> <span class="element-value geoform">web site</span><br/>
+<span class="element-name pubinfo">Publication_Information:</span><div class="child">
+<span class="element-name pubplace">Publication_Place:</span> <span class="element-value pubplace">on line</span><br/>
+<span class="element-name publish">Publisher:</span> <span class="element-value publish">U.S. Geological Survey</span><br/>
+</div>
+<span class="element-name othercit">Other_Citation_Details:</span> <span class="element-value othercit">USGS Glaciology Studies information web site</span><br/>
+<span class="element-name onlink">Online_Linkage:</span> <span class="element-value onlink"><a href="https://www2.usgs.gov/landresources/lcs/glacierstudies/">https://www2.usgs.gov/landresources/lcs/glacierstudies/</a></span><br/>
+</div>
+</div>
+</div>
+</div>
+<div class="major-section" id="2">
+<span class="element-name dataqual">Data_Quality_Information:</span><div class="child">
+<span class="element-name attracc">Attribute_Accuracy:</span><div class="child">
+<span class="element-name attraccr">Attribute_Accuracy_Report:</span>
+<div class="child element-value attraccr">
+Uncertainties: For all input values, uncertainties are poorly constrained, and evaluated primarily on the basis of expert opinion. 
+Time: time is constrained to days. 
+Snow accumulation: Primary sources of uncertainty exist from surface roughness, snow density variability, stake deformation and drilling and discrepancies between various types of observations (probe depths, stake length change and snow pit depth). Nominal uncertainty from these sources has been previously estimated to range between  15-20%  (Dunse and others, 2008; Heinrichs and others, 1995). Snow and ice melt: Primary sources of uncertainty exist from surface roughness, snow density variability, stake deformation and drilling and discrepancies between various types of observations (probe depths, stake length change and snow pit depth). Nominal uncertainty from these sources is estimated at 0.10 meters water equivalent (m w.e.) (Heinrichs and others, 1995).
+Temperature: Measurement uncertainty has decreased in time with sensor evolution. Through 1998, average daily temperatures were recorded using analog instruments with uncertainties estimated of  1 C. After 1998, digital sensors with shorter response times and measurement intervals have decreased this uncertainty to  0.25 C. (Kennedy and others, 1997). 
+Precipitation: Uncertainty in precipitation catch is hard to estimate, but are dominated by thermal expansion during the analog record (all data provided here). Moreover, catch ratios are known to decrease substantially in winter, especially during snow events with wind. Daily uncertainties for these gages were estimated to be 5-8 mm  (Kennedy, 1995). 
+Glacier-Wide Mass Balance: Extrapolation and interpolation errors present in the glacier-wide average mass balance solutions here are difficult to quantify. Earlier error estimates suggest values of 0.2 m w.e. are appropriate (van Beusekom and others, 2010).
+</div>
+</div>
+<span class="element-name logic">Logical_Consistency_Report:</span>
+<div class="child element-value logic">
+Missing data is denoted with the code nan. Data gaps are described more fully in the entity-attribute section of this metadata record, in the entity definitions.
+</div>
+<span class="element-name complete">Completeness_Report:</span>
+<div class="child element-value complete">
+All data is included, as available. There is no criteria for omission. Dataset is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.
+</div>
+<span class="element-name posacc">Positional_Accuracy:</span><div class="child">
+<span class="element-name horizpa">Horizontal_Positional_Accuracy:</span><div class="child">
+<span class="element-name horizpar">Horizontal_Positional_Accuracy_Report:</span>
+<div class="child element-value horizpar">
+Positions are reported to 1 m and are generally known to better than this scale. However, sites located on the glacier are moving, and the coordinates represent an average location that the measurement site flows through on an annual basis.
+</div>
+</div>
+</div>
+<span class="element-name lineage">Lineage:</span><div class="child">
+<span class="element-name procstep">Process_Step:</span><div class="child">
+<span class="element-name procdesc">Process_Description:</span>
+<div class="child element-value procdesc">
+Glacier fieldwork is conducted including the use of snow-pits and cores to measure winter accumulation, use of stakes and wires to measure ablation, and the measurement of snow densities, as described in: Ostrem G, Brugman M (1991) Glacier Mass-Balance Measurements, National Hydrology Research Institute, Environment Canada, Saskatoon, Saskatchewan.
+</div>
+<span class="element-name procdate">Process_Date:</span> <span class="element-value procdate">2019</span><br/>
+</div>
+<span class="element-name procstep">Process_Step:</span><div class="child">
+<span class="element-name procdesc">Process_Description:</span>
+<div class="child element-value procdesc">
+The USGS runs a coded analysis to transform the three input data types to the output glacier-wide data. Output data represent surface mass balance estimates.  The output solution is a geodetically calibrated, conventional glacier-wide mass balance, which represents our preferred solution. Details are provided in O'Neel et. al (2019).
+</div>
+<span class="element-name procdate">Process_Date:</span> <span class="element-value procdate">2019</span><br/>
+</div>
+</div>
+</div>
+</div>
+<div class="major-section" id="3">
+<span class="element-name spdoinfo">Spatial_Data_Organization_Information:</span><div class="child">
+<span class="element-name direct">Direct_Spatial_Reference_Method:</span> <span class="element-value direct">Raster</span><br/>
+<span class="element-name rastinfo">Raster_Object_Information:</span><div class="child">
+<span class="element-name rasttype">Raster_Object_Type:</span> <span class="element-value rasttype">Point</span><br/>
+</div>
+</div>
+</div>
+<div class="major-section" id="4">
+<span class="element-name spref">Spatial_Reference_Information:</span><div class="child">
+<span class="element-name horizsys">Horizontal_Coordinate_System_Definition:</span><div class="child">
+<span class="element-name planar">Planar:</span><div class="child">
+<span class="element-name mapproj">Map_Projection:</span><div class="child">
+<span class="element-name mapprojn">Map_Projection_Name:</span> <span class="element-value mapprojn">Transverse Mercator</span><br/>
+<span class="element-name transmer">Transverse_Mercator:</span><div class="child">
+<span class="element-name sfctrmer">Scale_Factor_at_Central_Meridian:</span> <span class="element-value sfctrmer">0.9996</span><br/>
+<span class="element-name longcm">Longitude_of_Central_Meridian:</span> <span class="element-value longcm">-147.0</span><br/>
+<span class="element-name latprjo">Latitude_of_Projection_Origin:</span> <span class="element-value latprjo">0.0</span><br/>
+<span class="element-name feast">False_Easting:</span> <span class="element-value feast">500000.0</span><br/>
+<span class="element-name fnorth">False_Northing:</span> <span class="element-value fnorth">0.0</span><br/>
+</div>
+</div>
+<span class="element-name planci">Planar_Coordinate_Information:</span><div class="child">
+<span class="element-name plance">Planar_Coordinate_Encoding_Method:</span> <span class="element-value plance">coordinate pair</span><br/>
+<span class="element-name coordrep">Coordinate_Representation:</span><div class="child">
+<span class="element-name absres">Abscissa_Resolution:</span> <span class="element-value absres">1</span><br/>
+<span class="element-name ordres">Ordinate_Resolution:</span> <span class="element-value ordres">1</span><br/>
+</div>
+<span class="element-name plandu">Planar_Distance_Units:</span> <span class="element-value plandu">meters</span><br/>
+</div>
+</div>
+<span class="element-name geodetic">Geodetic_Model:</span><div class="child">
+<span class="element-name horizdn">Horizontal_Datum_Name:</span> <span class="element-value horizdn">World Geodetic System of 1984</span><br/>
+<span class="element-name ellips">Ellipsoid_Name:</span> <span class="element-value ellips">World Geodetic System of 1984</span><br/>
+<span class="element-name semiaxis">Semi-major_Axis:</span> <span class="element-value semiaxis">6378137</span><br/>
+<span class="element-name denflat">Denominator_of_Flattening_Ratio:</span> <span class="element-value denflat">298.257223563</span><br/>
+</div>
+</div>
+<span class="element-name vertdef">Vertical_Coordinate_System_Definition:</span><div class="child">
+<span class="element-name altsys">Altitude_System_Definition:</span><div class="child">
+<span class="element-name altdatum">Altitude_Datum_Name:</span> <span class="element-value altdatum">World Geodetic System of 1984</span><br/>
+<span class="element-name altres">Altitude_Resolution:</span> <span class="element-value altres">0.5</span><br/>
+<span class="element-name altunits">Altitude_Distance_Units:</span> <span class="element-value altunits">meters</span><br/>
+<span class="element-name altenc">Altitude_Encoding_Method:</span>
+<div class="child element-value altenc">
+Explicit elevation coordinate included with horizontal coordinates
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="major-section" id="5">
+<span class="element-name eainfo">Entity_and_Attribute_Information:</span><div class="child">
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Area Altitude Distribution (AAD)</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Time dependent glacier geometry is provided as an Area Altitude Distribution (AAD) in the file Input_Glacier_Area_Altitude_Distribution.csv. Columns represent area in 100 m elevation bins. The area in each bin is given in km2. The first row is a column header, and specifies the median elevation for the bin. The first column gives the balance year that the areas represent.  The total glacier area can be calculated by summing across the row for any given year. Glacier areas are derived from DEMS constructed in a number of years, and area is interpolated linearly between DEM acquisitions.
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">User Defined</span><br/>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Weather data given in Input_[Glacier]_Daily_Weather.csv.</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Weather data is provided in the file Input_[Glacier]_Daily_Weather.csv. Date is given in yyyy/mm/dd format and the remaining two columns provide meteorological observations. Precipitation is given in mm w.e. and temperature in degrees C. Precipitation values represent daily totals and temperature values represent daily averages of all temperatures recorded.
+A lack of precipitation data, in combination with a somewhat incomplete record of temperature, prompted use of continuously-operating area weather stations over local icefield meteorological data. Portions of this discontinuous, local station data is available in the associated weather data release. Locations of weather stations used for calculation of glacier-wide mass balance are given below; the same site is used for both Lemon Creek and Taku glaciers. This is the Juneau Airport station, at an approximate elevation of 5 meters, located at a latitude of 58.3566 and longitude of -134.5640 (WGS84; EPSG 4326).To produce glacier-wide mass balance solutions, these weather data are used to solve for the timing of mass extrema. Timeseries from the Juneau Airport are nearly continuous, and there is no need to fill gaps with data from a secondary site.
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer Defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Date</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Date of measurements</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1945/01/01</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2019/09/30</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Temperature</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Average daily temperature in degrees Celsius</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-23.9</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">21.6</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Celsius</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Precipitation</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Total daily precipitation in millimeters</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">88</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">millimeters</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Site locations given in JuneauIcefield_UTM8N.csv</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Index site locations are given in the file JuneauIcefield_UTM8N.csv. Coordinates for research sites on the entire Juneau Icefield are given here; the specific glacier is indicated in the column named &quot;Glacier&quot;, including Lemon Creek and Taku.
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">user defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Glacier</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Glacier name of the site. Provided for convenience</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">user defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name udom">Unrepresentable_Domain:</span> <span class="element-value udom">Name of glacier</span><br/>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Site</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Character string used to represent mass balance index site. Coordinates are fixed in space).
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">user defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name udom">Unrepresentable_Domain:</span> <span class="element-value udom">Arbitrary, unique site name per glacier site</span><br/>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Easting</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">UTM Easting coordinate</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">user defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">526636</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">554497</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Meters</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Northing</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">UTM Northing coordinate</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">user defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">6469094</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">6533889</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Meters</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Point water balance; Input_[Glacier]_Glaciological_Data.csv</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Time series of point water balances measurements is provided in the file Input_[Glacier]_Glaciological_Data.csv
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer Defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Year</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies.
+<div class="blank"></div>
+Primary sites are included for every year of the time series, unless the glacier has retreated beyond the site location. Secondary sites are only included occasionally. (Source: Cogley and others, 2011)
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1948</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">site_name</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+See the read me file for a location map of index sites on the glaciers. Unique names are arbitrary.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name udom">Unrepresentable_Domain:</span> <span class="element-value udom">Arbitrary, unique site name per glacier site</span><br/>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">spring_date</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Date of spring measurement</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1948/03/01</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018/05/08</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">fall_date</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Date of fall measurement</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1948/09/30</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018/09/13</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">elevation</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Elevation of the measurement site in meters above sea level.</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">235</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">1890</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">bw</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Winter balance at the site estimated from stake, pit, core, and/or probe measurements provided in units of [m w.e.] Summer balances may be derived as the difference between annual and winter mass balance. Values provided in this file may represent an average of multiple measurements made during field visits.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0.0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">3.98</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">m w.e.</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.01</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">ba</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Annual (net) balance at the site estimated from stake and/or pit measurements provided in units of [m w.e.] Summer balances may be derived as the difference between annual and winter mass balance. Values provided in this file may represent an average of multiple measurements made during field visits.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-4.74</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">4.16</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">m w.e.</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.01</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">winter_ablation</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Ablation [m w.e.] that occurred after the fall field visit, and was measured the subsequent spring visit. Although measured in balance year i+1 this ablation occurred in balance year i. We partition the balance in this way to be clear about the timing of the measurements. Depending how the user wishes to analyze the data, winter ablation may be excluded if desired.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-0.33</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">0</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">m w.e.</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.01</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">summer_accumulation</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Accumulation [m w.e.] that occurred before the fall field visit, but was measured at the time of the fall visit. Although measured in balance year i, this accumulation may better apply to balance year i+1. We partition the balance in this way to be clear about the timing of the measurements. Depending how the user wishes to analyze the data winter ablation may be excluded if desired.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">0.06</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">m w.e.</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.01</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Output_[GLACIER]_Glacier_Wide_solutions_calibrated.csv</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Both annual and seasonally time-stepped glacier-wide mass balance solutions calibrated with geodetic observations (O’Neel and others, 2014) are provided in files with the naming convention of Output_Glacier_Glacier_Wide_solutions_calibrated.csv. These results are produced using a two-piece linear balance profile based on elevation. This two-piece balance profile was chosen because it incorporates physical expectations of variable melt rates for snow and ice. Our choice was guided by several factors including: 1) feasibility and goodness-of-fit at all glaciers, 2) applicability for both sparse and robust data sets, and 3) capacity to include short-lived expanded stake and ground-penetrating radar campaigns above long-term index sites. Each fit is constrained to have a single interior breakpoint, or knot, in the piecewise-linear fit. Further details are given in O’Neel and others, 2019.
+Prior to version 3.0 of this data release, values were calculated using the “index method” (van Beusekom and others, 2010). Version 3.0 of this data release results from a significant reanalysis effort, detailed in O’Neel and others (2019).
+<div class="blank"></div>
+Calibration:
+USGS follows much of the re-analysis procedure outlined by Zemp and others (2013). However, for geodetic calibration, we adopt a piecewise/ breakpoint fitting approach over approximately decadal intervals. This maximizes the incorporation of geodetic data, while minimizing the impacts of non-stationarity that manifest in multi-decadal calibrations, and limits the impact of errors arising from material density assumptions. For further details, see O’Neel (2019). Associated geodetic data used to derive the calibrations are given in an accompanying data release, found under the USGS Juneau Icefield mass balance data release via <a href="https://doi.org/10.5066/P90RCN51">https://doi.org/10.5066/P90RCN51</a>.
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer Defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Year</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1946</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2019</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Bw</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Glacier-wide winter mass balance, in m w. e.</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1.14</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">3.72</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">m w.e.</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.01</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Bs</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Glacier-wide summer mass balance, in m w. e.</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-5.14</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">-1.71</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Ba</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Glacier-wide average annual mass balance, in m w. e.</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-3.22</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">1.57</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">m w.e.</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.01</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">ELA</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Equilibrium line altitude, as solved during the calculation of glacier-wide mass balance, in meters above sea level
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">948</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2085</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters above sea level</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Bw_Date</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Date of mass maximum. Solved estimate for the day of mass maximum, using local precipitation, temperature data, and a degree day model
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1995/04/18</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2019/05/07</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Ba_Date</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Date of mass minimum. USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies. The dates here are the solved estimate for the day of the mass minimum, using local precipitation, temperature data, and a degree day model
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1995/10/06</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2019/10/01</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Calibration</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Geodetic calibration, given in units of m. w.e. If an uncalibrated, conventional glacier-wide mass balance is desired, it can be calculated easily using the given calibration. For annual balance, the calibration is simply added to the value in Ba. For summer (Ba) and winter (Bw) balances, half the calibration should be added to each.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-0.40</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">0.17</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span>
+<div class="child element-value enttypl">
+Transient Snow Line Data, in file named according to the convention Input_[Glacier]_TSL_Data.csv
+</div>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Comma Separated Value (CSV) file containing transient snow line data.
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer Defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Year</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1972</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2019</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Years</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Date</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Date, as given in yyyy/mm/dd format</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1972/08/11</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2019/08/0221</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Elevation</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Elevation given as meters above sea level</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">32</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">1476</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Sub-Seasonal Glaciological Data</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Comma Separated Value (CSV) file containing sub-seasonal glaciological data.
+File format of Input_[Glacier]_SubSeasonal_Glaciological_Data.csv
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer Defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Year</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1949</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">site_name</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Character string used to represent mass balance index site. Coordinates are fixed in space, unlike the physical location of an ablation stake.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name udom">Unrepresentable_Domain:</span> <span class="element-value udom">Arbitrary site names</span><br/>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Elevation</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Elevation as taken from a digital elevation model (DEM) in the year of observation, given in meters above sea level.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">20</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">1886</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters above sea level</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Date1</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Date of first observation</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1949/08/14</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018/05/08</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Surface1</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Material on surface at time of Date1 observation</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">snow</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">Surface is snow</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">ice</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">Surface is ice</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">firn</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">Surface is firn</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Date2</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Date of second observation</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1949/09/18</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018/07/05</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Surface2</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Material on surface at time of Date 2</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">snow</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">Surface is snow</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">ice</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">Surface is ice</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">firn</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">Surface is firn</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">db</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Change in mass balance between Date 1 and Date 2, in meters water equivalent (m. w.e.)
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-8.67</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">-0.02</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.01</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Geodetic Data</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Comma Separated Value (CSV) file containing geodetic summary data. File named according to the convention Input_[Glacier]_Geodetics.csv
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Date</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Date of DEM acquisition</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1948/07/05</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018/10/01</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Surface_Elevation_Change</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Difference of surface height (m) relative to the master DEM, which is the final, most recent DEM in the series. Details found in O’Neel et, al (2019). Units are meters of height change, not meters of water equivalent.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-58.4</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">20.4</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Uncertainty</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+The uncertainty reported for the geodetic mass balance is due to error associated with the elevation data (DEM) differencing required to compute glacier volume change, and the material density assumption required to convert ice volume change to water equivalent mass (Huss, 2013). Quantification of geodetic mass balance uncertainty is described fully in O'Neel and others (2019).
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0.0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">17.9</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name overview">Overview_Description:</span><div class="child">
+<span class="element-name eaover">Entity_and_Attribute_Overview:</span>
+<div class="child element-value eaover">
+The described tables are composed of the processed data associated with the long-term mass balance measurement campaigns at select glaciers of the Juneau Icefield.
+</div>
+<span class="element-name eadetcit">Entity_and_Attribute_Detail_Citation:</span>
+<div class="child element-value eadetcit">
+McNeil et. al (2019). Surface Mass Balance Reanalysis of Taku and Lemon Creek glaciers, Alaska: 1946–2018.
+</div>
+</div>
+</div>
+</div>
+<div class="major-section" id="6">
+<span class="element-name distinfo">Distribution_Information:</span><div class="child">
+<span class="element-name distrib">Distributor:</span><div class="child">
+<span class="element-name cntinfo">Contact_Information:</span><div class="child">
+<span class="element-name cntorgp">Contact_Organization_Primary:</span><div class="child">
+<span class="element-name cntorg">Contact_Organization:</span> <span class="element-value cntorg">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name cntaddr">Contact_Address:</span><div class="child">
+<span class="element-name addrtype">Address_Type:</span> <span class="element-value addrtype">mailing and physical</span><br/>
+<span class="element-name address">Address:</span> <span class="element-value address">4210 University Drive</span><br/>
+<span class="element-name city">City:</span> <span class="element-value city">Anchorage</span><br/>
+<span class="element-name state">State_or_Province:</span> <span class="element-value state">AK</span><br/>
+<span class="element-name postal">Postal_Code:</span> <span class="element-value postal">99508</span><br/>
+<span class="element-name country">Country:</span> <span class="element-value country">USA</span><br/>
+</div>
+<span class="element-name cntvoice">Contact_Voice_Telephone:</span> <span class="element-value cntvoice">907-786-7000</span><br/>
+<span class="element-name cntemail">Contact_Electronic_Mail_Address:</span> <span class="element-value cntemail">ascweb@usgs.gov</span><br/>
+</div>
+</div>
+<span class="element-name resdesc">Resource_Description:</span> <span class="element-value resdesc">Authoritative source of data.</span><br/>
+<span class="element-name distliab">Distribution_Liability:</span>
+<div class="child element-value distliab">
+Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.
+</div>
+<span class="element-name stdorder">Standard_Order_Process:</span><div class="child">
+<span class="element-name digform">Digital_Form:</span><div class="child">
+<span class="element-name digtinfo">Digital_Transfer_Information:</span><div class="child">
+<span class="element-name formname">Format_Name:</span> <span class="element-value formname">ZIP</span><br/>
+<span class="element-name formvern">Format_Version_Number:</span> <span class="element-value formvern">19</span><br/>
+<span class="element-name formcont">Format_Information_Content:</span>
+<div class="child element-value formcont">
+Zip package containing input and output comma delimited data in ASCII txt format, site references as txt and metadata in XML and HTML formats.
+</div>
+<span class="element-name filedec">File_Decompression_Technique:</span> <span class="element-value filedec">Winzip Legacy Compression</span><br/>
+<span class="element-name transize">Transfer_Size:</span> <span class="element-value transize">1.00</span><br/>
+</div>
+<span class="element-name digtopt">Digital_Transfer_Option:</span><div class="child">
+<span class="element-name onlinopt">Online_Option:</span><div class="child">
+<span class="element-name computer">Computer_Contact_Information:</span><div class="child">
+<span class="element-name networka">Network_Address:</span><div class="child">
+<span class="element-name networkr">Network_Resource_Name:</span> <span class="element-value networkr"><a href="https://doi.org/10.5066/P9YBZ36F">https://doi.org/10.5066/P9YBZ36F</a></span><br/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name fees">Fees:</span> <span class="element-value fees">None</span><br/>
+</div>
+</div>
+</div>
+<div class="major-section" id="7">
+<span class="element-name metainfo">Metadata_Reference_Information:</span><div class="child">
+<span class="element-name metd">Metadata_Date:</span> <span class="element-value metd">20191105</span><br/>
+<span class="element-name metc">Metadata_Contact:</span><div class="child">
+<span class="element-name cntinfo">Contact_Information:</span><div class="child">
+<span class="element-name cntorgp">Contact_Organization_Primary:</span><div class="child">
+<span class="element-name cntorg">Contact_Organization:</span> <span class="element-value cntorg">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name cntaddr">Contact_Address:</span><div class="child">
+<span class="element-name addrtype">Address_Type:</span> <span class="element-value addrtype">mailing and physical</span><br/>
+<span class="element-name address">Address:</span> <span class="element-value address">4210 University Drive</span><br/>
+<span class="element-name city">City:</span> <span class="element-value city">Anchorage</span><br/>
+<span class="element-name state">State_or_Province:</span> <span class="element-value state">AK</span><br/>
+<span class="element-name postal">Postal_Code:</span> <span class="element-value postal">99508</span><br/>
+<span class="element-name country">Country:</span> <span class="element-value country">USA</span><br/>
+</div>
+<span class="element-name cntvoice">Contact_Voice_Telephone:</span> <span class="element-value cntvoice">907.786.7000</span><br/>
+</div>
+</div>
+<span class="element-name metstdn">Metadata_Standard_Name:</span> <span class="element-value metstdn">Content Standard for Digital Geospatial Metadata</span><br/>
+<span class="element-name metstdv">Metadata_Standard_Version:</span> <span class="element-value metstdv">FGDC-STD-001-1998</span><br/>
+</div>
+</div>
+<hr id="page-bottom"/>
+<div id="generated-by">Generated by <a href="https://geology.usgs.gov/tools/metadata/tools/doc/mp.html" style="font-family: monospace;">mp</a> version 2.9.50 on Tue Nov 12 15:27:41 2019</div>
+
+</body>
+</html>

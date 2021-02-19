@@ -1,0 +1,869 @@
+<?xml version="1.0"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Christopher J. McNeil (ORCID: 0000-0003-4170-0428)</origin>
+        <origin>Seth W. Campbell (ORCID: 0000-0002-9620-8329)</origin>
+        <origin>Shad O'Neel (ORCID: 0000-0002-9185-0144)</origin>
+        <origin>Emily H. Baker (ORCID: 0000-0002-0938-3496)</origin>
+        <pubdate>20191112</pubdate>
+        <title>Glacier-Wide Mass Balance and Compiled Data Inputs: Juneau Icefield Glaciers</title>
+        <geoform>tabular digital data</geoform>
+        <serinfo>
+          <sername>Glacier-Wide Mass Balance and Compiled Data Inputs: Juneau Icefield Glaciers</sername>
+          <issue>1.0</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>Anchorage, Alaska</pubplace>
+          <publish>U.S. Geological Survey, Alaska Science Center</publish>
+        </pubinfo>
+        <othercit>McNeil, C. J., Campbell, S. W., O'Neel, S., and Baker, E. H., 2019, Glacier-wide mass balance and compiled data inputs: Juneau Icefield glaciers, (ver. 1.0, November 2019): U.S. Geological Survey data release, https://doi.org/10.5066/P9YBZ36F</othercit>
+        <onlink>https://doi.org/10.5066/P9YBZ36F</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>Shad O'Neel (ORCID: 0000-0002-9185-0144)</origin>
+            <origin>Louis C. Sass (ORCID: 0000-0003-4677-029X)</origin>
+            <pubdate>2019</pubdate>
+            <title>USGS Benchmark Glacier Mass Balance</title>
+            <geoform>Web Site</geoform>
+            <pubinfo>
+              <pubplace>Anchorage, Alaska</pubplace>
+              <publish>U.S. Geological Survey, Alaska Science Center</publish>
+            </pubinfo>
+            <onlink>https://doi.org/10.5066/F7BG2N8R</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Since the 1940s, the Juneau Icefield Research Program (JIRP) has been measuring surface mass balance on the Juneau Icefield. This is the longest ongoing program of its kind in North America. The program nominally occurs between late June and late August, traversing between Juneau, Alaska and Atlin, British Columbia. JIRP has examined the surface mass balance of the Juneau Icefield since 1946, with principal efforts focused on Lemon Creek Glacier and Taku Glacier. Glaciological, geodetic, and meteorological data have been collected by JIRP to characterize the interaction between the climate and glaciers of the Juneau Icefield. Direct field measurements of point glaciological data are combined with weather and geodetic data to estimate the seasonal and annual mass balance at each glacier in both a conventional and reference surface format (Cogley and others, 2011). The basic analysis framework (O'Neel, 2019; McNeil et. al, 2019) is the same at each glacier to enable cross-comparison between output time series. For Taku and Lemon Creek glaciers, temperature lapse rates are optimized using on-icefield weather data. This changes the degree day factor in the melt model, giving small post-geodetic calibration differences on the order of 2-3 cm. Details are described in McNeil (2019). Vocabulary used follows Cogley and others (2011) Glossary of Glacier Mass Balance.
+This portion of the data release includes glacier wide mass balance solutions for Taku and Lemon Creek Glaciers, as well as the refined inputs used in these calculations. Input data are of three types: 1) time-variable area altitude distribution (AAD); 2) time series of point water balance at long term sites (with secondary sites given in recent years); 3) weather data from nearby stations, either installed along the glacier margins or taken from a nearby site if continuous glacier-adjacent data is unavailable. The USGS runs a coded analysis to transform the three input data types to the output glacier-wide data. Output data represent surface mass balance estimates. The output solution is a geodetically calibrated, conventional glacier-wide mass balance, which represents our preferred solution. Conventional glacier-wide mass balance from direct observations without calibration can be easily derived by using the geodetic calibration coefficients provided, if desired. We do not explicitly account for basal or englacial accumulation or ablation. Mass balances are reported in water equivalent (w.e.) units, and often represent integration of multiple field measurements. Whenever possible, we average multiple field measurements to account for surface roughness and measurement errors.
+</abstract>
+      <purpose>The purpose of this project is to quantitatively evaluate time changes in mass at specified glaciers.</purpose>
+      <supplinf>Output files were produced in year of release; time series goes through previous year, as current year's measurements are necessary for the previous year's mass balance calculation. As the time series grows, more points will be added to both the AAD and point balance matrices, which may result in changes to values.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>1945</begdate>
+          <enddate>2019</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>In work</progress>
+      <update>Annually</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-135.3470</westbc>
+        <eastbc>-133.6890</eastbc>
+        <northbc>59.5220</northbc>
+        <southbc>58.3620</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>geoscientificInformation</themekey>
+      </theme>
+      <theme>
+        <themekt>NASA GCMD Earth Science Thesaurus</themekt>
+        <themekey>Cryosphere</themekey>
+        <themekey>Glaciers/Ice Sheets</themekey>
+        <themekey>Glaciers</themekey>
+        <themekey>Ablation Zones/Accumulation Zones</themekey>
+        <themekey>Glacier Elevation/Ice Sheet Elevation</themekey>
+        <themekey>Glacier Mass Balance/Ice Sheet Mass Balance</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS CSA Biocomplexity Thesaurus</themekt>
+        <themekey>Glaciology</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>Snow and ice cover</themekey>
+        <themekey>Glaciation</themekey>
+        <themekey>Glaciology</themekey>
+      </theme>
+      <place>
+        <placekt>USGS Geographic Names Information System</placekt>
+        <placekey>Juneau Icefield</placekey>
+        <placekey>Taku Glacier</placekey>
+        <placekey>Lemon Creek Glacier</placekey>
+        <placekey>Alaska</placekey>
+      </place>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>It is requested that the authors and the USGS be cited for any subsequent publications referenced to this dataset. It is strongly recommended that careful attention be paid to the contents of the metadata file associated with these data to evaluate data set limitations, restrictions or intended use.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Shad O'Neel</cntper>
+          <cntorg>U.S. Geological Survey, Alaska Science Center</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>4210 University Dr</address>
+          <city>Anchorage</city>
+          <state>AK</state>
+          <postal>99508</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>907.786.7000</cntvoice>
+        <cntemail>ascweb@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>USGS Climate and Land Use Change Glacier and Climate Project</datacred>
+    <crossref>
+      <citeinfo>
+        <origin>Shad O'Neel</origin>
+        <origin>Dan Fagre</origin>
+        <origin>Erin Whorton</origin>
+        <pubdate>Unpublished material</pubdate>
+        <title>USGS Glacier Studies</title>
+        <geoform>web site</geoform>
+        <pubinfo>
+          <pubplace>on line</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <othercit>USGS Glaciology Studies information web site</othercit>
+        <onlink>https://www2.usgs.gov/landresources/lcs/glacierstudies/</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Uncertainties: For all input values, uncertainties are poorly constrained, and evaluated primarily on the basis of expert opinion. 
+	 Time: time is constrained to days. 
+	 Snow accumulation: Primary sources of uncertainty exist from surface roughness, snow density variability, stake deformation and drilling and discrepancies between various types of observations (probe depths, stake length change and snow pit depth). Nominal uncertainty from these sources has been previously estimated to range between  15-20%  (Dunse and others, 2008; Heinrichs and others, 1995). Snow and ice melt: Primary sources of uncertainty exist from surface roughness, snow density variability, stake deformation and drilling and discrepancies between various types of observations (probe depths, stake length change and snow pit depth). Nominal uncertainty from these sources is estimated at 0.10 meters water equivalent (m w.e.) (Heinrichs and others, 1995).
+	 Temperature: Measurement uncertainty has decreased in time with sensor evolution. Through 1998, average daily temperatures were recorded using analog instruments with uncertainties estimated of  1 C. After 1998, digital sensors with shorter response times and measurement intervals have decreased this uncertainty to  0.25 C. (Kennedy and others, 1997). 
+	 Precipitation: Uncertainty in precipitation catch is hard to estimate, but are dominated by thermal expansion during the analog record (all data provided here). Moreover, catch ratios are known to decrease substantially in winter, especially during snow events with wind. Daily uncertainties for these gages were estimated to be 5-8 mm  (Kennedy, 1995). 
+	 Glacier-Wide Mass Balance: Extrapolation and interpolation errors present in the glacier-wide average mass balance solutions here are difficult to quantify. Earlier error estimates suggest values of 0.2 m w.e. are appropriate (van Beusekom and others, 2010).</attraccr>
+    </attracc>
+    <logic>Missing data is denoted with the code nan. Data gaps are described more fully in the entity-attribute section of this metadata record, in the entity definitions.</logic>
+    <complete>All data is included, as available. There is no criteria for omission. Dataset is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Positions are reported to 1 m and are generally known to better than this scale. However, sites located on the glacier are moving, and the coordinates represent an average location that the measurement site flows through on an annual basis.</horizpar>
+      </horizpa>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Glacier fieldwork is conducted including the use of snow-pits and cores to measure winter accumulation, use of stakes and wires to measure ablation, and the measurement of snow densities, as described in: Ostrem G, Brugman M (1991) Glacier Mass-Balance Measurements, National Hydrology Research Institute, Environment Canada, Saskatoon, Saskatchewan.</procdesc>
+        <procdate>2019</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>The USGS runs a coded analysis to transform the three input data types to the output glacier-wide data. Output data represent surface mass balance estimates.  The output solution is a geodetically calibrated, conventional glacier-wide mass balance, which represents our preferred solution. Details are provided in O'Neel et. al (2019).</procdesc>
+        <procdate>2019</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Raster</direct>
+    <rastinfo>
+      <rasttype>Point</rasttype>
+    </rastinfo>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <planar>
+        <mapproj>
+          <mapprojn>Transverse Mercator</mapprojn>
+          <transmer>
+            <sfctrmer>0.9996</sfctrmer>
+            <longcm>-147.0</longcm>
+            <latprjo>0.0</latprjo>
+            <feast>500000.0</feast>
+            <fnorth>0.0</fnorth>
+          </transmer>
+        </mapproj>
+        <planci>
+          <plance>coordinate pair</plance>
+          <coordrep>
+            <absres>1</absres>
+            <ordres>1</ordres>
+          </coordrep>
+          <plandu>meters</plandu>
+        </planci>
+      </planar>
+      <geodetic>
+        <horizdn>World Geodetic System of 1984</horizdn>
+        <ellips>World Geodetic System of 1984</ellips>
+        <semiaxis>6378137</semiaxis>
+        <denflat>298.257223563</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>World Geodetic System of 1984</altdatum>
+        <altres>0.5</altres>
+        <altunits>meters</altunits>
+        <altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Area Altitude Distribution (AAD)</enttypl>
+        <enttypd>Time dependent glacier geometry is provided as an Area Altitude Distribution (AAD) in the file Input_Glacier_Area_Altitude_Distribution.csv. Columns represent area in 100 m elevation bins. The area in each bin is given in km2. The first row is a column header, and specifies the median elevation for the bin. The first column gives the balance year that the areas represent.  The total glacier area can be calculated by summing across the row for any given year. Glacier areas are derived from DEMS constructed in a number of years, and area is interpolated linearly between DEM acquisitions.</enttypd>
+        <enttypds>User Defined</enttypds>
+      </enttyp>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Weather data given in Input_[Glacier]_Daily_Weather.csv.</enttypl>
+        <enttypd>Weather data is provided in the file Input_[Glacier]_Daily_Weather.csv. Date is given in yyyy/mm/dd format and the remaining two columns provide meteorological observations. Precipitation is given in mm w.e. and temperature in degrees C. Precipitation values represent daily totals and temperature values represent daily averages of all temperatures recorded.
+A lack of precipitation data, in combination with a somewhat incomplete record of temperature, prompted use of continuously-operating area weather stations over local icefield meteorological data. Portions of this discontinuous, local station data is available in the associated weather data release. Locations of weather stations used for calculation of glacier-wide mass balance are given below; the same site is used for both Lemon Creek and Taku glaciers. This is the Juneau Airport station, at an approximate elevation of 5 meters, located at a latitude of 58.3566 and longitude of -134.5640 (WGS84; EPSG 4326).To produce glacier-wide mass balance solutions, these weather data are used to solve for the timing of mass extrema. Timeseries from the Juneau Airport are nearly continuous, and there is no need to fill gaps with data from a secondary site.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>Date of measurements</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1945/01/01</rdommin>
+            <rdommax>2019/09/30</rdommax>
+            <attrunit>days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Temperature</attrlabl>
+        <attrdef>Average daily temperature in degrees Celsius</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-23.9</rdommin>
+            <rdommax>21.6</rdommax>
+            <attrunit>Celsius</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Precipitation</attrlabl>
+        <attrdef>Total daily precipitation in millimeters</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>88</rdommax>
+            <attrunit>millimeters</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Site locations given in JuneauIcefield_UTM8N.csv</enttypl>
+        <enttypd>Index site locations are given in the file JuneauIcefield_UTM8N.csv. Coordinates for research sites on the entire Juneau Icefield are given here; the specific glacier is indicated in the column named "Glacier", including Lemon Creek and Taku.</enttypd>
+        <enttypds>user defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Glacier</attrlabl>
+        <attrdef>Glacier name of the site. Provided for convenience</attrdef>
+        <attrdefs>user defined</attrdefs>
+        <attrdomv>
+          <udom>Name of glacier</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Site</attrlabl>
+        <attrdef>Character string used to represent mass balance index site. Coordinates are fixed in space).</attrdef>
+        <attrdefs>user defined</attrdefs>
+        <attrdomv>
+          <udom>Arbitrary, unique site name per glacier site</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Easting</attrlabl>
+        <attrdef>UTM Easting coordinate</attrdef>
+        <attrdefs>user defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>526636</rdommin>
+            <rdommax>554497</rdommax>
+            <attrunit>Meters</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Northing</attrlabl>
+        <attrdef>UTM Northing coordinate</attrdef>
+        <attrdefs>user defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>6469094</rdommin>
+            <rdommax>6533889</rdommax>
+            <attrunit>Meters</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Point water balance; Input_[Glacier]_Glaciological_Data.csv</enttypl>
+        <enttypd>Time series of point water balances measurements is provided in the file Input_[Glacier]_Glaciological_Data.csv</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Year</attrlabl>
+        <attrdef>USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies.
+
+Primary sites are included for every year of the time series, unless the glacier has retreated beyond the site location. Secondary sites are only included occasionally. (Source: Cogley and others, 2011)</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1948</rdommin>
+            <rdommax>2018</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_name</attrlabl>
+        <attrdef>See the read me file for a location map of index sites on the glaciers. Unique names are arbitrary.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Arbitrary, unique site name per glacier site</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>spring_date</attrlabl>
+        <attrdef>Date of spring measurement</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1948/03/01</rdommin>
+            <rdommax>2018/05/08</rdommax>
+            <attrunit>days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>fall_date</attrlabl>
+        <attrdef>Date of fall measurement</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1948/09/30</rdommin>
+            <rdommax>2018/09/13</rdommax>
+            <attrunit>days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>elevation</attrlabl>
+        <attrdef>Elevation of the measurement site in meters above sea level.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>235</rdommin>
+            <rdommax>1890</rdommax>
+            <attrunit>meters</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>bw</attrlabl>
+        <attrdef>Winter balance at the site estimated from stake, pit, core, and/or probe measurements provided in units of [m w.e.] Summer balances may be derived as the difference between annual and winter mass balance. Values provided in this file may represent an average of multiple measurements made during field visits.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>3.98</rdommax>
+            <attrunit>m w.e.</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ba</attrlabl>
+        <attrdef>Annual (net) balance at the site estimated from stake and/or pit measurements provided in units of [m w.e.] Summer balances may be derived as the difference between annual and winter mass balance. Values provided in this file may represent an average of multiple measurements made during field visits.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-4.74</rdommin>
+            <rdommax>4.16</rdommax>
+            <attrunit>m w.e.</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>winter_ablation</attrlabl>
+        <attrdef>Ablation [m w.e.] that occurred after the fall field visit, and was measured the subsequent spring visit. Although measured in balance year i+1 this ablation occurred in balance year i. We partition the balance in this way to be clear about the timing of the measurements. Depending how the user wishes to analyze the data, winter ablation may be excluded if desired.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.33</rdommin>
+            <rdommax>0</rdommax>
+            <attrunit>m w.e.</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>summer_accumulation</attrlabl>
+        <attrdef>Accumulation [m w.e.] that occurred before the fall field visit, but was measured at the time of the fall visit. Although measured in balance year i, this accumulation may better apply to balance year i+1. We partition the balance in this way to be clear about the timing of the measurements. Depending how the user wishes to analyze the data winter ablation may be excluded if desired.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>0.06</rdommax>
+            <attrunit>m w.e.</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Output_[GLACIER]_Glacier_Wide_solutions_calibrated.csv</enttypl>
+        <enttypd>Both annual and seasonally time-stepped glacier-wide mass balance solutions calibrated with geodetic observations (O’Neel and others, 2014) are provided in files with the naming convention of Output_Glacier_Glacier_Wide_solutions_calibrated.csv. These results are produced using a two-piece linear balance profile based on elevation. This two-piece balance profile was chosen because it incorporates physical expectations of variable melt rates for snow and ice. Our choice was guided by several factors including: 1) feasibility and goodness-of-fit at all glaciers, 2) applicability for both sparse and robust data sets, and 3) capacity to include short-lived expanded stake and ground-penetrating radar campaigns above long-term index sites. Each fit is constrained to have a single interior breakpoint, or knot, in the piecewise-linear fit. Further details are given in O’Neel and others, 2019.
+Prior to version 3.0 of this data release, values were calculated using the “index method” (van Beusekom and others, 2010). Version 3.0 of this data release results from a significant reanalysis effort, detailed in O’Neel and others (2019).
+
+Calibration:
+USGS follows much of the re-analysis procedure outlined by Zemp and others (2013). However, for geodetic calibration, we adopt a piecewise/ breakpoint fitting approach over approximately decadal intervals. This maximizes the incorporation of geodetic data, while minimizing the impacts of non-stationarity that manifest in multi-decadal calibrations, and limits the impact of errors arising from material density assumptions. For further details, see O’Neel (2019). Associated geodetic data used to derive the calibrations are given in an accompanying data release, found under the USGS Juneau Icefield mass balance data release via https://doi.org/10.5066/P90RCN51.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Year</attrlabl>
+        <attrdef>USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1946</rdommin>
+            <rdommax>2019</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Bw</attrlabl>
+        <attrdef>Glacier-wide winter mass balance, in m w. e.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.14</rdommin>
+            <rdommax>3.72</rdommax>
+            <attrunit>m w.e.</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Bs</attrlabl>
+        <attrdef>Glacier-wide summer mass balance, in m w. e.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-5.14</rdommin>
+            <rdommax>-1.71</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Ba</attrlabl>
+        <attrdef>Glacier-wide average annual mass balance, in m w. e.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-3.22</rdommin>
+            <rdommax>1.57</rdommax>
+            <attrunit>m w.e.</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ELA</attrlabl>
+        <attrdef>Equilibrium line altitude, as solved during the calculation of glacier-wide mass balance, in meters above sea level</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>948</rdommin>
+            <rdommax>2085</rdommax>
+            <attrunit>meters above sea level</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Bw_Date</attrlabl>
+        <attrdef>Date of mass maximum. Solved estimate for the day of mass maximum, using local precipitation, temperature data, and a degree day model</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1995/04/18</rdommin>
+            <rdommax>2019/05/07</rdommax>
+            <attrunit>days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Ba_Date</attrlabl>
+        <attrdef>Date of mass minimum. USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies. The dates here are the solved estimate for the day of the mass minimum, using local precipitation, temperature data, and a degree day model</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1995/10/06</rdommin>
+            <rdommax>2019/10/01</rdommax>
+            <attrunit>days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Calibration</attrlabl>
+        <attrdef>Geodetic calibration, given in units of m. w.e. If an uncalibrated, conventional glacier-wide mass balance is desired, it can be calculated easily using the given calibration. For annual balance, the calibration is simply added to the value in Ba. For summer (Ba) and winter (Bw) balances, half the calibration should be added to each.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.40</rdommin>
+            <rdommax>0.17</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Transient Snow Line Data, in file named according to the convention Input_[Glacier]_TSL_Data.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing transient snow line data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Year</attrlabl>
+        <attrdef>USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1972</rdommin>
+            <rdommax>2019</rdommax>
+            <attrunit>Years</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>Date, as given in yyyy/mm/dd format</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1972/08/11</rdommin>
+            <rdommax>2019/08/0221</rdommax>
+            <attrunit>Days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Elevation</attrlabl>
+        <attrdef>Elevation given as meters above sea level</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>32</rdommin>
+            <rdommax>1476</rdommax>
+            <attrunit>meters</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Sub-Seasonal Glaciological Data</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing sub-seasonal glaciological data.
+File format of Input_[Glacier]_SubSeasonal_Glaciological_Data.csv</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Year</attrlabl>
+        <attrdef>USGS uses the floating date time system, in which the balance year refers to the time span equal or approximately equal in duration to one calendar year to which the annual mass balance applies.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1949</rdommin>
+            <rdommax>2018</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_name</attrlabl>
+        <attrdef>Character string used to represent mass balance index site. Coordinates are fixed in space, unlike the physical location of an ablation stake.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Arbitrary site names</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Elevation</attrlabl>
+        <attrdef>Elevation as taken from a digital elevation model (DEM) in the year of observation, given in meters above sea level.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>20</rdommin>
+            <rdommax>1886</rdommax>
+            <attrunit>meters above sea level</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date1</attrlabl>
+        <attrdef>Date of first observation</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1949/08/14</rdommin>
+            <rdommax>2018/05/08</rdommax>
+            <attrunit>Days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Surface1</attrlabl>
+        <attrdef>Material on surface at time of Date1 observation</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>snow</edomv>
+            <edomvd>Surface is snow</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>ice</edomv>
+            <edomvd>Surface is ice</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>firn</edomv>
+            <edomvd>Surface is firn</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Date2</attrlabl>
+        <attrdef>Date of second observation</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1949/09/18</rdommin>
+            <rdommax>2018/07/05</rdommax>
+            <attrunit>Days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Surface2</attrlabl>
+        <attrdef>Material on surface at time of Date 2</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>snow</edomv>
+            <edomvd>Surface is snow</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>ice</edomv>
+            <edomvd>Surface is ice</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>firn</edomv>
+            <edomvd>Surface is firn</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>db</attrlabl>
+        <attrdef>Change in mass balance between Date 1 and Date 2, in meters water equivalent (m. w.e.)</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-8.67</rdommin>
+            <rdommax>-0.02</rdommax>
+            <attrunit>meters</attrunit>
+            <attrmres>0.01</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Geodetic Data</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing geodetic summary data. File named according to the convention Input_[Glacier]_Geodetics.csv</enttypd>
+        <enttypds>Producer defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>Date of DEM acquisition</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1948/07/05</rdommin>
+            <rdommax>2018/10/01</rdommax>
+            <attrunit>days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Surface_Elevation_Change</attrlabl>
+        <attrdef>Difference of surface height (m) relative to the master DEM, which is the final, most recent DEM in the series. Details found in O’Neel et, al (2019). Units are meters of height change, not meters of water equivalent.</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-58.4</rdommin>
+            <rdommax>20.4</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Uncertainty</attrlabl>
+        <attrdef>The uncertainty reported for the geodetic mass balance is due to error associated with the elevation data (DEM) differencing required to compute glacier volume change, and the material density assumption required to convert ice volume change to water equivalent mass (Huss, 2013). Quantification of geodetic mass balance uncertainty is described fully in O'Neel and others (2019).</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>17.9</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <overview>
+      <eaover>The described tables are composed of the processed data associated with the long-term mass balance measurement campaigns at select glaciers of the Juneau Icefield.</eaover>
+      <eadetcit>McNeil et. al (2019). Surface Mass Balance Reanalysis of Taku and Lemon Creek glaciers, Alaska: 1946–2018.</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, Alaska Science Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>4210 University Drive</address>
+          <city>Anchorage</city>
+          <state>AK</state>
+          <postal>99508</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>907-786-7000</cntvoice>
+        <cntemail>ascweb@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>Authoritative source of data.</resdesc>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>ZIP</formname>
+          <formvern>19</formvern>
+          <formcont>Zip package containing input and output comma delimited data in ASCII txt format, site references as txt and metadata in XML and HTML formats.</formcont>
+          <filedec>Winzip Legacy Compression</filedec>
+          <transize>1.00</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9YBZ36F</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20191105</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, Alaska Science Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>4210 University Drive</address>
+          <city>Anchorage</city>
+          <state>AK</state>
+          <postal>99508</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>907.786.7000</cntvoice>
+      </cntinfo>
+    </metc>
+    <metstdn>Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

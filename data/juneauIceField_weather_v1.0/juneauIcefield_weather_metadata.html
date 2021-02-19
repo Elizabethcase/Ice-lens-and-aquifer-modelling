@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Weather Station Data on the Juneau Icefield</title>
+  <link rel="schema.dc" href="http://purl.org/metadata/dublin_core"/>
+  <meta name="dc.title" content="Weather Station Data on the Juneau Icefield "/>
+  <meta name="dc.creator" content="Emily H. Baker (ORCID: 0000-0002-0938-3496) Scott McGee Seth W. Campbell (ORCID: 0000-0002-9620-8329) Jamie L. Pierce Christopher J. McNeil (ORCID: 0000-0003-4170-0428) "/>
+  <meta name="dc.subject" content="geoscientificInformation climatologyMeteorologyAtmosphere environment "/>
+  <meta name="dc.description" content="Since the 1940s, the Juneau Icefield Research Program (JIRP) has been measuring surface mass balance on the Juneau Icefield. This is the longest ongoing program of its kind in North America. The program nominally occurs between late June and late August, traversing between Juneau, Alaska and Atlin, British Columbia. JIRP has examined the surface mass balance of the Juneau Icefield since 1946, with principal efforts focused on Lemon Creek Glacier and Taku Glacier. Glaciological, geodetic, and meteorological data have been collected by JIRP to characterize the interaction between the climate and glaciers of the Juneau Icefield.  Measurements of meteorological data are made at many permanent camp facilities on the Juneau Icefield. This portion of the data release includes select weather data that has received basic quality control and assurance. Data is released at three different levels of processing, level 0, 1 and 2. Level 0 data contains compiled raw data, before QC procedures are applied, at the original timestep recorded by the instrument. Level 1 data has received a plausible value check, and minimal manual error identification (e.g. errors noted on field visits). Level 2 data has been through more extensive quality control procedures and is provided at both the original instrument timestep as well as aggregated hourly and daily values. Data at many JIRP sites consist of a single temperature sensor, recording in a Stevenson-type shield. Automated weather stations at Camp 10, 17, and 18 have measured additional meteorological variables in recent years. Both are presented in this data release. "/>
+  <meta name="dc.publisher" content="U.S. Geological Survey, Alaska Science Center"/>
+  <meta name="dc.date" content="20190626"/>
+  <meta name="dc.type" content="data.tabular digital data"/>
+  <meta name="dc.format" content="Zip"/>
+  <meta name="dc.identifier" content="https://doi.org/10.5066/P9DUI71J"/>
+  <meta name="dc.source" content="Authoritative source for access to data in the collection. This resource is a download website from which data can be accessed based on data type, glacier and vintage."/>
+  <meta name="dc.lang" content="en"/>
+  <meta name="dc.coverage.x.min" scheme="DD" content="-135.347"/>
+  <meta name="dc.coverage.x.max" scheme="DD" content="-133.689"/>
+  <meta name="dc.coverage.y.min" scheme="DD" content="58.3616"/>
+  <meta name="dc.coverage.y.max" scheme="DD" content="59.522"/>
+  <meta name="dc.coverage.placeName" content="Juneau Icefield"/>
+  <meta name="dc.coverage.t.min" content="1990"/>
+  <meta name="dc.coverage.t.max" content="2018"/>
+  <meta name="dc.rights" content="Access constraints: none; Use constraints: It is requested that the authors and the USGS be cited for any subsequent publications referencing this dataset. It is strongly recommended that careful attention be paid to the contents of the metadata file associated with these data in order to evaluate dataset limitations, restrictions and recommended uses. When appropriate, please consider co-authorship with the authors of these data."/>
+  <meta name="generated-from" content="phpTS4TLP.xml"/>
+  <style type="text/css">
+    /* These CSS rules can be modified to apply different styles to your outline-format metadata. */
+    .major-section { border-top: 1px solid black; padding-top: 0.5em; }
+    .child { margin-left: 2em; margin-bottom: 0.5em; }
+    .element-name { font-style: italic; }
+    .element-value { }
+    .blank { margin-top: 1em; }
+    #page-bottom { visibility: hidden; display: none; }
+    #generated-by { font-size: small; }
+  </style>
+</head>
+<body>
+<h1>Weather Station Data on the Juneau Icefield</h1>
+<p>
+<h3>Metadata:</h3>
+<ul>
+<li><a href="#1">Identification_Information</a></li>
+<li><a href="#2">Data_Quality_Information</a></li>
+<li><a href="#3">Spatial_Data_Organization_Information</a></li>
+<li><a href="#4">Spatial_Reference_Information</a></li>
+<li><a href="#5">Entity_and_Attribute_Information</a></li>
+<li><a href="#6">Distribution_Information</a></li>
+<li><a href="#7">Metadata_Reference_Information</a></li>
+</ul>
+<div class="major-section" id="1">
+<span class="element-name idinfo">Identification_Information:</span><div class="child">
+<span class="element-name citation">Citation:</span><div class="child">
+<span class="element-name citeinfo">Citation_Information:</span><div class="child">
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Emily H. Baker (ORCID: 0000-0002-0938-3496)</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Scott McGee</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Seth W. Campbell (ORCID: 0000-0002-9620-8329)</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Jamie L. Pierce</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Christopher J. McNeil (ORCID: 0000-0003-4170-0428)</span><br/>
+<span class="element-name pubdate">Publication_Date:</span> <span class="element-value pubdate">20190626</span><br/>
+<span class="element-name title">Title:</span> <span class="element-value title">Weather Station Data on the Juneau Icefield</span><br/>
+<span class="element-name geoform">Geospatial_Data_Presentation_Form:</span> <span class="element-value geoform">tabular digital data</span><br/>
+<span class="element-name pubinfo">Publication_Information:</span><div class="child">
+<span class="element-name pubplace">Publication_Place:</span> <span class="element-value pubplace">Anchorage, AK</span><br/>
+<span class="element-name publish">Publisher:</span> <span class="element-value publish">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name othercit">Other_Citation_Details:</span>
+<div class="child element-value othercit">
+Baker, E. H., McGee, S., Campbell, S. W., Pierce, J. L., McNeil, C. J., 2019, Weather station data on the Juneau Icefield (ver. 1.0, June 2019): U.S. Geological Survey data release, <a href="https://doi.org/10.5066/P9DUI71J">https://doi.org/10.5066/P9DUI71J</a>.
+</div>
+<span class="element-name onlink">Online_Linkage:</span> <span class="element-value onlink"><a href="https://doi.org/10.5066/P9DUI71J">https://doi.org/10.5066/P9DUI71J</a></span><br/>
+</div>
+</div>
+<span class="element-name descript">Description:</span><div class="child">
+<span class="element-name abstract">Abstract:</span>
+<div class="child element-value abstract">
+Since the 1940s, the Juneau Icefield Research Program (JIRP) has been measuring surface mass balance on the Juneau Icefield. This is the longest ongoing program of its kind in North America. The program nominally occurs between late June and late August, traversing between Juneau, Alaska and Atlin, British Columbia. JIRP has examined the surface mass balance of the Juneau Icefield since 1946, with principal efforts focused on Lemon Creek Glacier and Taku Glacier. Glaciological, geodetic, and meteorological data have been collected by JIRP to characterize the interaction between the climate and glaciers of the Juneau Icefield. 
+<div class="blank"></div>
+Measurements of meteorological data are made at many permanent camp facilities on the Juneau Icefield. This portion of the data release includes select weather data that has received basic quality control and assurance. Data is released at three different levels of processing, level 0, 1 and 2. Level 0 data contains compiled raw data, before QC procedures are applied, at the original timestep recorded by the instrument. Level 1 data has received a plausible value check, and minimal manual error identification (e.g. errors noted on field visits). Level 2 data has been through more extensive quality control procedures and is provided at both the original instrument timestep as well as aggregated hourly and daily values. Data at many JIRP sites consist of a single temperature sensor, recording in a Stevenson-type shield. Automated weather stations at Camp 10, 17, and 18 have measured additional meteorological variables in recent years. Both are presented in this data release.
+</div>
+<span class="element-name purpose">Purpose:</span>
+<div class="child element-value purpose">
+Weather data is collected at high-elevation locations adjacent to the Juneau Icefield in order to track changes in environmental conditions over time, and for use in mass balance calculations. There are many other potential uses for this data, including ecological, hydrological, and geophysical research questions among others.
+</div>
+</div>
+<span class="element-name timeperd">Time_Period_of_Content:</span><div class="child">
+<span class="element-name timeinfo">Time_Period_Information:</span><div class="child">
+<span class="element-name rngdates">Range_of_Dates/Times:</span><div class="child">
+<span class="element-name begdate">Beginning_Date:</span> <span class="element-value begdate">1990</span><br/>
+<span class="element-name enddate">Ending_Date:</span> <span class="element-value enddate">2018</span><br/>
+</div>
+</div>
+<span class="element-name current">Currentness_Reference:</span> <span class="element-value current">observed</span><br/>
+</div>
+<span class="element-name status">Status:</span><div class="child">
+<span class="element-name progress">Progress:</span> <span class="element-value progress">Planned</span><br/>
+<span class="element-name update">Maintenance_and_Update_Frequency:</span> <span class="element-value update">Annually</span><br/>
+</div>
+<span class="element-name spdom">Spatial_Domain:</span><div class="child">
+<span class="element-name bounding">Bounding_Coordinates:</span><div class="child">
+<span class="element-name westbc">West_Bounding_Coordinate:</span> <span class="element-value westbc">-135.347</span><br/>
+<span class="element-name eastbc">East_Bounding_Coordinate:</span> <span class="element-value eastbc">-133.689</span><br/>
+<span class="element-name northbc">North_Bounding_Coordinate:</span> <span class="element-value northbc">59.522</span><br/>
+<span class="element-name southbc">South_Bounding_Coordinate:</span> <span class="element-value southbc">58.3616</span><br/>
+</div>
+</div>
+<span class="element-name keywords">Keywords:</span><div class="child">
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">ISO 19115 Topic Category</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">geoscientificInformation</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">climatologyMeteorologyAtmosphere</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">environment</span><br/>
+</div>
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">None</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciology</span><br/>
+</div>
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">NASA Earth Science Thesaurus</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Cryosphere</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciers/Ice Sheets</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciers</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Ablation Zones/Accumulation Zones</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glacier Elevation/Ice Sheet Elevation</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glacier Mass Balance/Ice Sheet Mass Balance</span><br/>
+</div>
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">USGS CSA Biocomplexity Thesaurus</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Glaciology</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Geomorphology</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">Geology</span><br/>
+</div>
+<span class="element-name theme">Theme:</span><div class="child">
+<span class="element-name themekt">Theme_Keyword_Thesaurus:</span> <span class="element-value themekt">USGS Thesaurus</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">glaciology</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">glaciation</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">snow and ice cover</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">precipitation (atmospheric)</span><br/>
+<span class="element-name themekey">Theme_Keyword:</span> <span class="element-value themekey">field inventory and monitoring</span><br/>
+</div>
+<span class="element-name place">Place:</span><div class="child">
+<span class="element-name placekt">Place_Keyword_Thesaurus:</span> <span class="element-value placekt">USGS Geographic Names Information System</span><br/>
+<span class="element-name placekey">Place_Keyword:</span> <span class="element-value placekey">Juneau Icefield</span><br/>
+</div>
+</div>
+<span class="element-name accconst">Access_Constraints:</span> <span class="element-value accconst">none</span><br/>
+<span class="element-name useconst">Use_Constraints:</span>
+<div class="child element-value useconst">
+It is requested that the authors and the USGS be cited for any subsequent publications referencing this dataset. It is strongly recommended that careful attention be paid to the contents of the metadata file associated with these data in order to evaluate dataset limitations, restrictions and recommended uses. When appropriate, please consider co-authorship with the authors of these data.
+</div>
+<span class="element-name ptcontac">Point_of_Contact:</span><div class="child">
+<span class="element-name cntinfo">Contact_Information:</span><div class="child">
+<span class="element-name cntorgp">Contact_Organization_Primary:</span><div class="child">
+<span class="element-name cntorg">Contact_Organization:</span> <span class="element-value cntorg">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name cntaddr">Contact_Address:</span><div class="child">
+<span class="element-name addrtype">Address_Type:</span> <span class="element-value addrtype">mailing</span><br/>
+<span class="element-name address">Address:</span> <span class="element-value address">4210 University Dr.</span><br/>
+<span class="element-name city">City:</span> <span class="element-value city">Anchorage</span><br/>
+<span class="element-name state">State_or_Province:</span> <span class="element-value state">AK</span><br/>
+<span class="element-name postal">Postal_Code:</span> <span class="element-value postal">99508-4626</span><br/>
+<span class="element-name country">Country:</span> <span class="element-value country">USA</span><br/>
+</div>
+<span class="element-name cntvoice">Contact_Voice_Telephone:</span> <span class="element-value cntvoice">(907) 786-7000</span><br/>
+<span class="element-name cntfax">Contact_Facsimile_Telephone:</span> <span class="element-value cntfax">(907) 786-7020</span><br/>
+<span class="element-name cntemail">Contact_Electronic_Mail_Address:</span> <span class="element-value cntemail">ascweb@usgs.gov</span><br/>
+</div>
+</div>
+<span class="element-name crossref">Cross_Reference:</span><div class="child">
+<span class="element-name citeinfo">Citation_Information:</span><div class="child">
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Shad O'Neel (ORCID: 0000-0002-9185-0144)</span><br/>
+<span class="element-name origin">Originator:</span> <span class="element-value origin">Emily H. Baker (ORCID: 0000-0002-0938-3496)</span><br/>
+<span class="element-name pubdate">Publication_Date:</span> <span class="element-value pubdate">20180101</span><br/>
+<span class="element-name title">Title:</span> <span class="element-value title">Alaska Benchmark Glacier Mass Balance Website</span><br/>
+<span class="element-name geoform">Geospatial_Data_Presentation_Form:</span> <span class="element-value geoform">website</span><br/>
+<span class="element-name pubinfo">Publication_Information:</span><div class="child">
+<span class="element-name pubplace">Publication_Place:</span> <span class="element-value pubplace">online</span><br/>
+<span class="element-name publish">Publisher:</span> <span class="element-value publish">U.S. Geological Survey</span><br/>
+</div>
+<span class="element-name othercit">Other_Citation_Details:</span> <span class="element-value othercit">U.S. Geological Survey Benchmark Glacier web page.</span><br/>
+<span class="element-name onlink">Online_Linkage:</span> <span class="element-value onlink"><a href="https://www2.usgs.gov/landresources/lcs/glacierstudies/">https://www2.usgs.gov/landresources/lcs/glacierstudies/</a></span><br/>
+</div>
+</div>
+</div>
+</div>
+<div class="major-section" id="2">
+<span class="element-name dataqual">Data_Quality_Information:</span><div class="child">
+<span class="element-name attracc">Attribute_Accuracy:</span><div class="child">
+<span class="element-name attraccr">Attribute_Accuracy_Report:</span>
+<div class="child element-value attraccr">
+Efforts were made to ensure accuracy in released data. QC procedures are described in detail within the process steps, but vary by data type. Degree of manual QC of data varies by location.
+</div>
+</div>
+<span class="element-name logic">Logical_Consistency_Report:</span>
+<div class="child element-value logic">
+Data has undergone a scripted QC process, as detailed in the process description section. All values pass logical consistency checks therein. nan values indicate that data is not available for that timestep. The instrument may not have been functioning, or determined to not be functioning correctly.
+</div>
+<span class="element-name complete">Completeness_Report:</span>
+<div class="child element-value complete">
+Additional older records may be available before the digital era, via scans of strip charts. Contact authors regarding this potential. Strip charts exist, but have not been digitized at this time. Faulty data has been removed from Level 1 and Level 2 weather data, as described in the process steps section of this document.
+</div>
+<span class="element-name posacc">Positional_Accuracy:</span><div class="child">
+<span class="element-name horizpa">Horizontal_Positional_Accuracy:</span><div class="child">
+<span class="element-name horizpar">Horizontal_Positional_Accuracy_Report:</span>
+<div class="child element-value horizpar">
+Positions are reported to 1 m and the location of the site is known to higher accuracy. Vertical accuracy is low, to the closest 10 m; elevations of the station names are used to distinguish the sites, rather than provide precise elevation data. Users should determine precise elevation from an outside elevation dataset of their choice (e.g. a digital elevation model in the geodetic portion of the mass balance data collection).
+</div>
+</div>
+</div>
+<span class="element-name lineage">Lineage:</span><div class="child">
+<span class="element-name procstep">Process_Step:</span><div class="child">
+<span class="element-name procdesc">Process_Description:</span>
+<div class="child element-value procdesc">
+Level 0 Data Processing:
+<div class="blank"></div>
+Raw data are compiled from multiple sources, primarily remote telemetry and raw downloaded logger files. Timeslips in logger are adjusted to match nearest 15 minute logger interval.
+<div class="blank"></div>
+Additional older raw records may be available via digitized scans of analog strip charts prior to installation of digital automated weather stations.
+</div>
+<span class="element-name procdate">Process_Date:</span> <span class="element-value procdate">2018</span><br/>
+</div>
+<span class="element-name procstep">Process_Step:</span><div class="child">
+<span class="element-name procdesc">Process_Description:</span>
+<div class="child element-value procdesc">
+Level 1 Data Processing:
+<div class="blank"></div>
+Temperature Data
+All temperature sensors
+1. Plausible value check - remove values below -40, above +30 &deg; C. This is informed by knowledge of the specific sites in our analysis.
+<div class="blank"></div>
+Precipitation Data
+1. Remove maintenance-related noise from the record, resulting from precipitation gage liquid filling and emptying from the record. If the sum of incremental precipitation received in 45 minutes is over 6 cm, the incremental precipitation received during this period is set to null, as well as the timesteps immediately preceding and after to ensure entire maintenance impacts are removed from the record.
+<div class="blank"></div>
+Wind Data
+Wind Speed
+1 .Plausible value check, setting wind speeds of greater than 75 m/s to NAN.
+2. Check for a minimum variability in wind speed of at least 0.5 m/s every hour, indicating that instrument is not rimed, and is recording wind speed. 
+<div class="blank"></div>
+Wind Direction
+1. Plausible value check; remove values greater than 360&deg; and less than 0&deg;.
+2. Minimum variability check; remove data where wind direction measured changes less than 10&deg; in 3 hours. The World Meteorological Organization (WMO) recommendation is for 10 &deg; in 1 hour, but for data measured at higher frequency.
+<div class="blank"></div>
+Radiation Data
+Radiation data should be used with caution at this time. Little effort has been made to correct for sensor drift, issues with rime accumulation, and other confounding factors. Raw data is provided here with these caveats. 
+1. Plausible value check; remove values less than 0 and greater than 1600 Watts per meter squared (W/ m2) (Zahumensky, 2004). Values less than 0 are set to 0. 
+<div class="blank"></div>
+Air Pressure Data
+1. Plausible value check; remove values less than 50 kilo pascals (kPa), greater than 110 kPa.
+</div>
+<span class="element-name procdate">Process_Date:</span> <span class="element-value procdate">2018</span><br/>
+</div>
+<span class="element-name procstep">Process_Step:</span><div class="child">
+<span class="element-name procdesc">Process_Description:</span>
+<div class="child element-value procdesc">
+Level 2 Data Processing:
+<div class="blank"></div>
+Temperature Data
+1. Remove transient malfunctions with a median-based filter. A moving window of 8 values (2 hours for 15 min data) is used to identify sensor spikes. Where the absolute difference of a single observation from the 8-observation rolling median is greater than 4 &deg; C, the value is set to window median.
+Create site-best temperature
+1. If multiple temperature sensors exist at the site, the records are compared and combined to create a timeseries of the best site temperature. If an aspirated temperature sensor exists at the site, this is considered the primary sensor due to better performance in calm, sunny conditions; passive temperature sensors are secondary.
+2. In primary (aspirated) temperature sensor record, replace values with passive-sensor median where:
+• Absolute difference between aspirated sensor and mean of passive sensors greater than 2 &deg;C and
+• Passive sensors agree with each other within 0.5 &deg;C and
+• More than one passive sensor record is available. These values come from Zahumensky (2004).
+3. Fill remaining gaps in primary temperature sensor record with median of all other sensors available, when the standard deviation among the remaining sensors is less than 1.5. Secondary sensors may be composed of a secondary aspirated, 2 passive sensors, or some other combination thereof.
+4. Remove outliers due to intermittent sensor noise with a hampel filter. A hampel filter uses a moving window of 7 values, identifying outliers as values greater than 3 median absolute deviations from the window median. This is only applied in locations where the initial timestep of the logged data is sub-hourly.
+5. Remove remaining transient outliers in final ‘best-temperature time series via an 8-sample median-based filter, as above.
+6. Create time-aggregated 
+<div class="blank"></div>
+Precipitation Data
+1. Remove high-amplitude noise related to wind with a median-based hampel filter.
+• A 6-sample hampel filter identifies measurements greater than 2 median absolute deviations from period median, and fills with median. Window examines 3 measurements before and after each value, for a window period of 45 min on either side of examined value for 15-minute data.
+2. Remove transient sensor malfunctions, resulting from electronic noise, using the daily median of incremental precipitation for the original timestep of data (15 minutes). If a single value of incremental precipitation is over 1 cm, that measurement is removed, and set to the median of incremental precipitation that day.
+3. Remove low-amplitude noise, including wind and temperature-related diurnal fluctuation noise, with a smoother that retains total precipitation catch, while creating a monotonically increasing timeseries, as defined by Nayak (2010).  Preserves timing and quantity of precipitation, while removing ‘negative’ precipitation measurements, a result of temperature and wind-related noise.
+<div class="blank"></div>
+Wind, Radiation, Air Pressure Data
+• Same level of QC process as L1; time-aggregated data is provided as a convenience.
+<div class="blank"></div>
+Data QC following recommendations of Zahumensk&yacute;, I., 2004, Guidelines on quality control procedures for data from automatic weather stations: World Meteorological Organization, no. 955, p. 2–6.
+</div>
+<span class="element-name procdate">Process_Date:</span> <span class="element-value procdate">2018</span><br/>
+</div>
+</div>
+</div>
+</div>
+<div class="major-section" id="3">
+<span class="element-name spdoinfo">Spatial_Data_Organization_Information:</span><div class="child">
+<span class="element-name direct">Direct_Spatial_Reference_Method:</span> <span class="element-value direct">Point</span><br/>
+</div>
+</div>
+<div class="major-section" id="4">
+<span class="element-name spref">Spatial_Reference_Information:</span><div class="child">
+<span class="element-name horizsys">Horizontal_Coordinate_System_Definition:</span><div class="child">
+<span class="element-name geograph">Geographic:</span><div class="child">
+<span class="element-name latres">Latitude_Resolution:</span> <span class="element-value latres">0.000001</span><br/>
+<span class="element-name longres">Longitude_Resolution:</span> <span class="element-value longres">0.000001</span><br/>
+<span class="element-name geogunit">Geographic_Coordinate_Units:</span> <span class="element-value geogunit">Decimal degrees</span><br/>
+</div>
+<span class="element-name geodetic">Geodetic_Model:</span><div class="child">
+<span class="element-name horizdn">Horizontal_Datum_Name:</span> <span class="element-value horizdn">World Geodetic System of 1984</span><br/>
+<span class="element-name ellips">Ellipsoid_Name:</span> <span class="element-value ellips">World Geodetic System of 1984</span><br/>
+<span class="element-name semiaxis">Semi-major_Axis:</span> <span class="element-value semiaxis">6378137</span><br/>
+<span class="element-name denflat">Denominator_of_Flattening_Ratio:</span> <span class="element-value denflat">298.257223563</span><br/>
+</div>
+</div>
+<span class="element-name vertdef">Vertical_Coordinate_System_Definition:</span><div class="child">
+<span class="element-name altsys">Altitude_System_Definition:</span><div class="child">
+<span class="element-name altdatum">Altitude_Datum_Name:</span> <span class="element-value altdatum">North American Vertical Datum of 1988</span><br/>
+<span class="element-name altres">Altitude_Resolution:</span> <span class="element-value altres">10</span><br/>
+<span class="element-name altunits">Altitude_Distance_Units:</span> <span class="element-value altunits">meters</span><br/>
+<span class="element-name altenc">Altitude_Encoding_Method:</span> <span class="element-value altenc">Attribute values</span><br/>
+</div>
+</div>
+</div>
+</div>
+<div class="major-section" id="5">
+<span class="element-name eainfo">Entity_and_Attribute_Information:</span><div class="child">
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Comma Separated Value (CSV) file containing  LVL0 and LVL1 data</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Table names indicate the level of QC the data has received, as described in the process details section, following the convention [glacier][site]_[timestep]_[QClevel].csv. The meteorological variable in each column is indicated by the column name. These are consistent across all the sites, and the descriptions here apply across all levels of QC and location. Additional columns are present in time-aggregated LVL2 data.
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer Defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">local_time</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Local time (e.g. Alaska, Mountain, or Pacific), including daylight savings shifts.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1998</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">minutes</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">UTC_time</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">UTC time (Zulu Time). No daylight savings shifts.</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1998</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">minutes</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">TPassive1</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Air temperature, as measured with a passively-aspirated temperature sensor in degrees Celsius. Value is the interval-average.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-40</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">40</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Celsius</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">TPassive2</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Air temperature, as measured with a passively-aspirated temperature sensor in degrees Celsius. Value is the interval-average.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-40</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">40</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Celsius</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">TAspirated1</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Air temperature, as measured with a mechanically-aspirated temperature sensor in degrees Celsius. Value is interval average.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-40</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">40</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Celsius</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">TAspirated2</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Air temperature, as measured with a mechanically-aspirated temperature sensor in degrees Celsius. Value is interval average.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-40</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">40</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Celsius</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Precip_Weighing_Cumulative</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Cumulative precipitation, measured by a weighing-style gage, in meters of water equivalent (m. w.e.). The weighing gage used is a Sutron Total Precipitation Gage (TPG).
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-1.0076</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">3.7549</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.001</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Precip_Stage_Cumulative</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Cumulative precipitation, measured by a stage-style gage, in meters of water equivalent (m. w.e.). The precipitation gage used is an older style “Rocket” gage, no longer in use by USGS.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-0.3635</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">16.385</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">m</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.001</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">site_temp</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Only present in Level 2 data. This indicates that this is the best estimate of temperature at a site, given multiple measurements present. Procedure for determining this is detailed in the PDF README included in the data release. 
+<div class="blank"></div>
+For temperature data, multiple quantities are reported for time-binned data (hourly or daily). A suffix indicates minimum temperature (“min”), maximum temperature (“max”), a straight all-value mean temperature (“USGS”), or average temp computed as the mean of high and low temperatures (WMO).
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-50</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">50</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">Celsius</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">WindSpeed</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+average wind speed measured over interval, in meters per second.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0.0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">40</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters per second</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">WindDir</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+wind direction average over the interval specified, not taking speed into account, indicated in degrees.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0.0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">360</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">degrees</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">VecAvgWindDir</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+vector average wind direction, giving average direction of wind of time interval indicated in degrees.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">360</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">degrees</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">RelHum</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">relative humidity. Reported in percent, from 0 to 100.</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">100</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">percent</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">WindGustSpeed</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+highest three-second gust measured during logging interval in meters per second.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">0.0</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">200</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters per second</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Barom</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">barometric pressure, measured in kilo-Pascals (kPa).</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">50</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">110</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">kilo Pascals</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.1</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span> <span class="element-value enttypl">Comma Separated Value (CSV) file containing  LVL 2 data</span><br/>
+<span class="element-name enttypd">Entity_Type_Definition:</span>
+<div class="child element-value enttypd">
+Comma Separated Value (CSV) file containing data. Only additional variables not described in LVL0 and LVL1 documentation are described here.
+</div>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer Defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Date</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Date, in yyyy/mm/dd format</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">1995</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2018</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">days</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">1</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">site_temp_min</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+The prefix &quot;site_temp&quot; indicates that this is the best value for temperature at the site, given multiple temperature measurements that may be in place (e.g. multiple passive or aspirated temperature sensors). The process for determining this is detailed in the process steps section of the metadata.
+<div class="blank"></div>
+For time-aggregated hourly and daily data, the suffix &quot;min&quot; indicates the minimum temperature during this period.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-28.8</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">17.9</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">site_temp_max</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+The prefix &quot;site_temp&quot; indicates that this is the best value for temperature at the site, given multiple temperature measurements that may be in place (e.g. multiple passive or aspirated temperature sensors). The process for determining this is detailed in the process steps section of the metadata.
+<div class="blank"></div>
+For time-aggregated hourly and daily data, the suffix &quot;max&quot; indicates the maximum temperature during this period.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-22.6</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">21.0</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">site_temp_WMO</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+The prefix &quot;site_temp&quot; indicates that this is the best value for temperature at the site, given multiple temperature measurements that may be in place (e.g. multiple passive or aspirated temperature sensors). The process for determining this is detailed in the process steps section of the metadata.
+<div class="blank"></div>
+For time-aggregated hourly and daily data, the suffix &quot;WMO&quot; indicates the average of the high and low temperatures during this period, following the traditional WMO procedure.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-25.6</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">18.0</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">site_temp_USGS</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+The prefix &quot;site_temp&quot; indicates that this is the best value for temperature at the site, given multiple temperature measurements that may be in place (e.g. multiple passive or aspirated temperature sensors). The process for determining this is detailed in the process steps section of the metadata.
+<div class="blank"></div>
+For time-aggregated hourly and daily data, the suffix &quot;USGS&quot; indicates the average of the high and low temperatures during this period, following the traditional WMO procedure.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name edom">Enumerated_Domain:</span><div class="child">
+<span class="element-name edomv">Enumerated_Domain_Value:</span> <span class="element-value edomv">nan</span><br/>
+<span class="element-name edomvd">Enumerated_Domain_Value_Definition:</span> <span class="element-value edomvd">No Data</span><br/>
+<span class="element-name edomvds">Enumerated_Domain_Value_Definition_Source:</span> <span class="element-value edomvds">Producer defined</span><br/>
+</div>
+</div>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-25.7</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">17.0</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name detailed">Detailed_Description:</span><div class="child">
+<span class="element-name enttyp">Entity_Type:</span><div class="child">
+<span class="element-name enttypl">Entity_Type_Label:</span>
+<div class="child element-value enttypl">
+Comma Separated Value (CSV) file containing weather station locations
+</div>
+<span class="element-name enttypd">Entity_Type_Definition:</span> <span class="element-value enttypd">Comma Separated Value (CSV) file containing data.</span><br/>
+<span class="element-name enttypds">Entity_Type_Definition_Source:</span> <span class="element-value enttypds">Producer Defined</span><br/>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Location</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">Glacier adjacent to which weather station is located</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name udom">Unrepresentable_Domain:</span> <span class="element-value udom">Name of glacier</span><br/>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Elevation</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+Approximate elevation of the weather station. This is used as a site label rather than an exact elevation of the site.
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">Producer Defined</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">370</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">2444</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">meters</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">10</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Latitude</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span> <span class="element-value attrdef">weather station latitude in decimal degrees (WGS 84; EPSG 4326)</span><br/>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">EPSG</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">48.364291</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">63.297137</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">degrees</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.00001</span><br/>
+</div>
+</div>
+</div>
+<span class="element-name attr">Attribute:</span><div class="child">
+<span class="element-name attrlabl">Attribute_Label:</span> <span class="element-value attrlabl">Longitude</span><br/>
+<span class="element-name attrdef">Attribute_Definition:</span>
+<div class="child element-value attrdef">
+weather station longitude in decimal degrees (WGS 84; EPSG 4326)
+</div>
+<span class="element-name attrdefs">Attribute_Definition_Source:</span> <span class="element-value attrdefs">EPSG</span><br/>
+<span class="element-name attrdomv">Attribute_Domain_Values:</span><div class="child">
+<span class="element-name rdom">Range_Domain:</span><div class="child">
+<span class="element-name rdommin">Range_Domain_Minimum:</span> <span class="element-value rdommin">-148.945242</span><br/>
+<span class="element-name rdommax">Range_Domain_Maximum:</span> <span class="element-value rdommax">-113.765174</span><br/>
+<span class="element-name attrunit">Attribute_Units_of_Measure:</span> <span class="element-value attrunit">degrees</span><br/>
+<span class="element-name attrmres">Attribute_Measurement_Resolution:</span> <span class="element-value attrmres">0.00001</span><br/>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name overview">Overview_Description:</span><div class="child">
+<span class="element-name eaover">Entity_and_Attribute_Overview:</span>
+<div class="child element-value eaover">
+This release contains meteorological data from the Juneau Icefield, in Alaska and Canada. This weather data is used in glacier mass balance calculations, among other scientific purposes. Available data varies by location, as detailed within this release. 
+<div class="blank"></div>
+Each weather station location is named via its approximate elevation, referred to by the generic term &quot;Site&quot; here. Data is organized into folders by glacier, and level of QC. The exact process for each sensor type and QC level is detailed in the process step section, and included PDF README. Below, [Glacier] is a generic term for ice mass. For the Juneau Ice Field weather files, all are simply labeled with the icefield name rather than that of an individual glacier.
+<div class="blank"></div>
+[GLACIER] Folder:
+Files within labeled by site, with the convention [glacier][Site]_[timestep]_[QCLevel].
+<div class="blank"></div>
+LVL0 folder:
+Data which has received little QC; organized and concatenated raw logger data.
+<div class="blank"></div>
+LVL1 folder:
+Data which has received minimal QC; process described in detail above.
+<div class="blank"></div>
+LVL2 folder:
+Data which has received more substantial QC and been time-aggregated to daily and hourly data. Process described in detail above. All measured parameters are included in the time-aggregated hourly and daily files, for convenience. They have received only the QC specified above (i.e. L0 or L1; no additional QC is applied, only time-aggregation, for convenience of use). For temperature data, multiple quantities are reported for time-binned data (hourly or daily). A suffix indicates minimum temperature (“min”), maximum temperature (“max”), a straight all-value mean temperature (“USGS”), or average temp computed as the mean of high and low temperatures (WMO).
+</div>
+<span class="element-name eadetcit">Entity_and_Attribute_Detail_Citation:</span>
+<div class="child element-value eadetcit">
+Zahumensk&yacute;, I., 2004, Guidelines on quality control procedures for data from automatic weather stations: World Meteorological Organization, no. 955, p. 2–6.
+</div>
+</div>
+</div>
+</div>
+<div class="major-section" id="6">
+<span class="element-name distinfo">Distribution_Information:</span><div class="child">
+<span class="element-name distrib">Distributor:</span><div class="child">
+<span class="element-name cntinfo">Contact_Information:</span><div class="child">
+<span class="element-name cntorgp">Contact_Organization_Primary:</span><div class="child">
+<span class="element-name cntorg">Contact_Organization:</span> <span class="element-value cntorg">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name cntaddr">Contact_Address:</span><div class="child">
+<span class="element-name addrtype">Address_Type:</span> <span class="element-value addrtype">mailing and physical</span><br/>
+<span class="element-name address">Address:</span> <span class="element-value address">4210 University Dr.</span><br/>
+<span class="element-name city">City:</span> <span class="element-value city">Anchorage</span><br/>
+<span class="element-name state">State_or_Province:</span> <span class="element-value state">AK</span><br/>
+<span class="element-name postal">Postal_Code:</span> <span class="element-value postal">99508-4626</span><br/>
+<span class="element-name country">Country:</span> <span class="element-value country">USA</span><br/>
+</div>
+<span class="element-name cntvoice">Contact_Voice_Telephone:</span> <span class="element-value cntvoice">(907) 786-7000</span><br/>
+<span class="element-name cntemail">Contact_Electronic_Mail_Address:</span> <span class="element-value cntemail">ascweb@usgs.gov</span><br/>
+</div>
+</div>
+<span class="element-name resdesc">Resource_Description:</span>
+<div class="child element-value resdesc">
+Authoritative source for access to data in the collection. This resource is a download website from which data can be accessed based on data type, glacier and vintage.
+</div>
+<span class="element-name distliab">Distribution_Liability:</span>
+<div class="child element-value distliab">
+Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.
+</div>
+<span class="element-name stdorder">Standard_Order_Process:</span><div class="child">
+<span class="element-name digform">Digital_Form:</span><div class="child">
+<span class="element-name digtinfo">Digital_Transfer_Information:</span><div class="child">
+<span class="element-name formname">Format_Name:</span> <span class="element-value formname">Zip</span><br/>
+<span class="element-name formvern">Format_Version_Number:</span> <span class="element-value formvern">19.0</span><br/>
+<span class="element-name formcont">Format_Information_Content:</span>
+<div class="child element-value formcont">
+See metadata for individual data sets regarding information about zip package contents.
+</div>
+<span class="element-name filedec">File_Decompression_Technique:</span> <span class="element-value filedec">Zip</span><br/>
+<span class="element-name transize">Transfer_Size:</span> <span class="element-value transize">0.8</span><br/>
+</div>
+<span class="element-name digtopt">Digital_Transfer_Option:</span><div class="child">
+<span class="element-name onlinopt">Online_Option:</span><div class="child">
+<span class="element-name computer">Computer_Contact_Information:</span><div class="child">
+<span class="element-name networka">Network_Address:</span><div class="child">
+<span class="element-name networkr">Network_Resource_Name:</span> <span class="element-value networkr"><a href="https://doi.org/10.5066/P9DUI71J">https://doi.org/10.5066/P9DUI71J</a></span><br/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<span class="element-name fees">Fees:</span> <span class="element-value fees">none</span><br/>
+</div>
+</div>
+</div>
+<div class="major-section" id="7">
+<span class="element-name metainfo">Metadata_Reference_Information:</span><div class="child">
+<span class="element-name metd">Metadata_Date:</span> <span class="element-value metd">20180201</span><br/>
+<span class="element-name metc">Metadata_Contact:</span><div class="child">
+<span class="element-name cntinfo">Contact_Information:</span><div class="child">
+<span class="element-name cntorgp">Contact_Organization_Primary:</span><div class="child">
+<span class="element-name cntorg">Contact_Organization:</span> <span class="element-value cntorg">U.S. Geological Survey, Alaska Science Center</span><br/>
+</div>
+<span class="element-name cntaddr">Contact_Address:</span><div class="child">
+<span class="element-name addrtype">Address_Type:</span> <span class="element-value addrtype">mailing and physical</span><br/>
+<span class="element-name address">Address:</span> <span class="element-value address">4210 University Dr.</span><br/>
+<span class="element-name city">City:</span> <span class="element-value city">Anchorage</span><br/>
+<span class="element-name state">State_or_Province:</span> <span class="element-value state">Alaska</span><br/>
+<span class="element-name postal">Postal_Code:</span> <span class="element-value postal">99508-4626</span><br/>
+<span class="element-name country">Country:</span> <span class="element-value country">USA</span><br/>
+</div>
+<span class="element-name cntvoice">Contact_Voice_Telephone:</span> <span class="element-value cntvoice">(907) 786-7000</span><br/>
+<span class="element-name cntemail">Contact_Electronic_Mail_Address:</span> <span class="element-value cntemail">ascweb@usgs.gov</span><br/>
+</div>
+</div>
+<span class="element-name metstdn">Metadata_Standard_Name:</span> <span class="element-value metstdn">FGDC Content Standard for Digital Geospatial Metadata</span><br/>
+<span class="element-name metstdv">Metadata_Standard_Version:</span> <span class="element-value metstdv">FGDC-STD-001.1-1999</span><br/>
+</div>
+</div>
+<hr id="page-bottom"/>
+<div id="generated-by">Generated by <a href="https://geology.usgs.gov/tools/metadata/tools/doc/mp.html" style="font-family: monospace;">mp</a> version 2.9.50 on Wed Jun 26 18:02:39 2019</div>
+
+</body>
+</html>

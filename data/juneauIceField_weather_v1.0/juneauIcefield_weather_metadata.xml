@@ -1,0 +1,699 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href='NBII_classic.xsl' type='text/xsl'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Emily H. Baker (ORCID: 0000-0002-0938-3496)</origin>
+        <origin>Scott McGee</origin>
+        <origin>Seth W. Campbell (ORCID: 0000-0002-9620-8329)</origin>
+        <origin>Jamie L. Pierce</origin>
+        <origin>Christopher J. McNeil (ORCID: 0000-0003-4170-0428)</origin>
+        <pubdate>20190626</pubdate>
+        <title>Weather Station Data on the Juneau Icefield</title>
+        <geoform>tabular digital data</geoform>
+        <pubinfo>
+          <pubplace>Anchorage, AK</pubplace>
+          <publish>U.S. Geological Survey, Alaska Science Center</publish>
+        </pubinfo>
+        <othercit>Baker, E. H., McGee, S., Campbell, S. W., Pierce, J. L., McNeil, C. J., 2019, Weather station data on the Juneau Icefield (ver. 1.0, June 2019): U.S. Geological Survey data release, https://doi.org/10.5066/P9DUI71J.</othercit>
+        <onlink>https://doi.org/10.5066/P9DUI71J</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Since the 1940s, the Juneau Icefield Research Program (JIRP) has been measuring surface mass balance on the Juneau Icefield. This is the longest ongoing program of its kind in North America. The program nominally occurs between late June and late August, traversing between Juneau, Alaska and Atlin, British Columbia. JIRP has examined the surface mass balance of the Juneau Icefield since 1946, with principal efforts focused on Lemon Creek Glacier and Taku Glacier. Glaciological, geodetic, and meteorological data have been collected by JIRP to characterize the interaction between the climate and glaciers of the Juneau Icefield. 
+
+Measurements of meteorological data are made at many permanent camp facilities on the Juneau Icefield. This portion of the data release includes select weather data that has received basic quality control and assurance. Data is released at three different levels of processing, level 0, 1 and 2. Level 0 data contains compiled raw data, before QC procedures are applied, at the original timestep recorded by the instrument. Level 1 data has received a plausible value check, and minimal manual error identification (e.g. errors noted on field visits). Level 2 data has been through more extensive quality control procedures and is provided at both the original instrument timestep as well as aggregated hourly and daily values. Data at many JIRP sites consist of a single temperature sensor, recording in a Stevenson-type shield. Automated weather stations at Camp 10, 17, and 18 have measured additional meteorological variables in recent years. Both are presented in this data release.
+</abstract>
+      <purpose>Weather data is collected at high-elevation locations adjacent to the Juneau Icefield in order to track changes in environmental conditions over time, and for use in mass balance calculations. There are many other potential uses for this data, including ecological, hydrological, and geophysical research questions among others. </purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>1990</begdate>
+          <enddate>2018</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>observed</current>
+    </timeperd>
+    <status>
+      <progress>Planned</progress>
+      <update>Annually</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-135.347</westbc>
+        <eastbc>-133.689</eastbc>
+        <northbc>59.522</northbc>
+        <southbc>58.3616</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>geoscientificInformation</themekey>
+        <themekey>climatologyMeteorologyAtmosphere</themekey>
+        <themekey>environment</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>Glaciology</themekey>
+      </theme>
+      <theme>
+        <themekt>NASA Earth Science Thesaurus</themekt>
+        <themekey>Cryosphere</themekey>
+        <themekey>Glaciers/Ice Sheets</themekey>
+        <themekey>Glaciers</themekey>
+        <themekey>Ablation Zones/Accumulation Zones</themekey>
+        <themekey>Glacier Elevation/Ice Sheet Elevation</themekey>
+        <themekey>Glacier Mass Balance/Ice Sheet Mass Balance</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS CSA Biocomplexity Thesaurus</themekt>
+        <themekey>Glaciology</themekey>
+        <themekey>Geomorphology</themekey>
+        <themekey>Geology</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>glaciology</themekey>
+        <themekey>glaciation</themekey>
+        <themekey>snow and ice cover</themekey>
+        <themekey>precipitation (atmospheric)</themekey>
+        <themekey>field inventory and monitoring</themekey>
+      </theme>
+      <place>
+        <placekt>USGS Geographic Names Information System</placekt>
+        <placekey>Juneau Icefield</placekey>
+      </place>
+    </keywords>
+    <accconst>none</accconst>
+    <useconst>It is requested that the authors and the USGS be cited for any subsequent publications referencing this dataset. It is strongly recommended that careful attention be paid to the contents of the metadata file associated with these data in order to evaluate dataset limitations, restrictions and recommended uses. When appropriate, please consider co-authorship with the authors of these data.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, Alaska Science Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <address>4210 University Dr.</address>
+          <city>Anchorage</city>
+          <state>AK</state>
+          <postal>99508-4626</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>(907) 786-7000</cntvoice>
+        <cntfax>(907) 786-7020</cntfax>
+        <cntemail>ascweb@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <crossref>
+      <citeinfo>
+        <origin>Shad O'Neel (ORCID: 0000-0002-9185-0144)</origin>
+        <origin>Emily H. Baker (ORCID: 0000-0002-0938-3496)</origin>
+        <pubdate>20180101</pubdate>
+        <title>Alaska Benchmark Glacier Mass Balance Website</title>
+        <geoform>website</geoform>
+        <pubinfo>
+          <pubplace>online</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <othercit>U.S. Geological Survey Benchmark Glacier web page.</othercit>
+        <onlink>https://www2.usgs.gov/landresources/lcs/glacierstudies/</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>Efforts were made to ensure accuracy in released data. QC procedures are described in detail within the process steps, but vary by data type. Degree of manual QC of data varies by location.</attraccr>
+    </attracc>
+    <logic>Data has undergone a scripted QC process, as detailed in the process description section. All values pass logical consistency checks therein. nan values indicate that data is not available for that timestep. The instrument may not have been functioning, or determined to not be functioning correctly.</logic>
+    <complete>Additional older records may be available before the digital era, via scans of strip charts. Contact authors regarding this potential. Strip charts exist, but have not been digitized at this time. Faulty data has been removed from Level 1 and Level 2 weather data, as described in the process steps section of this document.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Positions are reported to 1 m and the location of the site is known to higher accuracy. Vertical accuracy is low, to the closest 10 m; elevations of the station names are used to distinguish the sites, rather than provide precise elevation data. Users should determine precise elevation from an outside elevation dataset of their choice (e.g. a digital elevation model in the geodetic portion of the mass balance data collection).</horizpar>
+      </horizpa>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Level 0 Data Processing:
+
+Raw data are compiled from multiple sources, primarily remote telemetry and raw downloaded logger files. Timeslips in logger are adjusted to match nearest 15 minute logger interval.
+
+Additional older raw records may be available via digitized scans of analog strip charts prior to installation of digital automated weather stations.</procdesc>
+        <procdate>2018</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Level 1 Data Processing:
+
+Temperature Data
+All temperature sensors
+1. Plausible value check - remove values below -40, above +30 ° C. This is informed by knowledge of the specific sites in our analysis.
+
+Precipitation Data
+1. Remove maintenance-related noise from the record, resulting from precipitation gage liquid filling and emptying from the record. If the sum of incremental precipitation received in 45 minutes is over 6 cm, the incremental precipitation received during this period is set to null, as well as the timesteps immediately preceding and after to ensure entire maintenance impacts are removed from the record.
+
+Wind Data
+Wind Speed
+1 .Plausible value check, setting wind speeds of greater than 75 m/s to NAN.
+2. Check for a minimum variability in wind speed of at least 0.5 m/s every hour, indicating that instrument is not rimed, and is recording wind speed. 
+
+Wind Direction
+1. Plausible value check; remove values greater than 360° and less than 0°.
+2. Minimum variability check; remove data where wind direction measured changes less than 10° in 3 hours. The World Meteorological Organization (WMO) recommendation is for 10 ° in 1 hour, but for data measured at higher frequency.
+
+Radiation Data
+Radiation data should be used with caution at this time. Little effort has been made to correct for sensor drift, issues with rime accumulation, and other confounding factors. Raw data is provided here with these caveats. 
+1. Plausible value check; remove values less than 0 and greater than 1600 Watts per meter squared (W/ m2) (Zahumensky, 2004). Values less than 0 are set to 0. 
+
+Air Pressure Data
+1. Plausible value check; remove values less than 50 kilo pascals (kPa), greater than 110 kPa.</procdesc>
+        <procdate>2018</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Level 2 Data Processing:
+
+Temperature Data
+1. Remove transient malfunctions with a median-based filter. A moving window of 8 values (2 hours for 15 min data) is used to identify sensor spikes. Where the absolute difference of a single observation from the 8-observation rolling median is greater than 4 ° C, the value is set to window median.
+Create site-best temperature
+1. If multiple temperature sensors exist at the site, the records are compared and combined to create a timeseries of the best site temperature. If an aspirated temperature sensor exists at the site, this is considered the primary sensor due to better performance in calm, sunny conditions; passive temperature sensors are secondary.
+2. In primary (aspirated) temperature sensor record, replace values with passive-sensor median where:
+• Absolute difference between aspirated sensor and mean of passive sensors greater than 2 °C and
+• Passive sensors agree with each other within 0.5 °C and
+• More than one passive sensor record is available. These values come from Zahumensky (2004).
+3. Fill remaining gaps in primary temperature sensor record with median of all other sensors available, when the standard deviation among the remaining sensors is less than 1.5. Secondary sensors may be composed of a secondary aspirated, 2 passive sensors, or some other combination thereof.
+4. Remove outliers due to intermittent sensor noise with a hampel filter. A hampel filter uses a moving window of 7 values, identifying outliers as values greater than 3 median absolute deviations from the window median. This is only applied in locations where the initial timestep of the logged data is sub-hourly.
+5. Remove remaining transient outliers in final ‘best-temperature time series via an 8-sample median-based filter, as above.
+6. Create time-aggregated 
+
+Precipitation Data
+1. Remove high-amplitude noise related to wind with a median-based hampel filter.
+• A 6-sample hampel filter identifies measurements greater than 2 median absolute deviations from period median, and fills with median. Window examines 3 measurements before and after each value, for a window period of 45 min on either side of examined value for 15-minute data.
+2. Remove transient sensor malfunctions, resulting from electronic noise, using the daily median of incremental precipitation for the original timestep of data (15 minutes). If a single value of incremental precipitation is over 1 cm, that measurement is removed, and set to the median of incremental precipitation that day.
+3. Remove low-amplitude noise, including wind and temperature-related diurnal fluctuation noise, with a smoother that retains total precipitation catch, while creating a monotonically increasing timeseries, as defined by Nayak (2010).  Preserves timing and quantity of precipitation, while removing ‘negative’ precipitation measurements, a result of temperature and wind-related noise.
+
+Wind, Radiation, Air Pressure Data
+• Same level of QC process as L1; time-aggregated data is provided as a convenience.
+
+Data QC following recommendations of Zahumenský, I., 2004, Guidelines on quality control procedures for data from automatic weather stations: World Meteorological Organization, no. 955, p. 2–6.</procdesc>
+        <procdate>2018</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Point</direct>
+  </spdoinfo>
+  <spref>
+    <horizsys>
+      <geograph>
+        <latres>0.000001</latres>
+        <longres>0.000001</longres>
+        <geogunit>Decimal degrees</geogunit>
+      </geograph>
+      <geodetic>
+        <horizdn>World Geodetic System of 1984</horizdn>
+        <ellips>World Geodetic System of 1984</ellips>
+        <semiaxis>6378137</semiaxis>
+        <denflat>298.257223563</denflat>
+      </geodetic>
+    </horizsys>
+    <vertdef>
+      <altsys>
+        <altdatum>North American Vertical Datum of 1988</altdatum>
+        <altres>10</altres>
+        <altunits>meters</altunits>
+        <altenc>Attribute values</altenc>
+      </altsys>
+    </vertdef>
+  </spref>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Comma Separated Value (CSV) file containing  LVL0 and LVL1 data</enttypl>
+        <enttypd>Table names indicate the level of QC the data has received, as described in the process details section, following the convention [glacier][site]_[timestep]_[QClevel].csv. The meteorological variable in each column is indicated by the column name. These are consistent across all the sites, and the descriptions here apply across all levels of QC and location. Additional columns are present in time-aggregated LVL2 data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>local_time</attrlabl>
+        <attrdef>Local time (e.g. Alaska, Mountain, or Pacific), including daylight savings shifts.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1998</rdommin>
+            <rdommax>2018</rdommax>
+            <attrunit>minutes</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>UTC_time</attrlabl>
+        <attrdef>UTC time (Zulu Time). No daylight savings shifts.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1998</rdommin>
+            <rdommax>2018</rdommax>
+            <attrunit>minutes</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>TPassive1</attrlabl>
+        <attrdef>Air temperature, as measured with a passively-aspirated temperature sensor in degrees Celsius. Value is the interval-average.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-40</rdommin>
+            <rdommax>40</rdommax>
+            <attrunit>Celsius</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>TPassive2</attrlabl>
+        <attrdef>Air temperature, as measured with a passively-aspirated temperature sensor in degrees Celsius. Value is the interval-average.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-40</rdommin>
+            <rdommax>40</rdommax>
+            <attrunit>Celsius</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>TAspirated1</attrlabl>
+        <attrdef>Air temperature, as measured with a mechanically-aspirated temperature sensor in degrees Celsius. Value is interval average.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-40</rdommin>
+            <rdommax>40</rdommax>
+            <attrunit>Celsius</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>TAspirated2</attrlabl>
+        <attrdef>Air temperature, as measured with a mechanically-aspirated temperature sensor in degrees Celsius. Value is interval average.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-40</rdommin>
+            <rdommax>40</rdommax>
+            <attrunit>Celsius</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Precip_Weighing_Cumulative</attrlabl>
+        <attrdef>Cumulative precipitation, measured by a weighing-style gage, in meters of water equivalent (m. w.e.). The weighing gage used is a Sutron Total Precipitation Gage (TPG).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.0076</rdommin>
+            <rdommax>3.7549</rdommax>
+            <attrunit>meters</attrunit>
+            <attrmres>0.001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Precip_Stage_Cumulative</attrlabl>
+        <attrdef>Cumulative precipitation, measured by a stage-style gage, in meters of water equivalent (m. w.e.). The precipitation gage used is an older style “Rocket” gage, no longer in use by USGS.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.3635</rdommin>
+            <rdommax>16.385</rdommax>
+            <attrunit>m</attrunit>
+            <attrmres>0.001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_temp</attrlabl>
+        <attrdef>Only present in Level 2 data. This indicates that this is the best estimate of temperature at a site, given multiple measurements present. Procedure for determining this is detailed in the PDF README included in the data release. 
+
+For temperature data, multiple quantities are reported for time-binned data (hourly or daily). A suffix indicates minimum temperature (“min”), maximum temperature (“max”), a straight all-value mean temperature (“USGS”), or average temp computed as the mean of high and low temperatures (WMO).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-50</rdommin>
+            <rdommax>50</rdommax>
+            <attrunit>Celsius</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>WindSpeed</attrlabl>
+        <attrdef>average wind speed measured over interval, in meters per second.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>40</rdommax>
+            <attrunit>meters per second</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>WindDir</attrlabl>
+        <attrdef>wind direction average over the interval specified, not taking speed into account, indicated in degrees.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>360</rdommax>
+            <attrunit>degrees</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>VecAvgWindDir</attrlabl>
+        <attrdef>vector average wind direction, giving average direction of wind of time interval indicated in degrees.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>360</rdommax>
+            <attrunit>degrees</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>RelHum</attrlabl>
+        <attrdef>relative humidity. Reported in percent, from 0 to 100.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>100</rdommax>
+            <attrunit>percent</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>WindGustSpeed</attrlabl>
+        <attrdef>highest three-second gust measured during logging interval in meters per second.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>200</rdommax>
+            <attrunit>meters per second</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Barom</attrlabl>
+        <attrdef>barometric pressure, measured in kilo-Pascals (kPa).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>50</rdommin>
+            <rdommax>110</rdommax>
+            <attrunit>kilo Pascals</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Comma Separated Value (CSV) file containing  LVL 2 data</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data. Only additional variables not described in LVL0 and LVL1 documentation are described here.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Date</attrlabl>
+        <attrdef>Date, in yyyy/mm/dd format</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1995</rdommin>
+            <rdommax>2018</rdommax>
+            <attrunit>days</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_temp_min</attrlabl>
+        <attrdef>The prefix "site_temp" indicates that this is the best value for temperature at the site, given multiple temperature measurements that may be in place (e.g. multiple passive or aspirated temperature sensors). The process for determining this is detailed in the process steps section of the metadata.
+
+For time-aggregated hourly and daily data, the suffix "min" indicates the minimum temperature during this period.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-28.8</rdommin>
+            <rdommax>17.9</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_temp_max</attrlabl>
+        <attrdef>The prefix "site_temp" indicates that this is the best value for temperature at the site, given multiple temperature measurements that may be in place (e.g. multiple passive or aspirated temperature sensors). The process for determining this is detailed in the process steps section of the metadata.
+
+For time-aggregated hourly and daily data, the suffix "max" indicates the maximum temperature during this period.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-22.6</rdommin>
+            <rdommax>21.0</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_temp_WMO</attrlabl>
+        <attrdef>The prefix "site_temp" indicates that this is the best value for temperature at the site, given multiple temperature measurements that may be in place (e.g. multiple passive or aspirated temperature sensors). The process for determining this is detailed in the process steps section of the metadata.
+
+For time-aggregated hourly and daily data, the suffix "WMO" indicates the average of the high and low temperatures during this period, following the traditional WMO procedure.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-25.6</rdommin>
+            <rdommax>18.0</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>site_temp_USGS</attrlabl>
+        <attrdef>The prefix "site_temp" indicates that this is the best value for temperature at the site, given multiple temperature measurements that may be in place (e.g. multiple passive or aspirated temperature sensors). The process for determining this is detailed in the process steps section of the metadata.
+
+For time-aggregated hourly and daily data, the suffix "USGS" indicates the average of the high and low temperatures during this period, following the traditional WMO procedure.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>nan</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-25.7</rdommin>
+            <rdommax>17.0</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Comma Separated Value (CSV) file containing weather station locations</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Location</attrlabl>
+        <attrdef>Glacier adjacent to which weather station is located</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Name of glacier</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Elevation</attrlabl>
+        <attrdef>Approximate elevation of the weather station. This is used as a site label rather than an exact elevation of the site.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>370</rdommin>
+            <rdommax>2444</rdommax>
+            <attrunit>meters</attrunit>
+            <attrmres>10</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Latitude</attrlabl>
+        <attrdef>weather station latitude in decimal degrees (WGS 84; EPSG 4326)</attrdef>
+        <attrdefs>EPSG</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>48.364291</rdommin>
+            <rdommax>63.297137</rdommax>
+            <attrunit>degrees</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Longitude</attrlabl>
+        <attrdef>weather station longitude in decimal degrees (WGS 84; EPSG 4326)</attrdef>
+        <attrdefs>EPSG</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-148.945242</rdommin>
+            <rdommax>-113.765174</rdommax>
+            <attrunit>degrees</attrunit>
+            <attrmres>0.00001</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <overview>
+      <eaover>This release contains meteorological data from the Juneau Icefield, in Alaska and Canada. This weather data is used in glacier mass balance calculations, among other scientific purposes. Available data varies by location, as detailed within this release. 
+
+Each weather station location is named via its approximate elevation, referred to by the generic term "Site" here. Data is organized into folders by glacier, and level of QC. The exact process for each sensor type and QC level is detailed in the process step section, and included PDF README. Below, [Glacier] is a generic term for ice mass. For the Juneau Ice Field weather files, all are simply labeled with the icefield name rather than that of an individual glacier.
+
+[GLACIER] Folder:
+Files within labeled by site, with the convention [glacier][Site]_[timestep]_[QCLevel].
+
+LVL0 folder:
+Data which has received little QC; organized and concatenated raw logger data.
+
+LVL1 folder:
+Data which has received minimal QC; process described in detail above.
+
+LVL2 folder:
+Data which has received more substantial QC and been time-aggregated to daily and hourly data. Process described in detail above. All measured parameters are included in the time-aggregated hourly and daily files, for convenience. They have received only the QC specified above (i.e. L0 or L1; no additional QC is applied, only time-aggregation, for convenience of use). For temperature data, multiple quantities are reported for time-binned data (hourly or daily). A suffix indicates minimum temperature (“min”), maximum temperature (“max”), a straight all-value mean temperature (“USGS”), or average temp computed as the mean of high and low temperatures (WMO).</eaover>
+      <eadetcit>Zahumenský, I., 2004, Guidelines on quality control procedures for data from automatic weather stations: World Meteorological Organization, no. 955, p. 2–6.</eadetcit>
+    </overview>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, Alaska Science Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>4210 University Dr.</address>
+          <city>Anchorage</city>
+          <state>AK</state>
+          <postal>99508-4626</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>(907) 786-7000</cntvoice>
+        <cntemail>ascweb@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>Authoritative source for access to data in the collection. This resource is a download website from which data can be accessed based on data type, glacier and vintage.</resdesc>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Zip</formname>
+          <formvern>19.0</formvern>
+          <formcont>See metadata for individual data sets regarding information about zip package contents.</formcont>
+          <filedec>Zip</filedec>
+          <transize>0.8</transize>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9DUI71J</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>none</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20180201</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey, Alaska Science Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>4210 University Dr.</address>
+          <city>Anchorage</city>
+          <state>Alaska</state>
+          <postal>99508-4626</postal>
+          <country>USA</country>
+        </cntaddr>
+        <cntvoice>(907) 786-7000</cntvoice>
+        <cntemail>ascweb@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>
