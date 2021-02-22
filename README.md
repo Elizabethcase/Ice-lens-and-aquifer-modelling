@@ -5,7 +5,7 @@ The code for this project is iterated from / based on:
 
 > Meyer CR and Hewitt IJ (2017) A continuum model for meltwater flow through compacting snow. The Cryosphere 11(6), 2799–2813. [doi:10.5194/tc-11-2799-2017](https://www.the-cryosphere.net/11/2799/2017/).
 
-| This project explores ice lens and firn aquifer formation. This work was initially inspired by a potential firn aquifer discvoered on the Juneau Icefield in 2018, in collaboration with the [Juneau Icefield Research Program]https://juneauicefield.org/). | <img src="https://github.com/Elizabethcase/Ice-lens-and-aquifer-modelling/blob/main/project-notes/imgs/JIRP.png" alt="map of survey on the Juneau Icefield showing the aquifer in the northwest corner" width="10%" height="10%" |
+| This project explores ice lens and firn aquifer formation. This work was initially inspired by a potential firn aquifer discvoered on the Juneau Icefield in 2018, in collaboration with the [Juneau Icefield Research Program]https://juneauicefield.org/). | <img src="https://github.com/Elizabethcase/Ice-lens-and-aquifer-modelling/blob/main/project-notes/imgs/JIRP.png" alt="map of survey on the Juneau Icefield showing the aquifer in the northwest corner" width="10%" height="10%"> |
 |----|----|
 
 It has since expanded more broadly into questions about coincident ice lens-firn aquifer formation.
