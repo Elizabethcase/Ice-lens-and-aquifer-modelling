@@ -33,7 +33,7 @@ main(AIn, QbarIn, NumRuns)
 function main(AIn, QbarIn, NumRuns)
 
 % % Simulation Parameters % % % % % % % % % % % % % %
-T = 40; % total simulation time (yr)
+T = 10; % total simulation time (yr)
 plot_amount = 10000; % time between each plot s
 save_freq = 100; % frequency at which plots are saved
 phi0 = 0.64; % surface porosity
@@ -93,6 +93,23 @@ n_plot = 1; RunOff = zeros(Nt,1); RO = zeros(Nt,1);
 
 holdOn = 0; %allows warming to stick around for longer
 for n = 1:Nt
+    
+    % Ebarfun has warming spike in winter
+    % dt = 10^-4 ~ 2.89 days.. would be a long warming spike.. may need to
+    % decrease dt
+    holdOn = holdOn + 1;
+    if holdOn > 20
+    EbarFun = @(tau)Qbar-cos(2*pi*tau);
+        if EbarFun(n*dt) < Qbar % if we are in coldest half of year (E < average)
+            disp('winter')
+            if rand(1) < .02 % warming spikes 2 percent of the time
+                disp('triggered')
+                EbarFun = @(tau) Qbar+1; %
+                holdOn = 0;
+            end
+        end
+    end
+
     
     % Assign values from previous timestep
     W_nm1 = W;

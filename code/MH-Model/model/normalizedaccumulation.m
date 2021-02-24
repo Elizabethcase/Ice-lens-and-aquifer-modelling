@@ -5,12 +5,13 @@
 % a = meters of accumulation in given units
 % units = m, mie, mwe, norm
 % Q0 = 200; %energy forcing %W m-2 or kg s-3
-% t0 = 3.15*10^7 % seconds per year s
-% rhoI = 917 % ice denisty kg m-3
-% L = 334000 %latent heat of water; m2 s-2
 % phi0 = 0.64; % surface percent of void space
 
-function AN = normalizedaccumulation(a, units, Q0, t0, rhoI, L, phi0)
+function AN = normalizedaccumulation(a, units, Q0, phi0)
+
+L = 334000; %latent heat of water; m2 s-2
+rhoI = 917; % ice denisty kg m-3
+t0 = 3.15*10^7; % seconds per year s
 
 l = Q0*t0/(rhoI*L);
 
