@@ -11,7 +11,8 @@ The Juneau Icefield is a set of temperate glaciers. Much circumstantial evidence
 
 ## To do 
 ### Feb 22-26
-- [ ]
+- [ ] create Simplified (no compaction, constant water input, etc) version of RunCode
+- [x] create gaus, exp, uniform, & ice lens initial phi
 ### Feb 1-5
 - [[20210202-Tue]]: run systematically varying Q + A 
 ### Jan 25-29
