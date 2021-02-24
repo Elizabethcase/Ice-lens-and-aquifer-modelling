@@ -2,7 +2,8 @@
 
 	Created Simplified_RunCode_2020_10_20.m w/
 
-` no compaction
+```
+no compaction
 timestep is a set step, not a fraction of T
 accumulation is normalized inside function
 thetaOpt: optional 'seasonal' or 'constant' temperature cycle
@@ -14,10 +15,12 @@ phiOpt: initialized porosity profile ...
            'uniform', (=phi0), or ...
            'ice lens uni', (1 ice lens in uniform (=phi0) snowpack)...
            'ice lens exp', (1 ice lens in exponentially decreasing phi)
- R: choose vol water input from the top`
+ R: choose vol water input from the top
+ ```
 
 Temp + acc: can choose from seasonal or uniform boundary condition
-` % Temperature
+```
+% Temperature
 if strcmp('seasonal',thetaOpt)
     EbarFun = @(tau)Qbar-cos(2*pi*tau); %Q0 = 200
 elseif strcmp('constant',thetaOpt)
@@ -29,11 +32,13 @@ if strcmp('seasonal',accOpt)
     Abar = @(tau)AccumulationRate/2-AccumulationRate*sin(2*pi*tau); 
 elseif strcmp('constant',accOpt)
     Abar = @(tau)AccumulationRate; % Accumulation
-end`
+end
+```
 
 For porosity, I want to explore many options: initializing with an exponential, with a uniform profile, and then adding in an ice lens, either with a step change in porisity (ice lens..) or smoothly going to ice (gaussian function), per Colin's suggestion
 
-`% Porosity
+```
+% Porosity
 if strcmp('exponential',phiOpt)
     Lphi = 5; %almost zero by z = 20 (~=ell, quite warm, equiv to juneau, also try increasing)
     phi = phi0 .* exp(-xgrid .* ell/Lphi);
@@ -66,6 +71,7 @@ elseif strcmp('ice lens exp',phiOpt)
     zLoc = 5;
     [v,index] = min(abs(zLoc - xgrid*ell));
     phi(index:index + lensThickness) = 0;
-end `
+end 
+```
 
 Currently getting singular matrix error, probably due to how I'm initializing phi, will take another go tomorrow (Feb 24)
