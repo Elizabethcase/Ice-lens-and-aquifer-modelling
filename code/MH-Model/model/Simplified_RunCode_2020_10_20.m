@@ -3,8 +3,8 @@
 % % % simplified version of RunCode % % % % % % % % %
 
 % no compaction
-% ~~ coming soon ~~ timestep is a set step, not a fraction of T
 % accumulation is normalized inside function
+% ~~ coming soon ~~ timestep is a set step, not a fraction of T
 
 % thetaOpt: optional 'seasonal' or 'constant' temperature cycle
 % accOpt: optional 'seasonal' or 'constant' acccumulation rate
@@ -28,35 +28,43 @@ phiOpt = {'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'};
 RVol = [0, 1/40, 10/40]; % (0, 1, 10 inch/yr)
 numRuns = 0;
 
-for iTheta = 1:length(thetaOpt)
-    th = thetaOpt{iTheta};
-    for iAcc = 1:length(accOpt)
-        ac = accOpt{iAcc};
-        for iPhi = 1:length(phiOpt)
-            ph = phiOpt{iPhi};
-            for iR = 1:length(RVol)
-                rv = RVol(iR);
-                for iQ = 1:length(QbarIn)
-                    qb = QbarIn(iQ);
-                    for iA = 1:length(AIn)
-                        ai = AIn(iA);
-                        numRuns = numRuns + 1;
-                        output = main(ai, units, qb, T, th, ac, ph, rv, numRuns);
-                        reference(numRuns).numRun = output.numRun;
-                        reference(numRuns).QOpt = output.QOpt;
-                        reference(numRuns).Q = output.Q;
-                        reference(numRuns).AOpt = output.AOpt;
-                        reference(numRuns).A = output.A;
-                        reference(numRuns).phiOpt = output.phiOpt;
-                        reference(numRuns).RVol = output.RVol;
-                        reference(numRuns).date = output.date;
-                        reference(numRuns).imgFile = output.imgFile;
-                    end
-                end
-            end
-        end
-    end
-end
+ai = 0;
+qb = -1;
+th = 'constant';
+ac = 'constant';
+ph = 'gausuni';
+rv = 1;
+
+main(ai, units, qb, T, th, ac, ph, rv, numRuns);
+% for iTheta = 1:length(thetaOpt)
+%     th = thetaOpt{iTheta};
+%     for iAcc = 1:length(accOpt)
+%         ac = accOpt{iAcc};
+%         for iPhi = 1:length(phiOpt)
+%             ph = phiOpt{iPhi};
+%             for iR = 1:length(RVol)
+%                 rv = RVol(iR);
+%                 for iQ = 1:length(QbarIn)
+%                     qb = QbarIn(iQ);
+%                     for iA = 1:length(AIn)
+%                         ai = AIn(iA);
+%                         numRuns = numRuns + 1;
+%                         output = main(ai, units, qb, T, th, ac, ph, rv, numRuns);
+%                         reference(numRuns).numRun = output.numRun;
+%                         reference(numRuns).QOpt = output.QOpt;
+%                         reference(numRuns).Q = output.Q;
+%                         reference(numRuns).AOpt = output.AOpt;
+%                         reference(numRuns).A = output.A;
+%                         reference(numRuns).phiOpt = output.phiOpt;
+%                         reference(numRuns).RVol = output.RVol;
+%                         reference(numRuns).date = output.date;
+%                         reference(numRuns).imgFile = output.imgFile;
+%                     end
+%                 end
+%             end
+%         end
+%     end
+% end
 
 
 function output = main(ai, units, qb, T, th, ac, ph, rv, numRuns)
@@ -126,12 +134,12 @@ end
 if strcmp('exponential',ph)
     Lphi = 5; %almost zero by z = 20 (~=ell, quite warm, equiv to juneau, also try increasing)
     phi = phi0 .* exp(-xgrid .* ell/Lphi);
-elseif strcmp('gaussuni',ph)
+elseif strcmp('gausuni',ph)
     aG = -0.54; %phi (close to ice density)
     bG = ell/2;
     cG = 1;
     phi = phi0 + aG * exp(-((xgrid .* ell - bG).^2)./(2*cG^2));
-elseif strcmp('gaussexp',ph)
+elseif strcmp('gausexp',ph)
     Lphi = 10; %almost zero by z = 20 (~=ell, quite warm, equiv to juneau, also try increasing)
     phi = phi0 .* exp(-xgrid .* ell/Lphi);
     %currently  just constant density + gaussian, but could also add
@@ -338,25 +346,25 @@ for n = 1:Nt
         MeltRate(n)=0;
     end
     
-%     if ~mod(n,plot_amount)
-%         plot(H,xgrid,'k','linewidth',2, 'DisplayName', 'Enthalpy')
-%         hold on;
-%         plot(Theta,xgrid,'y','linewidth',2,'DisplayName','Temperature')
-%         plot(S,xgrid,'r','linewidth',2,'DisplayName','Saturation')
-%         plot(W,xgrid,'b','linewidth',2,'DisplayName','Total Water')
-%         plot(phi,xgrid,'g','linewidth',2,'DisplayName','porosity')
-%         plot(pressure,xgrid,'m','linewidth',2,'DisplayName','water pressure')
-%         plot(FmWS,xgrid,'c','linewidth',2,'DisplayName','water flux')
-%         title(num2str(n*dt))
-%         set(gca,'fontsize',18,'ydir','reverse')
-%         axis([-1 2 a b])
-%         xlabel('Normalized parameter value')
-%         ylabel('Depth')
-%         legend();
-%         drawnow;
-%         hold off;
-%         
-%     end
+    if ~mod(n,plot_amount)
+        plot(H,xgrid,'k','linewidth',2, 'DisplayName', 'Enthalpy')
+        hold on;
+        plot(Theta,xgrid,'y','linewidth',2,'DisplayName','Temperature')
+        plot(S,xgrid,'r','linewidth',2,'DisplayName','Saturation')
+        plot(W,xgrid,'b','linewidth',2,'DisplayName','Total Water')
+        plot(phi,xgrid,'g','linewidth',2,'DisplayName','porosity')
+        plot(pressure,xgrid,'m','linewidth',2,'DisplayName','water pressure')
+        plot(FmWS,xgrid,'c','linewidth',2,'DisplayName','water flux')
+        title(num2str(n*dt))
+        set(gca,'fontsize',18,'ydir','reverse')
+        axis([-1 2 a b])
+        xlabel('Normalized parameter value')
+        ylabel('Depth')
+        legend();
+        drawnow;
+        hold off;
+        
+    end
 %     
     zs = zs + SurfaceIceVelocity*dt;
     if ~mod(n,save_freq)

@@ -1,3 +1,19 @@
+### Feb 25
+
+Drawing from MH paper, use experimental parameters & boundary conditions laid out in 3.1 (rainfall onto cold snow, p5)
+
+- no accumulation
+- no compaction
+- S = 0 (dry snow at surface)
+- phi = phi0
+- T = T_inf < T_m
+
+On the other hand, while they ensure porosity is large enough that the snow never saturates, I want the snow to saturate (and can force it to saturate at the induced gaussian ice lens which has a phi \~=0.1 (or less).
+
+Just imposing a rain volume at the surface (e.g. constant influx of water), is not enough (no saturation anywhere, no evidence of surface melt input.) Need to look at ind. plots. Is the water showing up anywhere? If not, why not?
+
+![Line plot of enthalpy, temp, sat, total water, porosity, water pressure, water flux][/imgs/20210225/time_step_rain_input.png] 
+
 ### Feb 24
 
 I think the code is broken because of how I'm forcing the initialization of phi... I believe it needs to be done when setting W and H, which, at this point, just create a uniform phi of value phi0
@@ -42,6 +58,7 @@ Next up,
 - [ ] thinking about boundary conditions at the surface with rain fall (e.g. a constant water input) 
 - [ ] getting a feel for what happens as water is added at the surface with and without an ice lens
 - [ ] initialize a temperature profile that's warm at the surface, cold deeper down.
+- [ ] turn off accumulation?
 
 ### Feb 23
 
