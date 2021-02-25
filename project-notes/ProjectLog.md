@@ -14,6 +14,26 @@ Just imposing a rain volume at the surface (e.g. constant influx of water), is n
 
 <img title='line plot' alt="Line plot of enthalpy, temp, sat, total water, porosity, water pressure, water flux" src=https://github.com/Elizabethcase/Ice-lens-and-aquifer-modelling/blob/main/project-notes/imgs/20210225/time_step_rain_input.png width=50%>
 
+This plot shows, I think, that any water is freezing right at the surface (total wter > avg, porosity = 0, saturation != 0, etc). Going to turn up the temp.
+
+OK i think the issue is that the gaussian phi is undefined at the surface and base (xgrid = 1, 0) 
+
+Let me try a sharp lens. -- Didn't work
+
+OK xgrid = cell centers.. let me try defining phi using xcelledges
+nope... hmm?
+
+Actually maybe what's happening is that it's saturating at the surfce and creating a lens
+
+It's freezing/saturating faster than the wetting front.
+
+OK now
+Q = 0 (everything is isothermal)
+Not sure why saturation doesn't increase over time...
+
+<img title='isothermal with water input and ice lens' src=https://github.com/Elizabethcase/Ice-lens-and-aquifer-modelling/blob/main/project-notes/imgs/20210225/uni_ice_lens_isothermal.png width=50%>
+
+
 ### Feb 24
 
 I think the code is broken because of how I'm forcing the initialization of phi... I believe it needs to be done when setting W and H, which, at this point, just create a uniform phi of value phi0
