@@ -12,7 +12,7 @@ On the other hand, while they ensure porosity is large enough that the snow neve
 
 Just imposing a rain volume at the surface (e.g. constant influx of water), is not enough (no saturation anywhere, no evidence of surface melt input.) Need to look at ind. plots. Is the water showing up anywhere? If not, why not?
 
-<img title='line plot' alt="Line plot of enthalpy, temp, sat, total water, porosity, water pressure, water flux" src=https://github.com/Elizabethcase/Ice-lens-and-aquifer-modelling/blob/main/project-notes/imgs/20210225/time_step_rain_input.png>
+<img title='line plot' alt="Line plot of enthalpy, temp, sat, total water, porosity, water pressure, water flux" src=https://github.com/Elizabethcase/Ice-lens-and-aquifer-modelling/blob/main/project-notes/imgs/20210225/time_step_rain_input.png width=50%>
 
 ### Feb 24
 
