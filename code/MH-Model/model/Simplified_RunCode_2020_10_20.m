@@ -21,7 +21,7 @@ QbarIn = [-2,-1,-0.5]; % NOTE SAVEFIG SAVES Q AS ABS VALUE
 AIn = [0.25, 1, 2, 4];
 units='mwe';
 
-T = 20; % total simulation time (yr)
+T = 5; % total simulation time (yr)
 thetaOpt = {'constant', 'seasonal'};
 accOpt = {'constant','seasonal'}; %(snow acc.)
 phiOpt = {'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'};
@@ -29,11 +29,11 @@ RVol = [0, 1/40, 10/40]; % (0, 1, 10 inch/yr)
 numRuns = 0;
 
 ai = 0;
-qb = -1;
+qb = 0;
 th = 'constant';
 ac = 'constant';
-ph = 'gausuni';
-rv = 1;
+ph = 'ice lens uni';
+rv = 1/4;
 
 main(ai, units, qb, T, th, ac, ph, rv, numRuns);
 % for iTheta = 1:length(thetaOpt)
@@ -154,7 +154,7 @@ elseif strcmp('ice lens uni',ph)
     phi = phi0 .* ones(N,1);
     lensThickness = 2; % # spatial steps;
     zLoc = 5;
-    [v,index] = min(abs(zLoc - xgrid*ell));
+    [v,index] = min(abs(zLoc - xcelledges*ell));
     phi(index:index + lensThickness) = 0;
 elseif strcmp('ice lens exp',ph)
     Lphi = 10; %almost zero by z = 20 (~=ell, quite warm, equiv to juneau, also try increasing)
