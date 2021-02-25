@@ -1,4 +1,49 @@
-	### Feb 23
+### Feb 24
+
+I think the code is broken because of how I'm forcing the initialization of phi... I believe it needs to be done when setting W and H, which, at this point, just create a uniform phi of value phi0
+
+```
+W = (1-phi0)*ones(N,1); % take in W from above
+H = W.*Qbar; % take in H from above
+```
+
+In Appendix B, 
+
+$$ \mathcal{W} = 1 - \phi + \phi*S \text{ (total water)}$$ $$ \mathcal{H} = \mathcal{W}*\theta + \mathcal{S}*phi*S \text{ (enthalpy)}$$
+
+where
+
+$$ \mathcal{S} = \frac{\mathcal{L}}{c_p \Delta T} \text{ (Stefan number)}$$ $$ S = max\{0, \frac{\mathcal{H}}{\rho \mathcal{L} \phi}\} \text{ (saturation)} $$ $$ \phi = 1-\mathcal{W}+max\{0,\frac{\mathcal{H}}{\rho \mathcal{L}}\} \text{ (porosity)} $$
+
+Tried changing phi0 to phi
+      
+```
+W = (1-phi); % take in W from above
+H = W.*Qbar; % take in H from above
+```
+
+But this did not solve the issue. Going back to double check that code still works w/ no phi initialization.
+
+It does not.. what else have I broken? OK.
+
+OK I had changed `dt` to be a timestep (instead of a fraction of the total time), but hadn't updated the rest of the code. That was breaking.
+
+`W = (1-phi)` is still a more consistent way of initializing phi than forcing it with 
+
+```
+if n == 1
+	phi_nm1 = phi;
+end
+```
+
+And this seems to work! or at least run, and the normalized values look reasonable. Reaches steady state by ~ 10 yrs. (accumulation and temperature are constant, compaction is off, no water input, so porosity goes to phi0 as expected)
+
+Next up, 
+- [ ] thinking about boundary conditions at the surface with rain fall (e.g. a constant water input) 
+- [ ] getting a feel for what happens as water is added at the surface with and without an ice lens
+- [ ] initialize a temperature profile that's warm at the surface, cold deeper down.
+
+### Feb 23
 
 	Created Simplified_RunCode_2020_10_20.m w/
 

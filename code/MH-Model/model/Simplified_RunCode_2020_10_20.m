@@ -1,9 +1,9 @@
-
-% % % ---DOES NOT WORK YET--- % % %
+% % % ---WORK IN PROGRESS--- % % %
+% % % last updated: 2021/02/24
 % % % simplified version of RunCode % % % % % % % % %
 
 % no compaction
-% timestep is a set step, not a fraction of T
+% ~~ coming soon ~~ timestep is a set step, not a fraction of T
 % accumulation is normalized inside function
 
 % thetaOpt: optional 'seasonal' or 'constant' temperature cycle
@@ -17,21 +17,49 @@
 %           'ice lens exp', (1 ice lens in exponentially decreasing phi)
 % R: choose vol water input from the top
 
-% february 23 2021 
-
-QbarIn = -0.5;
-AIn = 1;
+QbarIn = [-2,-1,-0.5]; % NOTE SAVEFIG SAVES Q AS ABS VALUE
+AIn = [0.25, 1, 2, 4];
 units='mwe';
 
-T = 40; % total simulation time (yr)
-thetaOpt = 'constant'; % 'seasonal'
-accOpt = 'constant'; % 'seasonal' (snow acc.)
-phiOpt = 'exponential'; % 'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'
-RVol = 0;
+T = 20; % total simulation time (yr)
+thetaOpt = {'constant', 'seasonal'};
+accOpt = {'constant','seasonal'}; %(snow acc.)
+phiOpt = {'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'};
+RVol = [0, 1/40, 10/40]; % (0, 1, 10 inch/yr)
+numRuns = 0;
 
-main(AIn, units, QbarIn, T, thetaOpt, accOpt, phiOpt, RVol)
+for iTheta = 1:length(thetaOpt)
+    th = thetaOpt{iTheta};
+    for iAcc = 1:length(accOpt)
+        ac = accOpt{iAcc};
+        for iPhi = 1:length(phiOpt)
+            ph = phiOpt{iPhi};
+            for iR = 1:length(RVol)
+                rv = RVol(iR);
+                for iQ = 1:length(QbarIn)
+                    qb = QbarIn(iQ);
+                    for iA = 1:length(AIn)
+                        ai = AIn(iA);
+                        numRuns = numRuns + 1;
+                        output = main(ai, units, qb, T, th, ac, ph, rv, numRuns);
+                        reference(numRuns).numRun = output.numRun;
+                        reference(numRuns).QOpt = output.QOpt;
+                        reference(numRuns).Q = output.Q;
+                        reference(numRuns).AOpt = output.AOpt;
+                        reference(numRuns).A = output.A;
+                        reference(numRuns).phiOpt = output.phiOpt;
+                        reference(numRuns).RVol = output.RVol;
+                        reference(numRuns).date = output.date;
+                        reference(numRuns).imgFile = output.imgFile;
+                    end
+                end
+            end
+        end
+    end
+end
 
-function main(AIn, units, QbarIn, T, thetaOpt, accOpt, phiOpt, RVol)
+
+function output = main(ai, units, qb, T, th, ac, ph, rv, numRuns)
 
 % % Physical Parameters % % % % % % % % % % % % % % %
 B = 260; % bond number
@@ -44,22 +72,22 @@ alpha = 1; % exponent of capillary pressure
 beta = 2; % saturation flux exponent
 ell = 20.6; % firn melting lengthscale
 Q0 = 200; %energy forcing %W m-2 or kg s-3
-t0 = 365.25 * 24 * 3600; %seconds per year
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Simulation Parameters % % % % % % % % % % % % % %
 plot_amount = 10000; % time between each plot s
 save_freq = 100; % frequency at which plots are saved
 phi0 = 0.64; % surface porosity
-metersofsnow = normalizedaccumulation(AIn, units, Q0, phi0);
+metersofsnow = normalizedaccumulation(ai, units, Q0, phi0);
 AccumulationRate = metersofsnow*(1-phi0); %metersofsnow*(1-phi0); % m snow / yr 
-Qbar = QbarIn; %; % surface energy flux normalized by ? 
+Qbar = qb; %; % surface energy flux normalized by ? 
 type = 'none'; %none, poreclosure
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Discretization % % % % % % % % % % % % % % % % % %
 dx = 10^(-2); 
-dt = 10800; %s (10800 = 3 hours)   
+dt = 10^(-4); % would like to change to a time step, e.g. 10800; %s (10800 = 3 hours)   
 % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 % Mesh Information
@@ -71,7 +99,7 @@ xcelledges = linspace(a,b,N+1)'; % Cell edges
 xgrid = (xcelledges(1:N)+xcelledges(2:(N+1)))/2; % Cell centers
 
 % Time step information
-Nt = round(T*t0/dt); % Number of timesteps
+Nt = round(T/dt); % Number of timesteps
 
 % Functions
 k = @(p) p.^(3); % Simple Carmen-Kozeny
@@ -80,30 +108,30 @@ pc = @(s) s.^(-alpha); % capillary pressure
 kr_pc_prime = @(s) -alpha.*(s.^(beta-(alpha+1))); % combined function
 
 % Temperature
-if strcmp('seasonal',thetaOpt)
+if strcmp('seasonal',th)
     EbarFun = @(tau)Qbar-cos(2*pi*tau); %Q0 = 200
-elseif strcmp('constant',thetaOpt)
+elseif strcmp('constant',th)
     EbarFun = @(tau) Qbar;
 end
 
 % Accumulation
-if strcmp('seasonal',accOpt)
+if strcmp('seasonal',ac)
     % Very simple seasonal accumulation (max in winter, min in summer)
     Abar = @(tau)AccumulationRate/2-AccumulationRate*sin(2*pi*tau); 
-elseif strcmp('constant',accOpt)
+elseif strcmp('constant',ac)
     Abar = @(tau)AccumulationRate; % Accumulation
 end
 
 % Porosity
-if strcmp('exponential',phiOpt)
+if strcmp('exponential',ph)
     Lphi = 5; %almost zero by z = 20 (~=ell, quite warm, equiv to juneau, also try increasing)
     phi = phi0 .* exp(-xgrid .* ell/Lphi);
-elseif strcmp('gaussuni',phiOpt)
+elseif strcmp('gaussuni',ph)
     aG = -0.54; %phi (close to ice density)
     bG = ell/2;
     cG = 1;
     phi = phi0 + aG * exp(-((xgrid .* ell - bG).^2)./(2*cG^2));
-elseif strcmp('gaussexp',phiOpt)
+elseif strcmp('gaussexp',ph)
     Lphi = 10; %almost zero by z = 20 (~=ell, quite warm, equiv to juneau, also try increasing)
     phi = phi0 .* exp(-xgrid .* ell/Lphi);
     %currently  just constant density + gaussian, but could also add
@@ -112,15 +140,15 @@ elseif strcmp('gaussexp',phiOpt)
     bG = ell/2;
     cG = 1;
     phi = phi + aG * exp(-((xgrid .* ell - bG).^2)./(2*cG^2));
-elseif strcmp('uniform',phiOpt)
+elseif strcmp('uniform',ph)
     phi = phi0 .* ones(N,1); 
-elseif strcmp('ice lens uni',phiOpt)
+elseif strcmp('ice lens uni',ph)
     phi = phi0 .* ones(N,1);
     lensThickness = 2; % # spatial steps;
     zLoc = 5;
     [v,index] = min(abs(zLoc - xgrid*ell));
     phi(index:index + lensThickness) = 0;
-elseif strcmp('ice lens exp',phiOpt)
+elseif strcmp('ice lens exp',ph)
     Lphi = 10; %almost zero by z = 20 (~=ell, quite warm, equiv to juneau, also try increasing)
     phi = phi0 .* exp(-xgrid .* ell/Lphi);
     lensThickness = 2; % # spatial steps;
@@ -131,11 +159,11 @@ end
     
 %Surface water flux
 
-Rbar = RVol; %8.05 * 10^-10; %0; % fixed surface water flux (rain)
+Rbar = rv; %fixed surface water flux (rain, mwe yr-1)
 
 pressure0 = -(pc(1)/B)*ones(N,1); % initial pressure
 zs = 0; % zero initial surface height
-W = (1-phi0)*ones(N,1); % take in W from above
+W = (1-phi); % take in W from above
 H =  W.*Qbar; % take in H from above
 
 % Initialize variables
@@ -151,9 +179,9 @@ for n = 1:Nt
     [Theta_nm1,phi_nm1,S_nm1] = conversiontotemperature(H_nm1,W_nm1,Stefan);
 
     % use initial phi
-    if n == 1
-        phi_nm1 = phi;
-    end
+%     if n == 1
+%         phi_nm1 = phi;
+%     end
     
     % % Theta is temperature % phi is porosity % S is saturation % %
     
@@ -310,25 +338,25 @@ for n = 1:Nt
         MeltRate(n)=0;
     end
     
-    if ~mod(n,plot_amount)
-        plot(H,xgrid,'k','linewidth',2, 'DisplayName', 'Enthalpy')
-        hold on;
-        plot(Theta,xgrid,'y','linewidth',2,'DisplayName','Temperature')
-        plot(S,xgrid,'r','linewidth',2,'DisplayName','Saturation')
-        plot(W,xgrid,'b','linewidth',2,'DisplayName','Total Water')
-        plot(phi,xgrid,'g','linewidth',2,'DisplayName','porosity')
-        plot(pressure,xgrid,'m','linewidth',2,'DisplayName','water pressure')
-        plot(FmWS,xgrid,'c','linewidth',2,'DisplayName','water flux')
-        title(num2str(n*dt))
-        set(gca,'fontsize',18,'ydir','reverse')
-        axis([-1 2 a b])
-        xlabel('Normalized parameter value')
-        ylabel('Depth')
-        legend();
-        drawnow;
-        hold off;
-        
-    end
+%     if ~mod(n,plot_amount)
+%         plot(H,xgrid,'k','linewidth',2, 'DisplayName', 'Enthalpy')
+%         hold on;
+%         plot(Theta,xgrid,'y','linewidth',2,'DisplayName','Temperature')
+%         plot(S,xgrid,'r','linewidth',2,'DisplayName','Saturation')
+%         plot(W,xgrid,'b','linewidth',2,'DisplayName','Total Water')
+%         plot(phi,xgrid,'g','linewidth',2,'DisplayName','porosity')
+%         plot(pressure,xgrid,'m','linewidth',2,'DisplayName','water pressure')
+%         plot(FmWS,xgrid,'c','linewidth',2,'DisplayName','water flux')
+%         title(num2str(n*dt))
+%         set(gca,'fontsize',18,'ydir','reverse')
+%         axis([-1 2 a b])
+%         xlabel('Normalized parameter value')
+%         ylabel('Depth')
+%         legend();
+%         drawnow;
+%         hold off;
+%         
+%     end
 %     
     zs = zs + SurfaceIceVelocity*dt;
     if ~mod(n,save_freq)
@@ -404,8 +432,17 @@ xlabel('$t$ (yr)','interpreter','latex','fontsize',20)
 ylabel('$Z$ (m)','interpreter','latex','fontsize',20)
 axis([0 T 0 zmax])
 
-sgtitle(['Qbar = ' num2str(Qbar) ', A = ' num2str(metersofsnow) ', type = ' type])
+sgtitle(sprintf(['T = ' th ', Qbar = ' num2str(qb*Q0) '\nA = ' num2str(ai) ' mwe, ' ac '\n phiInit = ' ph '\n RVol = ' num2str(rv)]))
 
-savefig([num2str(NumRuns) '_type_' type '_' datestr(now,'mmddyyHH')]);
+output.numRun = numRuns;
+output.QOpt = th;
+output.Q = qb;
+output.AOpt = ac;
+output.A = ai;
+output.phiOpt = ph;
+output.RVol = rv;
+output.date = datestr(now,'yymmdd');
+output.imgFile = [datestr(now,'yymmdd') '_' num2str(numRuns) '.fig'];
 
+savefig([datestr(now,'yymmdd') '_' num2str(numRuns)]);
 end
