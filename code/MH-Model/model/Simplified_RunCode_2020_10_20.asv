@@ -353,11 +353,11 @@ for n = 1:Nt
         plot(FmWS,xgrid,'c','linewidth',2,'DisplayName','water flux')
         title(num2str(n*dt))
         set(gca,'fontsize',18,'ydir','reverse')
-        axis([0 2 a b])
+        axis([ 2 a b])
         xlabel('Normalized parameter value')
         ylabel('Depth')
         
-        %legend();
+        legend();
         drawnow;
         hold off;
         
