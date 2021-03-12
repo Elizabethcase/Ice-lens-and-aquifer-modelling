@@ -1,3 +1,4 @@
+% % % OLD CODE. USE SIMPLIFIED_RUNCODE_UPDATE.m INSTEAD. % % %
 % % % ---WORK IN PROGRESS--- % % %
 % % % last updated: 2021/02/24
 % % % simplified version of RunCode % % % % % % % % %
@@ -154,7 +155,7 @@ elseif strcmp('ice lens uni',ph)
     phi = phi0 .* ones(N,1);
     lensThickness = 2; % # spatial steps;
     zLoc = 5;
-    [v,index] = min(abs(zLoc - xcelledges*ell));
+    v,index] = min(abs(zLoc - xcelledges*ell));
     phi(index:index + lensThickness) = 0;
 elseif strcmp('ice lens exp',ph)
     Lphi = 10; %almost zero by z = 20 (~=ell, quite warm, equiv to juneau, also try increasing)
