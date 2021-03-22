@@ -6,25 +6,26 @@ AIn = 0;
 units = 'mwe';
 
 
-T = 10; % total simulation time (yr)
+T = .17; % total simulation time (yr)
+thetaInitOpt = {'constantiso','tanh'};
 thetaOpt = {'constant', 'seasonal'};
 accOpt = {'constant','seasonal'}; %(snow acc.)
-phiOpt = {'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'};
+phiOpt = {'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp', 'uniform'};
 RVol = [0, 1/40, 10/40]; % (0, 1, 10 inch/yr)
 numRuns = 0;
 
-ai = 0.5;
-qb = 0;
+ai = 0; %accumulation rate in m / year
+qb = 0; %average Qbar or surface Qbar, depending on ti
+ti = 'tanh';%'tanh';
 th = 'constant';
-ac = 'seasonal';
-ph = 'gausexp';
-rv = 0.1;
+ac = 'constant';
+ph = 'uniform';
+rv = .1;
 rt = 'constant'; 
 
-main(ai, units, qb, T, th, ac, ph, rv, rt, numRuns);
+main(T, ai, ac, units, qb, th, ti, ph, rv, rt, numRuns);
 
-function output = main(ai, units, qb, T, th, ac, ph, rv, rt, numRuns)
-
+function output = main(T, ai, ac, units, qb, th, ti, ph, rv, rt, numRuns)
 % % Physical Parameters % % % % % % % % % % % % % % %
 B = 260; % bond number
 Stefan = 12; % stefan number
@@ -40,8 +41,8 @@ h = 14.8; %effective heat transfer coefficient
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Simulation Parameters % % % % % % % % % % % % % %
-plot_amount = 1000; % time between each plot
-save_freq = 1000; % frequency at which plots are saved
+plot_amount = 10; % time between each plot
+save_freq = 10; % frequency at which plots are saved
 phi0 = 0.64; % surface porosity
 metersofsnow = normalizedaccumulation(ai, units, Q0, phi0);
 AccumulationRate = metersofsnow*(1-phi0); % accumulation rate
@@ -50,8 +51,8 @@ type = 'none';
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Discretization % % % % % % % % % % % % % %
-dx = 10^(-2);
-dt = 10^(-4);
+dx = .005; %10^(-2);
+dt = 5.0e-5;%10^(-4);
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
@@ -72,11 +73,22 @@ kr = @(s) s.^beta; % relative permeability with saturation
 pc = @(s) s.^(-alpha); % capillary pressure
 kr_pc_prime = @(s) -alpha.*(s.^(beta-(alpha+1))); % combined function
 
-% Temperature
+% Surface energy balance
 if strcmp('seasonal',th)
     EbarFun = @(tau)Qbar-cos(2*pi*tau); %Q0 = 200
 elseif strcmp('constant',th)
     EbarFun = @(tau) Qbar;
+end
+
+% Temeperature of firn column
+if strcmp (ti, 'constantiso')
+    theta0 = 0; 
+elseif strcmp(ti, 'tanh')
+    start = 0;
+    range = 20;
+    z = linspace(pi, -pi, length(xgrid));
+    theta0 = range/2*tanh(z) + (start-range/2);
+    theta0 = theta0';
 end
 
 % Accumulation
@@ -129,12 +141,12 @@ elseif strcmp(rt,'seasonal')
     Rbar = @(tau)rv-rv*cos(2*pi*tau); %high in summer, zero in winter
 end
 
+
 % Initial values
 
 pressure0 = -(pc(1)/B)*ones(N,1); % initial pressure
 zs = 0; % zero initial surface height
 S0 = zeros(N,1);
-theta0=0;
 %phi = phi0*(1-0.99*exp(-(xgrid-0.5).^2/0.005));
 W = 1-phi+phi.*S0; % take in W from above
 H =  W.*theta0+Stefan.*phi.*S0; % take in H from above
@@ -310,21 +322,22 @@ for n = 1:Nt
         MeltRate(n)=0;
     end
     
-%     if ~mod(n,plot_amount)
-%         plot(H,xgrid,'k','linewidth',2)
-%         hold on;
-%         plot(Theta,xgrid,'y','linewidth',2)
-%         plot(S,xgrid,'r','linewidth',2)
-%         plot(W,xgrid,'b','linewidth',2)
-%         plot(phi,xgrid,'g','linewidth',2)
-%         plot(pressure,xgrid,'m','linewidth',2)
-%         plot(FmWS,xgrid,'c','linewidth',2)
-%         title(num2str(n*dt))
-%         set(gca,'fontsize',18,'ydir','reverse')
-%         axis([-1 2 a b])
-%         drawnow;
-%         hold off;
-%     end
+    if ~mod(n,plot_amount)
+        plot(H,xgrid,'k','linewidth',2,'DisplayName','Enthalpy')
+        hold on;
+        plot(Theta,xgrid,'y','linewidth',2,'DisplayName','Temperature')
+        plot(S,xgrid,'r','linewidth',2,'DisplayName','Saturation')
+        plot(W,xgrid,'b','linewidth',2,'DisplayName','Total Water')
+        plot(phi,xgrid,'g','linewidth',2,'DisplayName','Porosity')
+        plot(pressure,xgrid,'m','linewidth',2,'DisplayName','Pressure')
+        plot(FmWS,xgrid,'c','linewidth',2,'DisplayName','Flux')
+        title(num2str(n*dt))
+        set(gca,'fontsize',18,'ydir','reverse')
+        axis([-1 2 a b])
+        drawnow;
+        hold off;
+        legend()
+    end
     
     zs = zs + SurfaceIceVelocity*dt;
     if ~mod(n,save_freq)
