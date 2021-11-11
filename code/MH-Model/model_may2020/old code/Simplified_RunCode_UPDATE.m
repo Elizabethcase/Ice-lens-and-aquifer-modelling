@@ -6,26 +6,26 @@ AIn = 0;
 units = 'mwe';
 
 
-T = 1; % total simulation time (yr)
+T = 10; % total simulation time (yr)
+thetaInitOpt = {'constant','tanh'};
 thetaOpt = {'constant', 'seasonal'};
 accOpt = {'constant','seasonal'}; %(snow acc.)
 phiOpt = {'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'};
 RVol = [0, 1/40, 10/40]; % (0, 1, 10 inch/yr)
 numRuns = 0;
 
-ai = 0;
-qb = 0;
-ti = 'tanh'; %constantiso or tanh
-th = 'constant'; %constant or seasonal
-ac = 'constant'; %constant or seasonal
-ph = 'gausexp'; %'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'
+ai = 0.5; %accumulation rate in m / year
+qb = 0; %average Qbar or surface Qbar, depending on ti
+ti = 'constant';%'tanh';
+th = 'constant';
+ac = 'seasonal';
+ph = 'gausexp';
 rv = 0.1;
-rt = 'constant'; 
+rt = 'constant';
 
-main(ai, units, qb, T, th, ac, ti, ph, rv, rt, numRuns);
+main(T, ai, ac, units, qb, th, ti, ph, rv, rt, numRuns);
 
-function output = main(ai, units, qb, T, th, ac, ti, ph, rv, rt, numRuns)
-
+function output = main(T, ai, ac, units, qb, th, ti, ph, rv, rt, numRuns)
 % % Physical Parameters % % % % % % % % % % % % % % %
 B = 260; % bond number
 Stefan = 12; % stefan number
@@ -37,7 +37,7 @@ alpha = 1; % exponent of capillary pressure
 beta = 2; % saturation flux exponent
 ell = 20.6; % firn melting lengthscale
 Q0 = 200; %energy forcing normalization %W m-2 or kg s-3
-h = 14.8; %effective heat transfer coefficient 
+h = 14.8; %effective heat transfer coefficient
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Simulation Parameters % % % % % % % % % % % % % %
@@ -80,20 +80,17 @@ elseif strcmp('constant',th)
     EbarFun = @(tau) Qbar;
 end
 
-%Temperature of firn column
-if strcmp(ti, 'constantiso')
+% Temeperature of firn column
+if strcmp (ti, 'constantiso')
     theta0 = 0;
 elseif strcmp(ti, 'tanh')
-    start=0;
-    range=20;
-    z=linspace(pi, -pi, length(xgrid));
-    theta0 = range/2*tanh(z) + (start-range/2);
-    theta0 = theta0';
+    start = 0;
+    range = 20;
 
 % Accumulation
 if strcmp('seasonal',ac)
     % Very simple seasonal accumulation (max in winter, min in summer)
-    Abar = @(tau)AccumulationRate+AccumulationRate*cos(2*pi*tau); 
+    Abar = @(tau)AccumulationRate+AccumulationRate*cos(2*pi*tau);
 elseif strcmp('constant',ac)
     Abar = @(tau)AccumulationRate; % Accumulation
 end
@@ -117,7 +114,7 @@ elseif strcmp('gausexp',ph)
     cG = 1;
     phi = phi + aG * exp(-((xgrid .* ell - bG).^2)./(2*cG^2));
 elseif strcmp('uniform',ph)
-    phi = phi0 .* ones(N,1); 
+    phi = phi0 .* ones(N,1);
 elseif strcmp('ice lens uni',ph)
     phi = phi0 .* ones(N,1);
     lensThickness = 2; % # spatial steps;
@@ -140,6 +137,7 @@ elseif strcmp(rt,'seasonal')
     Rbar = @(tau)rv-rv*cos(2*pi*tau); %high in summer, zero in winter
 end
 
+
 % Initial values
 
 pressure0 = -(pc(1)/B)*ones(N,1); % initial pressure
@@ -159,7 +157,7 @@ for n = 1:Nt
     % convert to Theta, phi, and S
     [Theta_nm1,phi_nm1,S_nm1] = conversiontotemperature(H_nm1,W_nm1,Stefan);
     % % Theta is temperature % phi is porosity % S is saturation % %
-    
+
     % Compute Compaction Velocity
     Shear = CompactionFunction(xgrid,W_nm1,phi_nm1,Theta_nm1,A,nglen,Abar(n*dt),type);
     CompactionVelocity = cumtrapz(xcelledges,[Shear; Shear(end)]);
@@ -168,118 +166,118 @@ for n = 1:Nt
         SurfaceIceVelocity = (Abar(n*dt)./(1-phi_nm1(1)))- MeltRate(max(n-1,1));
     end
     IceVelocity = SurfaceIceVelocity*ones(N+1,1)-CompactionVelocity;
-    
+
     %%%% FLUX CALC STARTS HERE %%%%
-    
-    
+
+
     % % Total Water % %
     % Ice Advective flux;
     [FadvIpW,FadvImW] = AdvectiveFlux(N,IceVelocity,W_nm1);
-    
+
     % Saturation Advective flux;
     SaturationVelocity = ones(N+1,1);
     [fadvSp,fadvSm] = AdvectiveFlux(N,SaturationVelocity,k(phi_nm1).*kr(S_nm1));
     FadvSp = U*fadvSp;
     FadvSm = U*fadvSm;
-    
+
     % Diffusive flux
     [FpD,FmD] = SaturationDiffusiveFlux(@(x,y)k(x).*kr_pc_prime(y),phi_nm1,S_nm1,dt,dx,U/B);
-    
+
     % No diffusive flux boundary condition
     FpD(end)=0;
-    
+
     % Total water saturation flux
     FpWS = FadvSp+FpD;
     FmWS = FadvSm+FmD;
-    
+
     % Total fluxes
     FpW = FadvIpW+FpWS; FmW = FadvImW+FmWS;
     FmW(1) = Abar(n*dt)+Rbar(n*dt); % accumulation and rain :: - RO(max(n-1,1))
     Fdif = FpW-FmW;
     W = W_nm1-(dt/dx)*Fdif;
-    
+
     % % Enthalpy % %
     % Ice Advective flux;
     [FadvIpH,FadvImH] = AdvectiveFlux(N,IceVelocity,H_nm1);
-    
+
     % Saturation Advective flux;
     SaturationVelocity = ones(N+1,1);
     [fadvSp,fadvSm] = AdvectiveFlux(N,SaturationVelocity,k(phi_nm1).*kr(S_nm1));
     FadvSp = U*Stefan*fadvSp;
     FadvSm = U*Stefan*fadvSm;
-    
+
     % Enthalpy/Saturation Diffusive flux
     [FpE,FmE] = EnthalpyDiffusiveFlux(@(x,y)k(x).*kr_pc_prime(y),Theta_nm1,phi_nm1,S_nm1,dt,dx,U/B,Stefan);
-    
+
     % Temperature Diffusive flux
     [FpT,FmT] = TemperatureDiffusiveFlux(W_nm1,Theta_nm1,dt,dx,1/Pe);
-    
+
     % No diffusive flux boundary condition
     FpT(end) = 0; FpE(end) = 0;
-    
+
     % Total saturation flux
     FpS = FpE+FadvSp; FmS = FmE+FadvSm;
-    
+
     % Total Saturation and Temperature fluxes
     Fp = FadvIpH+FpS+FpT; Fm = FadvImH+FmS+FmT;
     Fm(1)=Stefan*(EbarFun(n*dt)-Theta_nm1(1))+Stefan*Rbar(n*dt); % Enthalpy neumann conditions
     Fdif = Fp-Fm;
     H = H_nm1-(dt/dx)*Fdif;
-    
+
     % Compute fully saturated water pressure
     I = S_nm1>=1;
     if I(I)
         [qp,qm,pressure] = FullySaturatedWaterPressure(U,k,pressure0,dx,xgrid,N,A,phi_nm1,W_nm1,Theta_nm1,nglen,I,Abar(n*dt),type);
         if 1
             slocations = find(I(2:(N-1)))+1;
-            for i = slocations' % *facepalm*               
+            for i = slocations' % *facepalm*
                 if and(S_nm1(i-1)~=1,S_nm1(i)==1) % unsat(i-1)/sat(i)
-                    
+
                     % Total Water
-                    
+
                     if min(qp(i-1),FpWS(i-1)) == qp(i-1)
                         disp('min - ps')
                         disp(['qp = ' num2str(qp(i-1)) ' | up = ' num2str(FpWS(i-1))]);
-                    else 
+                    else
                         disp('min - pu')
                     end
                     if min(qm(i),FmWS(i)) == qm(i)
                         disp('min - ms')
-                        disp(['qm = ' num2str(qm(i)) ' | um = ' num2str(FmWS(i))]);                        
-                    else 
+                        disp(['qm = ' num2str(qm(i)) ' | um = ' num2str(FmWS(i))]);
+                    else
                         disp('min - mu')
                     end
-                    
+
                     FpWS(i-1) = min(qp(i-1),FpWS(i-1));
-                    FmWS(i) = min(qm(i),FmWS(i));  
-                    
+                    FmWS(i) = min(qm(i),FmWS(i));
+
                     % Enthalpy
                     FpS(i-1) = min(Stefan*qp(i-1),FpS(i-1)); % use minimum
                     FmS(i) = min(Stefan*qm(i),FmS(i)); % use minimum
-                    
+
                     if and(S_nm1(i)==1,S_nm1(i+1)==1) % sat(i)/sat(i+1)
-                       
+
                         % Total Water
                         FpWS(i) = qp(i); % use q
                         FmWS(i+1) = qm(i+1); % use q
                         % Enthalpy
                         FpS(i) = Stefan*qp(i); % use q
-                        FmS(i+1) = Stefan*qm(i+1); % use q    
-                        
+                        FmS(i+1) = Stefan*qm(i+1); % use q
+
                     elseif and(S_nm1(i)==1,S_nm1(i+1)~=1) % sat(i)/unsat(i+1)
 
                         if max(qp(i),FpWS(i)) == qp(i)
                             disp('max - ps')
                             disp(['qp = ' num2str(qp(i)) ' | up = ' num2str(FpWS(i))]);
-                        else 
+                        else
                             disp('max - pu')
                         end
 
                         if max(qm(i+1),FmWS(i+1)) == qm(i+1)
                             disp('max - ms')
-                            disp(['qm = ' num2str(qm(i+1)) ' | um = ' num2str(FmWS(i+1))]);   
-                        else 
-                            disp('max - mu')     
+                            disp(['qm = ' num2str(qm(i+1)) ' | um = ' num2str(FmWS(i+1))]);
+                        else
+                            disp('max - mu')
                         end
                         disp('--')
                          % Total Water
@@ -287,39 +285,39 @@ for n = 1:Nt
                         FmWS(i+1) = max(qm(i+1),FmWS(i+1)); % use maximum
                         % Enthalpy
                         FpS(i) = max(Stefan*qp(i),FpS(i)); % use maximum
-                        FmS(i+1) = max(Stefan*qm(i+1),FmS(i+1)); % use maximum                         
+                        FmS(i+1) = max(Stefan*qm(i+1),FmS(i+1)); % use maximum
                     end
-                        
+
                 elseif and(S_nm1(i)==1,S_nm1(i+1)==1) % sat(i)/sat(i+1)
                     FpWS(i) = qp(i); % use q
                     FmWS(i+1) = qm(i+1); % use q
                     % Enthalpy
                     FpS(i) = Stefan*qp(i); % use q
                     FmS(i+1) = Stefan*qm(i+1); % use q
-                    
+
                 elseif and(S_nm1(i)==1,S_nm1(i+1)~=1) % sat(i)/unsat(i+1)
                     % Total Water
 
                         if max(qp(i),FpWS(i)) == qp(i)
                             disp('max - ps')
                             disp(['qp = ' num2str(qp(i)) ' | up = ' num2str(FpWS(i))]);
-                        else 
+                        else
                             disp('max - pu')
                         end
 
                         if max(qm(i+1),FmWS(i+1)) == qm(i+1)
                             disp('max - ms')
-                            disp(['qm = ' num2str(qm(i+1)) ' | um = ' num2str(FmWS(i+1))]);   
-                        else 
-                            disp('max - mu')     
-                        end   
+                            disp(['qm = ' num2str(qm(i+1)) ' | um = ' num2str(FmWS(i+1))]);
+                        else
+                            disp('max - mu')
+                        end
                     FpWS(i) = min(qp(i),FpWS(i)); % use maximum
                     FmWS(i+1) = min(qm(i+1),FmWS(i+1)); % use maximum
                     % Enthalpy
                     FpS(i) = min(Stefan*qp(i),FpS(i)); % use maximum
-                    FmS(i+1) = min(Stefan*qm(i+1),FmS(i+1)); % use maximum 
-                end       
-                
+                    FmS(i+1) = min(Stefan*qm(i+1),FmS(i+1)); % use maximum
+                end
+
             end
             % Fix flux at surface for full saturation
         elseif 0
@@ -335,7 +333,7 @@ for n = 1:Nt
             FpWS(N) = qp(N);
             FpS(N) = Stefan*qp(N);
         end
-        
+
         % Total Water
         if I(1)
             FpW = FadvIpW+FpWS; FmW = FadvImW+FmWS;
@@ -360,7 +358,7 @@ for n = 1:Nt
         if RunOff_flag
             W(1)=1;
         end
-        
+
         % Enthalpy
         Fp = FadvIpH+FpS+FpT; Fm = FadvImH+FmS+FmT;
         if ~RunOff_flag
@@ -375,7 +373,7 @@ for n = 1:Nt
     end
     [Theta,phi,S] = conversiontotemperature(H,W,Stefan);
     [H,W] = conversiontoenthalpy(Theta,phi,S,Stefan);
-    
+
     % Compute surface melt rate
     Tsurf(n) = Theta(1);
     DiffusiveFlux = -(2/(Pe*dx))*(((1./W(1))+(1./W(2))).^(-1))*(Theta(2)-Theta(1));
@@ -387,7 +385,7 @@ for n = 1:Nt
     else
         MeltRate(n)=0;
     end
-    
+
 %     if ~mod(n,plot_amount)
 %         plot(H,xgrid,'k','linewidth',2)
 %         hold on;
@@ -403,7 +401,7 @@ for n = 1:Nt
 %         drawnow;
 %         hold off;
 %     end
-    
+
     zs = zs + SurfaceIceVelocity*dt;
     if ~mod(n,save_freq)
         disp(['prog... ' num2str(round(n/save_freq))])
