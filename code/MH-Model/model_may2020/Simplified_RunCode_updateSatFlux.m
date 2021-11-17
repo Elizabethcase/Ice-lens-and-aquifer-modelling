@@ -1,32 +1,34 @@
 % script to run code
 clearvars; close all; clc;
 
-QBarIn = 0;
-AIn = 0;
 units = 'mwe';
-T = 1; % total simulation time (yr)
+T = 8; % total simulation time (yr)
 
 %lists options for seasonality & intialization
 thetaOpt = {'constant', 'seasonal'}; %(temperature seasonality)
 thetaIOpt = {'uniiso', 'tanh', 'gausiso'}; %uniiso = uniform & isothermal; tanh and gausiso both can be customized below
 accOpt = {'constant','seasonal'}; %(snow acc. seasonality)
 phiOpt = {'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'}; % porosity initialization
-
+rcOpt = {'constant','seasonal','startstop'};
 numRuns = 0;
 
 %sets input for model
-ai = 0; %accumulation rate
-qb = 0; % surface energy balance
-ti = 'gausiso'; %temperature initialization uniiso, tanh, gausiso
-th = 'constant'; %temperature seasonality - constant or seasonal (highest in summer)
-ac = 'constant'; %accumulation seasonality - constant or seasonal (largest in winter)
+ai = 2; %accumulation rate
+qb = -0.6; % surface energy balance
+qb_offset = -.3; % to allow for avg temp < 0 (or >)
+ti = 'tanh'; %temperature initialization uniiso, tanh, gausiso
+th = 'seasonal'; %temperature seasonality - constant or seasonal (highest in summer)
+ac = 'seasonal'; %accumulation seasonality - constant or seasonal (largest in winter)
 ph = 'exponential'; %porosity initialization - 'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'
-rv = 0.1; %[0, 1/40, 10/40] = [0, 1, 10] inch/yr
-rt = 'constant';  %rain seasonality, constant or seasonal (largest in summer)
+rv = 0; %[0, 1/40, 10/40] = [0, 1, 10] inch/yr
+rt = 'seasonal';  %rain seasonality, constant, seasonal, startstop = stops at set point through run
+ctype = 'none'; %poreclosure, empirical
 
-main(ai, units, qb, T, th, ac, ti, ph, rv, rt, numRuns);
+main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns);
 
-function output = main(ai, units, qb, T, th, ac, ti, ph, rv, rt, numRuns)
+function output = main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns)
+
+global B Stefan U A nglen Pe alpha beta ell Q0 h phi0 rhoi
 
 % % Physical Parameters % % % % % % % % % % % % % % %
 B = 260; % bond number
@@ -40,6 +42,7 @@ beta = 2; % saturation flux exponent
 ell = 20.6; % firn melting lengthscale
 Q0 = 200; %energy forcing normalization %W m-2 or kg s-3
 h = 14.8; %effective heat transfer coefficient 
+rhoi = 917; % ice density
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Simulation Parameters % % % % % % % % % % % % % %
@@ -49,7 +52,7 @@ phi0 = 0.64; % surface porosity
 metersofsnow = normalizedaccumulation(ai, units, Q0, phi0);
 AccumulationRate = metersofsnow*(1-phi0); % accumulation rate
 Qbar = qb; % surface energy flux
-type = 'none';
+CompactionType = ctype;
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Discretization % % % % % % % % % % % % % %
@@ -77,7 +80,8 @@ kr_pc_prime = @(s) -alpha.*(s.^(beta-(alpha+1))); % combined function
 
 % Surface energy balance
 if strcmp('seasonal',th)
-    EbarFun = @(tau)Qbar-Qbar*cos(2*pi*tau); %Q0 = 200; should this be Qbar-cos(2*pi*tau) ?
+    %EbarFun = @(tau)Qbar-(Qbar+offset)*cos(2*pi*tau); %Q0 = 200; should this be Qbar-cos(2*pi*tau) ?
+    EbarFun = @(tau)Qbar*cos(2*pi*tau)+qb_offset; %Q0 = 200; should this be Qbar-cos(2*pi*tau) ?
 elseif strcmp('constant',th)
     EbarFun = @(tau) Qbar;
 end
@@ -87,22 +91,22 @@ if strcmp(ti, 'uniiso')
     theta0 = 0;
 elseif strcmp(ti, 'tanh')
     start=0;
-    range=20;
-    z=linspace(pi, -pi, length(xgrid));
-    theta0 = range/2*tanh(z) + (start-range/2);
+    range=1; %1 normalized T = 13 K
+    ztemp =linspace(pi, -pi, length(xgrid));
+    theta0 = range/2*tanh(ztemp) + (start-range/2);
     theta0 = theta0';
 elseif strcmp(ti, 'gausiso')
     theta_i = 0;
-    aG = -6;
+    aG = -4;
     bG = ell/2;
-    cG = 0.5;
+    cG = 1;
     theta0 = theta_i + aG * exp(-((xgrid .* ell - bG).^2)./(2*cG^2));    
 end
 
 % Accumulation
 if strcmp('seasonal',ac)
     % Very simple seasonal accumulation (max in winter, min in summer)
-    Abar = @(tau)AccumulationRate+AccumulationRate*cos(2*pi*tau); 
+    Abar = @(tau)AccumulationRate+AccumulationRate*cos(2*pi*tau) ; 
 elseif strcmp('constant',ac)
     Abar = @(tau)AccumulationRate; % Accumulation
 end
@@ -147,6 +151,9 @@ if strcmp(rt, 'constant')
     Rbar = @(tau)rv; % fixed surface water flux (rain)
 elseif strcmp(rt,'seasonal')
     Rbar = @(tau)rv-rv*cos(2*pi*tau); %high in summer, zero in winter
+elseif strcmp(rt,'startstop')
+    Rbar = @(tau)rv; %adjusted in code to go to zero at rstop point
+    rstop = 0.25; 
 end
 
 % Initial values
@@ -165,12 +172,17 @@ for n = 1:Nt
     % Assign values from previous timestep
     W_nm1 = W;
     H_nm1 = H;
+    if strcmp(rt,'startstop')
+        if n > Nt*rstop
+            Rbar = @(tau) 0;
+        end
+    end
     % convert to Theta, phi, and S
     [Theta_nm1,phi_nm1,S_nm1] = conversiontotemperature(H_nm1,W_nm1,Stefan);
     % % Theta is temperature % phi is porosity % S is saturation % %
     
     % Compute Compaction Velocity
-    Shear = CompactionFunction(xgrid,W_nm1,phi_nm1,Theta_nm1,A,nglen,Abar(n*dt),type);
+    Shear = CompactionFunction(xgrid,W_nm1,phi_nm1,Theta_nm1,A,nglen,Abar(n*dt),CompactionType);
     CompactionVelocity = cumtrapz(xcelledges,[Shear; Shear(end)]);
     SurfaceIceVelocity = (Abar(n*dt)./(1-phi0))- MeltRate(max(n-1,1));
     if SurfaceIceVelocity<0
@@ -238,7 +250,7 @@ for n = 1:Nt
     % Compute fully saturated water pressure
     I = S_nm1>=1;
     if I(I)
-        [qp,qm,pressure] = FullySaturatedWaterPressure(U,k,pressure0,dx,xgrid,N,A,phi_nm1,W_nm1,Theta_nm1,nglen,I,Abar(n*dt),type);
+        [qp,qm,pressure] = FullySaturatedWaterPressure(U,k,pressure0,dx,xgrid,N,A,phi_nm1,W_nm1,Theta_nm1,nglen,I,Abar(n*dt),CompactionType);
         if 1
             slocations = find(I(2:(N-1)))+1;
             for i = slocations'            
@@ -468,7 +480,7 @@ axis([0 T 0 ell])
 ax3 = subplot(3,1,3);
 deltaT = Q0/h;
 surf(tmat,zmat,deltaT*thetamat,'EdgeColor','none'); view(2);
-hc = colorbar; caxis([aG,0])
+hc = colorbar; caxis auto;
 ylabel(hc,'$T$ $^{\circ}$C','interpreter','latex','fontsize',20)
 set(gca,'fontsize',18,'ydir','reverse','layer','top'); grid off;
 xlabel('$t$ (yr)','interpreter','latex','fontsize',20)
@@ -479,16 +491,50 @@ sgtitle(sprintf(['T = ' th ', Qbar = ' num2str(qb*Q0) '\nA = ' num2str(ai) ' mwe
 
 linkaxes([ax1, ax2, ax3],'xy')
 
-output.numRun = numRuns;
-output.QOpt = th;
-output.Q = qb;
-output.AOpt = ac;
-output.A = ai;
-output.phiOpt = ph;
-output.RVol = rv;
-output.date = datestr(now,'yymmdd');
-output.imgFile = [datestr(now,'yymmddHHMM') '_' num2str(numRuns) '.fig'];
+set(gcf,'color','w');
 
-savefig([datestr(now,'yymmddHHMM') '_' num2str(numRuns)]);
+
+output_new.numRun = numRuns;
+output_new.AccumulationRate = ai;
+output_new.AccumulationSeasonality = ac;
+output_new.AccumulationUnits = units;
+output_new.SurfaceEnergyBalance = qb;
+output_new.TemperatureInitialShape = th;
+output_new.TemperatureSeasonality = th;
+output_new.PorosityInitialShape = ph;
+output_new.SnowPorosity = phi0;
+output_new.RainVolume = rv;
+output_new.RainSeasonality = rt;
+output_new.CompactionType = ctype;
+output_new.dx = dx;
+output_new.dt = dt;
+output_new.imgFile = [datestr(now,'yymmddHHMM') '_' num2str(numRuns) '.fig'];
+output_new.date = datetime('now','Format','yyMMdd');
+
+answer = questdlg('Would you to save the figure?', ...
+	'SaveFig', ...
+	'Yes','No',...
+    'Yes');
+% Handle response
+switch answer
+    case 'Yes'
+        %save figures
+        savefig(['/Users/elizabeth/Documents/projects/Ice-lens-and-aquifer-modelling/code/MH-Model/model_may2020/figures/fig/' datestr(now,'yymmddHHMM') '_' num2str(numRuns)]);
+        saveas(gcf, ['/Users/elizabeth/Documents/projects/Ice-lens-and-aquifer-modelling/code/MH-Model/model_may2020/figures/png/' datestr(now,'yymmddHHMM') '_' num2str(numRuns) '.png']);
+        %concatenate & save output as table
+        load('Output_MHMay.mat','output');
+        output2 = struct2table(output_new);
+        output_join = [output;output2];
+        clear output
+        output = output_join;
+        save('Output_MHMay.mat','output');
+    case 'No'
+end
+
+%%% create fresh output table
+% varNames=["numRun", "AccumulationRate", "AccumulationSeasonality", "AccumulationUnits", "SurfaceEnergyBalance",..."TemperatureInitialShape", "TemperatureSeasonality","PorisityInitialShape", "SnowPorosity","RainVolume", "RainSeasonality","CompactionType","dx", "dt","imgFile", "date"];
+% sz = [1 length(varNames)]
+% varTypes=["double","double","string","string","double","string","string","string","double","double","string","string","double","double","string","datetime"]
+% output = table('Size',sz,'VariableTypes',varTypes,'VariableNames',varNames)
 
 end

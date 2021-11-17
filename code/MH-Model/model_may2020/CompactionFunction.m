@@ -1,4 +1,4 @@
-function Shear = CompactionFunction(xgrid,W,phi,Theta,A,nglen,Accumulation, ell, Q0, h0, type)
+function Shear = CompactionFunction(xgrid,W,phi,Theta,A,nglen,Accumulation, type)
 % This function takes in W, phi, and theta and outputs the compaction rate
 % xcelledges are the cell edge values
 % phi is the snow porosity
@@ -15,7 +15,6 @@ switch type
         Shear = 2.*A.*(phi./(1-phi)).*IcePressure.^nglen; % dw/dz
         
     case 'empirical'
-        rhoi = 917; % ice density
         rhow = 1000; % water density
         f = 1-(550/rhoi); % transition porosity
         R = 8.314; % gas constant
@@ -36,7 +35,6 @@ switch type
         Shear = C.*(phi./(1-phi)); % dw/dz
         
     case 'arthern'
-        rhoi = 917; % ice density
         rhow = 1000; % water density
         R = 8.314; % gas constant
         g = 9.81; % gravitational constant
