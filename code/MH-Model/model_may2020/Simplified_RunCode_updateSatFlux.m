@@ -1,8 +1,8 @@
 % script to run code
 clearvars; close all; clc;
-
+%%
 units = 'mwe';
-T = 8; % total simulation time (yr)
+T = 2; % total simulation time (yr)
 
 %lists options for seasonality & intialization
 thetaOpt = {'constant', 'seasonal'}; %(temperature seasonality)
@@ -13,15 +13,15 @@ rcOpt = {'constant','seasonal','startstop'};
 numRuns = 0;
 
 %sets input for model
-ai = 2; %accumulation rate
-qb = -0.6; % surface energy balance
-qb_offset = -.3; % to allow for avg temp < 0 (or >)
+ai = 0; %accumulation rate
+qb = 0; % surface energy balance
+qb_offset = 0; % to allow for avg temp < 0 (or >)
 ti = 'tanh'; %temperature initialization uniiso, tanh, gausiso
-th = 'seasonal'; %temperature seasonality - constant or seasonal (highest in summer)
-ac = 'seasonal'; %accumulation seasonality - constant or seasonal (largest in winter)
+th = 'constant'; %temperature seasonality - constant or seasonal (highest in summer)
+ac = 'constant'; %accumulation seasonality - constant or seasonal (largest in winter)
 ph = 'exponential'; %porosity initialization - 'exponential', 'gausuni', 'gausexp', 'ice lens uni', 'ice lens exp'
-rv = 0; %[0, 1/40, 10/40] = [0, 1, 10] inch/yr
-rt = 'seasonal';  %rain seasonality, constant, seasonal, startstop = stops at set point through run
+rv = .1; %[0, 1/40, 10/40] = [0, 1, 10] inch/yr
+rt = 'startstop';  %rain seasonality, constant, seasonal, startstop = stops at set point through run
 ctype = 'none'; %poreclosure, empirical
 
 main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns);
@@ -38,7 +38,7 @@ A = 1; % compaction pressure / viscosity scale
 nglen = 1; % Glens law exponent for viscosity
 Pe = 11; % Peclet number
 alpha = 1; % exponent of capillary pressure
-beta = 2; % saturation flux exponent
+beta = alpha + 1; % saturation flux exponent; default = 2
 ell = 20.6; % firn melting lengthscale
 Q0 = 200; %energy forcing normalization %W m-2 or kg s-3
 h = 14.8; %effective heat transfer coefficient 
@@ -159,6 +159,7 @@ end
 % Initial values
 
 pressure0 = -(pc(1)/B)*ones(N,1); % initial pressure
+pressure = pressure0;
 zs = 0; % zero initial surface height
 S0 = zeros(N,1);
 %phi = phi0*(1-0.99*exp(-(xgrid-0.5).^2/0.005));
@@ -190,14 +191,13 @@ for n = 1:Nt
     end
     IceVelocity = SurfaceIceVelocity*ones(N+1,1)-CompactionVelocity;
     
-    %%%% FLUX CALC STARTS HERE %%%%
-    
-    
-    % % Total Water % %
+    %% %% %% FLUX CALC STARTS HERE %% %% %%
+        
+    %% Total Water (Mass) Flux %%
     % Ice Advective flux;
-    [FadvIpW,FadvImW] = AdvectiveFlux(N,IceVelocity,W_nm1);
+    [FadvIpW,FadvImW] = AdvectiveFlux(N,IceVelocity,W_nm1); %velocity * volume
     
-    % Saturation Advective flux;
+    % Saturation Advective flux; actually water percolation?
     SaturationVelocity = ones(N+1,1);
     [fadvSp,fadvSm] = AdvectiveFlux(N,SaturationVelocity,k(phi_nm1).*kr(S_nm1));
     FadvSp = U*fadvSp;
@@ -219,7 +219,7 @@ for n = 1:Nt
     Fdif = FpW-FmW;
     W = W_nm1-(dt/dx)*Fdif;
     
-    % % Enthalpy % %
+    %% Enthalpy Flux %%
     % Ice Advective flux;
     [FadvIpH,FadvImH] = AdvectiveFlux(N,IceVelocity,H_nm1);
     
@@ -247,6 +247,7 @@ for n = 1:Nt
     Fdif = Fp-Fm;
     H = H_nm1-(dt/dx)*Fdif;
     
+    %%  Saturated water pressure + fluxes %%
     % Compute fully saturated water pressure
     I = S_nm1>=1;
     if I(I)
@@ -306,6 +307,10 @@ for n = 1:Nt
                          % Total Water
                         FpWS(i) = max(qp(i),FpWS(i)); % use maximum
                         FmWS(i+1) = max(qm(i+1),FmWS(i+1)); % use maximum
+                        if phi_nm1(i) == 0
+                            FpWS(i) = 0;
+                            FmWS(i+1) = 0;
+                        end
                         % Enthalpy
                         FpS(i) = max(Stefan*qp(i),FpS(i)); % use maximum
                         FmS(i+1) = max(Stefan*qm(i+1),FmS(i+1)); % use maximum                         
@@ -349,16 +354,16 @@ for n = 1:Nt
             FpWS(Ip)=qp(Ip); FmWS(Im)=qm(Im);
             FpS(Ip)=Stefan*qp(Ip); FmS(Im)=Stefan*qm(Im);
         end
-        if I(1)
+        if I(1) % if saturated at surface
             FmWS(1) = qm(1);
             FmS(1) = Stefan*qm(1);
-        elseif I(N)
+        elseif I(N) % if saturated at base
             FpWS(N) = qp(N);
             FpS(N) = Stefan*qp(N);
         end
         
         % Total Water
-        if I(1)
+        if I(1) % if saturated at surface
             FpW = FadvIpW+FpWS; FmW = FadvImW+FmWS;
         else
             FpW = FadvIpW + FpWS;
@@ -417,7 +422,7 @@ for n = 1:Nt
         plot(W,xgrid,'b','linewidth',2,'DisplayName','Total Water')
         plot(phi,xgrid,'g','linewidth',2,'DisplayName','Phi')
         plot(pressure,xgrid,'m','linewidth',2,'DisplayName','Pressure')
-        plot(FmWS,xgrid,'c','linewidth',2,'DisplayName','Flux')
+        plot(FmW,xgrid,'c','linewidth',2,'DisplayName','Flux')
         title(num2str(n*dt))
         set(gca,'fontsize',18,'ydir','reverse')
         axis([-1 2 a b])
@@ -527,7 +532,7 @@ switch answer
         output_join = [output;output2];
         clear output
         output = output_join;
-        save('Output_MHMay.mat','output');
+        save('/Users/elizabeth/Documents/projects/Ice-lens-and-aquifer-modelling/code/MH-Model/model_may2020/Output_MHMay.mat','output');
     case 'No'
 end
 

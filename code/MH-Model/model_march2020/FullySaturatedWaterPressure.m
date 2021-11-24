@@ -10,13 +10,13 @@ I(phi<phimin)=0;
 phim = [phi(1); phi(1:(end-1))]; % cell values to the left of cell i
 phip = [phi(2:end); phi(end)]; % cell values to the right of cell i
 
-Dm = U*k(phim);
+Dm = U*k(phim); 
 D = U*k(phi);
 Dp = U*k(phip);
 
 fim = (2/dx)*(((1./Dm)+(1./D)).^(-1));
 fip = (2/dx)*(((1./D)+(1./Dp)).^(-1));
-fip(N)=0; % no pressure gradient
+fip(N)=0; % no pressure gradient at base
 % full difference
 S = [fim(2:N)', -(fim+fip)',fip(1:(N-1))'];
 Ind = [2:N, 1:N, 1:(N-1)];
