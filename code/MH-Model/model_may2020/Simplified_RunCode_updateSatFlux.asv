@@ -302,7 +302,7 @@ for n = 1:Nt
                     
                 elseif and(S_nm1(i)==1,S_nm1(i+1)~=1) % sat(i)/unsat(i+1)
   
-                    FpWS(i) = min(qp(i),FpWS(i)); % use minimum
+                    FpWS(i) = min(qp(i),FpWS(i)); % use min or max?
                     FmWS(i+1) = min(qm(i+1),FmWS(i+1)); % use minimum
                         
                     % Enthalpy

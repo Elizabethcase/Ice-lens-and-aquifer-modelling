@@ -4,7 +4,7 @@ function [T,phi,S] = conversiontotemperature(H,W,Stefan)
 % [T,phi,S] = conversiontotemperature(H,W,Stefan)
 
 T = min(0,(H./W)); 
-    % max temp = 0 (water automatically at 0 C?)
+    % max temp = 0 
     % but confused by H./W -->
         % when I solve Eqn(B3) for T, I get
             % T = (H-Stefan*phi*S) / W
