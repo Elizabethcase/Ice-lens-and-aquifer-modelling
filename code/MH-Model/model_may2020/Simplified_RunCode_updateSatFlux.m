@@ -24,9 +24,11 @@ rv = .1; %[0, 1/40, 10/40] = [0, 1, 10] inch/yr
 rt = 'startstop';  %rain seasonality, constant, seasonal, startstop = stops at set point through run
 ctype = 'none'; %poreclosure, empirical
 
-main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns);
+write_gif = 1; %0 don't write, 1 write
 
-function output = main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns)
+main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns, write_gif);
+
+function output = main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns, write_gif)
 
 global B Stefan U A nglen Pe alpha beta ell Q0 h phi0 rhoi
 
@@ -53,9 +55,12 @@ metersofsnow = normalizedaccumulation(ai, units, Q0, phi0);
 AccumulationRate = metersofsnow*(1-phi0); % accumulation rate
 Qbar = qb; % surface energy flux
 CompactionType = ctype;
+gifcounter = 1;
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Discretization % % % % % % % % % % % % % %
+%dx = 10^(-2)/2;
+%dt = 10^(-6);
 dx = 10^(-2);
 dt = 10^(-5);
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -153,7 +158,7 @@ elseif strcmp(rt,'seasonal')
     Rbar = @(tau)rv-rv*cos(2*pi*tau); %high in summer, zero in winter
 elseif strcmp(rt,'startstop')
     Rbar = @(tau)rv; %adjusted in code to go to zero at rstop point
-    rstop = 0.25; 
+    rstop = 0.5; 
 end
 
 % Initial values
@@ -169,6 +174,14 @@ H =  W.*theta0+Stefan.*phi.*S0; % take in H from above
 % Initialize variables
 Tsurf = zeros(Nt,1); MeltRate = zeros(Nt,1);
 n_plot = 1; RunOff = zeros(Nt,1); RO = zeros(Nt,1);
+
+
+
+
+%%%% loop begins %%%%
+
+
+
 for n = 1:Nt
     % Assign values from previous timestep
     W_nm1 = W;
@@ -182,8 +195,8 @@ for n = 1:Nt
         [Theta_nm1,phi_nm1,S_nm1] = conversiontotemperature(H_nm1,W_nm1,Stefan);
     end
     
-    if strcmp(rt,'startstop')
-        if n > Nt*rstop
+    if abs(n*dt - rstop) < 2.0000e-05
+       if strcmp(rt,'startstop')
             Rbar = @(tau) 0;
         end
     end
@@ -203,7 +216,7 @@ for n = 1:Nt
     % Ice Advective flux;
     [FadvIpW,FadvImW] = AdvectiveFlux(N,IceVelocity,W_nm1); %velocity * volume
     
-    % Saturation Advective flux; actually water percolation?
+    % Saturation Advective flux - water percolation?
     SaturationVelocity = ones(N+1,1);
     [fadvSp,fadvSm] = AdvectiveFlux(N,SaturationVelocity,k(phi_nm1).*kr(S_nm1));
     FadvSp = U*fadvSp;
@@ -222,8 +235,8 @@ for n = 1:Nt
     % Total fluxes
     FpW = FadvIpW+FpWS; FmW = FadvImW+FmWS;
     FmW(1) = Abar(n*dt)+Rbar(n*dt); % accumulation and rain :: - RO(max(n-1,1))
-    Fdif = FpW-FmW;
-    W = W_nm1-(dt/dx)*Fdif;
+    FdifW = FpW-FmW;
+    W = W_nm1-(dt/dx)*FdifW;
     
     %% Enthalpy Flux %%
     % Ice Advective flux;
@@ -250,8 +263,8 @@ for n = 1:Nt
     % Total Saturation and Temperature fluxes
     Fp = FadvIpH+FpS+FpT; Fm = FadvImH+FmS+FmT;
     Fm(1)=Stefan*(EbarFun(n*dt)-Theta_nm1(1))+Stefan*Rbar(n*dt); % Enthalpy neumann conditions
-    Fdif = Fp-Fm;
-    H = H_nm1-(dt/dx)*Fdif;
+    FdifH = Fp-Fm;
+    H = H_nm1-(dt/dx)*FdifH;
     
     %%  Saturated water pressure + fluxes %%
     % Compute fully saturated water pressure
@@ -302,12 +315,12 @@ for n = 1:Nt
                     
                 elseif and(S_nm1(i)==1,S_nm1(i+1)~=1) % sat(i)/unsat(i+1)
   
-                    FpWS(i) = min(qp(i),FpWS(i)); % use minimum
-                    FmWS(i+1) = min(qm(i+1),FmWS(i+1)); % use minimum
+                    FpWS(i) = max(qp(i),FpWS(i)); % use min or max?
+                    FmWS(i+1) = max(qm(i+1),FmWS(i+1)); % use minimum
                         
                     % Enthalpy
-                    FpS(i) = min(Stefan*qp(i),FpS(i)); % use minimum
-                    FmS(i+1) = min(Stefan*qm(i+1),FmS(i+1)); % use minimum 
+                    FpS(i) = max(Stefan*qp(i),FpS(i)); % use minimum
+                    FmS(i+1) = max(Stefan*qm(i+1),FmS(i+1)); % use minimum 
                 end       
                 
             end
@@ -346,8 +359,9 @@ for n = 1:Nt
             RunOff_flag = 0;
         end
         
-        Fdif = FpW-FmW;
-        W(I) = W_nm1(I)-(dt/dx)*Fdif(I);
+        FdifW = FpW-FmW;
+        %W(I) = W_nm1(I)-(dt/dx)*Fdif(I);
+        W = W_nm1-(dt/dx)*FdifW;
         
         if RunOff_flag
             W(1)=1;
@@ -360,8 +374,9 @@ for n = 1:Nt
         elseif RunOff_flag
             Fm(1)=Stefan*(EbarFun(n*dt)-Theta_nm1(1)+Rbar(n*dt)-RunOff(n));
         end
-        Fdif = Fp-Fm;
-        H(I) = H_nm1(I)-(dt/dx)*Fdif(I);
+        FdifH = Fp-Fm;
+        %H(I) = H_nm1(I)-(dt/dx)*Fdif(I);
+        H = H_nm1-(dt/dx)*FdifH;
     else
         pressure = pressure0;
     end
@@ -388,23 +403,43 @@ for n = 1:Nt
         plot(W,xgrid,'b','linewidth',2,'DisplayName','Total Water')
         plot(phi,xgrid,'go-','linewidth',2,'DisplayName','Phi')
         %plot(pressure,xgrid,'m','linewidth',2,'DisplayName','Pressure')
-        plot(FpW,xgrid,'c^-','linewidth',1,'DisplayName','Fp')
-        plot(FmW,xgrid,'b^-','linewidth',1,'DisplayName','Fm')
-        plot(Fdif,xgrid,'^-','Color','#006E77','linewidth',1,'DisplayName','F')
+        plot(FpW,xgrid,'c^-','linewidth',1,'DisplayName','FpW')
+        plot(FmW,xgrid,'b^-','linewidth',1,'DisplayName','FmW')
+        plot(FdifW,xgrid,'^-','Color','#006E77','linewidth',1,'DisplayName','Fdif')
         title(num2str(n*dt))
         set(gca,'fontsize',18,'ydir','reverse')
         axis([-1 2 a b])
         legend();
         drawnow;
         hold off;
+        
+        %write to gif
+        if write_gif==1 
+            frame = getframe(1);
+            im = frame2im(frame);
+            [imind,cm] = rgb2ind(im,256);
+            
+            if gifcounter == 1
+                filename = ['/Users/elizabeth/Documents/projects/Ice-lens-and-aquifer-modelling/code/MH-Model/model_may2020/figures/gif/' datestr(now,'yymmddHHMM') '.gif'];
+                imwrite(imind,cm,filename,'gif', 'Loopcount',inf);
+                gifcounter = gifcounter + 1;
+            else
+                imwrite(imind,cm,filename,'gif','WriteMode','append');
+            end
+        end
+
+       
     end
     
+
     zs = zs + SurfaceIceVelocity*dt;
     if ~mod(n,save_freq)
         disp(['prog... ' num2str(round(n/save_freq))])
         phiwithz(:,n_plot) = phi;
         Swithz(:,n_plot) = S;
         Thetawithz(:,n_plot)= Theta;
+        Wwithz(:,n_plot)= W;
+        FdifWwithz(:,n_plot)= FdifW;
         MeltRateSave(n_plot) = MeltRate(n);
         RunOffSave(n_plot) = RunOff(n);
         time(n_plot) = n*dt;
@@ -429,20 +464,26 @@ phimat = phiwithz;
 smat = Swithz;
 thetamat = Thetawithz;
 drainage = -BIV.*phimat(end,:).*smat(end,:) + BottomWaterFlux;
+Wmat = Wwithz;
+FdifWmat = FdifWwithz;
 
 tmat = repmat(time,length(xgrid),1);
 zmat = ell*repmat(xgrid,1,length(time));
 
-figure(2)
-ax1 = subplot(3,1,1);
-surf(tmat,zmat,phimat,'EdgeColor','none'); view(2);
+figure('Position',[440 377 560 600])
+tiledlayout(5,1)
+
+ax1 = nexttile;
+surf(tmat,zmat,phimat,'EdgeColor','none'); view(2); hold on;
 hc = colorbar; caxis([0 phi0])
 ylabel(hc,'$\phi$','interpreter','latex','fontsize',20)
 set(gca,'fontsize',18,'ydir','reverse','layer','top'); grid off;
 ylabel('$Z$ (m)','interpreter','latex','fontsize',20)
 axis([0 T 0 ell])
+plot3(rstop*ones(size(zmat(:,1))), zmat(:,1), ones(size(zmat(:,1)))*phimat(1,1),'-r')
+hold off;
 
-ax2 = subplot(3,1,2);
+ax2 = nexttile;
 surf(tmat,zmat,smat,'EdgeColor','none'); view(2);
 hc = colorbar; caxis([0 1])
 ylabel(hc,'$S$','interpreter','latex','fontsize',20)
@@ -450,19 +491,34 @@ set(gca,'fontsize',18,'ydir','reverse','layer','top'); grid off;
 ylabel('$Z$ (m)','interpreter','latex','fontsize',20)
 axis([0 T 0 ell])
 
-ax3 = subplot(3,1,3);
+ax3 = nexttile;
 deltaT = Q0/h;
 surf(tmat,zmat,deltaT*thetamat,'EdgeColor','none'); view(2);
 hc = colorbar; caxis auto;
 ylabel(hc,'$T$ $^{\circ}$C','interpreter','latex','fontsize',20)
 set(gca,'fontsize',18,'ydir','reverse','layer','top'); grid off;
-xlabel('$t$ (yr)','interpreter','latex','fontsize',20)
 ylabel('$Z$ (m)','interpreter','latex','fontsize',20)
 axis([0 T 0 ell])
 
-sgtitle(sprintf(['T = ' th ', Qbar = ' num2str(qb*Q0) '\nA = ' num2str(ai) ' mwe, ' ac '\n phiInit = ' ph '\n RVol = ' num2str(rv)]))
+ax4 = nexttile;
+surf(tmat,zmat,FdifWmat,'EdgeColor','none'); view(2);
+hc = colorbar; caxis([0 1])
+ylabel(hc,'$FdifW$','interpreter','latex','fontsize',20)
+set(gca,'fontsize',18,'ydir','reverse','layer','top'); grid off;
+ylabel('$Z$ (m)','interpreter','latex','fontsize',20)
+axis([0 T 0 ell])
 
-linkaxes([ax1, ax2, ax3],'xy')
+ax5 = nexttile;
+plot(tmat,sum(Wmat,1));
+ylabel('$\sum W$','interpreter','latex','fontsize',20)
+set(gca,'fontsize',18,'layer','top');
+xlabel('$t$ (yr)','interpreter','latex','fontsize',20)
+axis([0 T min(sum(Wmat,1)) max(sum(Wmat,1))])
+
+sgtitle(sprintf(['T = ' th ', Qbar = ' num2str(qb*Q0) '\nA = ' num2str(ai) ' mwe, ' ac '\n phiMin = ' num2str(min(min(phimat))) '\n RVol = ' num2str(rv)]))
+
+linkaxes([ax1, ax2, ax3, ax4],'xy')
+linkaxes([ax1, ax2, ax3, ax4, ax5],'x')
 
 set(gcf,'color','w');
 
@@ -481,7 +537,7 @@ output_new.RainSeasonality = rt;
 output_new.CompactionType = ctype;
 output_new.dx = dx;
 output_new.dt = dt;
-output_new.imgFile = [datestr(now,'yymmddHHMM') '_' num2str(numRuns) '.fig'];
+output_new.imgFile = [datestr(now,'yymmddHHMM') '.fig'];
 output_new.date = datetime('now','Format','yyMMdd');
 
 answer = questdlg('Would you to save the figure?', ...
@@ -492,8 +548,8 @@ answer = questdlg('Would you to save the figure?', ...
 switch answer
     case 'Yes'
         %save figures
-        savefig(['/Users/elizabeth/Documents/projects/Ice-lens-and-aquifer-modelling/code/MH-Model/model_may2020/figures/fig/' datestr(now,'yymmddHHMM') '_' num2str(numRuns)]);
-        saveas(gcf, ['/Users/elizabeth/Documents/projects/Ice-lens-and-aquifer-modelling/code/MH-Model/model_may2020/figures/png/' datestr(now,'yymmddHHMM') '_' num2str(numRuns) '.png']);
+        savefig(['/Users/elizabeth/Documents/projects/Ice-lens-and-aquifer-modelling/code/MH-Model/model_may2020/figures/fig/' datestr(now,'yymmddHHMM')]);
+        saveas(gcf, ['/Users/elizabeth/Documents/projects/Ice-lens-and-aquifer-modelling/code/MH-Model/model_may2020/figures/png/' datestr(now,'yymmddHHMM') '.png']);
         %concatenate & save output as table
         load('Output_MHMay.mat','output');
         output2 = struct2table(output_new);

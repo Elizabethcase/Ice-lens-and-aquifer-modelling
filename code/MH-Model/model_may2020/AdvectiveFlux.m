@@ -11,7 +11,7 @@ for i = 1:(N+1)
     elseif and(velocity(i)>0,i~=1)
         %englacially, fadv = v * previous field
         fadv(i) = velocity(i)*field(i-1);
-    elseif and(velocity(i)<=0,i==(N+1)) %bottom boundary; not sure why this is different than prev
+    elseif and(velocity(i)<=0,i==(N+1)) %bottom boundary;
         %at the bottom (N+1), fadv = v * previous field
         % fadv(i) = 0; % will be fixed by the boundary condition
         fadv(i) = velocity(i)*field(i-1); % natural inflow
