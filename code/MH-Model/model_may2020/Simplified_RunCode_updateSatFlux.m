@@ -30,7 +30,7 @@ main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns, write_
 
 function output = main(ai, units, qb, qb_offset, T, th, ac, ti, ph, rv, rt, ctype, numRuns, write_gif)
 
-global B Stefan U A nglen Pe alpha beta ell Q0 h phi0 rhoi
+global B Stefan U A nglen Pe alpha beta ell Q0 h phi0 rhoi phi_min
 
 % % Physical Parameters % % % % % % % % % % % % % % %
 B = 260; % bond number
@@ -45,6 +45,7 @@ ell = 20.6; % firn melting lengthscale
 Q0 = 200; %energy forcing normalization %W m-2 or kg s-3
 h = 14.8; %effective heat transfer coefficient 
 rhoi = 917; % ice density
+phi_min = 1e-4;
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Simulation Parameters % % % % % % % % % % % % % %
@@ -59,11 +60,10 @@ gifcounter = 1;
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 % % Discretization % % % % % % % % % % % % % %
-%dx = 10^(-2)/2;
-%dt = 10^(-6);
-dx = 10^(-2);
-dt = 10^(-5);
-% % % % % % % % % % % % % % % % % % % % % % % % % % %
+dx = 10^(-2)/2;
+dt = 10^(-6);
+%dt = 10^(-5);
+%% % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
 % Mesh Information

@@ -3,9 +3,11 @@ function [qp,qm,pressure] = FullySaturatedWaterPressure(U,k,pressure,dx,xgrid,N,
 % Compute water pressure when the snowpack is fully saturated. I is an
 % indicator function that determines whether to solve for the water pressure
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+global phi_min
 
-phimin = 10^(-4);
-I(phi<phimin)=0;
+%phimin = 10^(-4);
+%I(phi<phimin)=0;
+I(phi<phi_min)=0;
 
 phim = [phi(1); phi(1:(end-1))]; % cell values to the left of cell i
 phip = [phi(2:end); phi(end)]; % cell values to the right of cell i
